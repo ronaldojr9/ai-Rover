@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Rover | Our Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .value-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem; text-align: center; }
+        .value-card:hover { border-color: var(--accent-orange); }
+        .value-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .value-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .value-card .subtitle { color: var(--accent-orange); margin-bottom: 1rem; }
+        .value-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
+        .stat-item { text-align: center; }
+        .stat-item .value { font-family: 'Space Mono', monospace; font-size: 3rem; font-weight: 700; color: var(--accent-orange); }
+        .stat-item .label { color: var(--text-secondary); }
+        .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+        .diff-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; }
+        .diff-card h3 { margin-bottom: 1rem; }
+        .diff-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        @media (max-width: 768px) { .values-grid, .stats-row, .diff-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+        <div class="nav-cta"><a href="demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <p class="section-label">Why Rover</p>
+            <h1>Your Success Is Our Focus</h1>
+            <p>We don't just provide software—we deliver a platform tailored to empower your people, simplify workflows, and adapt as your business evolves.</p>
+        </div>
+    </div>
+
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Our Values</p>
+                <h2 class="section-title">We Are RAD</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Responsible</h3>
+                    <div class="subtitle">We own it</div>
+                    <p>We take ownership of our work. When we say we'll do something, we do it.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <h3>Adaptable</h3>
+                    <div class="subtitle">We evolve</div>
+                    <p>We stay flexible, embrace new approaches, and help customers navigate change.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💪</div>
+                    <h3>Dedicated</h3>
+                    <div class="subtitle">We care</div>
+                    <p>We're genuinely invested in our customers' success. Their wins are our wins.</p>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-item"><div class="value">30+</div><div class="label">Years serving manufacturers</div></div>
+                <div class="stat-item"><div class="value">500+</div><div class="label">Customers worldwide</div></div>
+                <div class="stat-item"><div class="value">45+</div><div class="label">Locations supported</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">What Makes Us Different</p>
+                <h2 class="section-title">Life Is Too Short to Work With Jerks</h2>
+                <p class="section-subtitle">We hire for attitude and aptitude, nurturing a team that genuinely cares about your success.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card"><h3>🎯 Tailored to You</h3><p>Most ERPs force you into rigid templates. Rover adapts to your unique workflows—customization is fundamental, not a costly add-on.</p></div>
+                <div class="diff-card"><h3>🤝 True Partnership</h3><p>Direct access to our expert team. We're invested in your success. Mr. NetSuite doesn't care about your business. We do.</p></div>
+                <div class="diff-card"><h3>🚀 AI & Payments Native</h3><p>Unlike competitors bolting on AI as an afterthought, Rover AI and Rover Pay are built into the platform from day one.</p></div>
+                <div class="diff-card"><h3>💰 No Brand Tax</h3><p>Enterprise-grade capabilities without the enterprise price tag. Powerful software that doesn't break the bank.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for a Partner, Not Just a Vendor?</h2>
+            <p>See why manufacturers trust Rover to turn complexity into clarity.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

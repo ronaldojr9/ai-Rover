@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Implement | Rover ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline { position: relative; max-width: 800px; margin: 4rem auto 0; }
+        .timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: var(--border-subtle); }
+        .timeline-item { position: relative; padding-left: 70px; padding-bottom: 3rem; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-marker { position: absolute; left: 0; top: 0; width: 50px; height: 50px; background: var(--bg-card); border: 2px solid var(--accent-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--accent-orange); z-index: 1; }
+        .timeline-content { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; }
+        .timeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+        .timeline-content h3 { font-size: 1.25rem; margin: 0; }
+        .timeline-weeks { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.1); padding: 0.35rem 0.75rem; border-radius: 100px; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+        .impl-benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; }
+        .impl-benefit { text-align: center; }
+        .impl-benefit-icon { width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1rem; }
+        .impl-benefit h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .impl-benefit p { color: var(--text-muted); font-size: 0.85rem; }
+        @media (max-width: 768px) {
+            .impl-benefits { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html" class="active">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="demo.html" class="btn btn-primary">Get a Demo</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <p class="section-label">Implementation</p>
+            <h1>Your Transition Made Effortless</h1>
+            <p>Implementing an ERP shouldn't feel overwhelming. Our experienced team guides you through each step—ensuring clarity, control, and confidence from day one.</p>
+        </div>
+    </div>
+
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="text-center mb-6">
+                <p class="section-label">Our Proven Framework</p>
+                <h2 class="section-title">From Kickoff to Go-Live in ~120 Days</h2>
+                <p class="section-subtitle">Significantly faster than industry averages, without cutting corners.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Discovery & Planning</h3>
+                            <span class="timeline-weeks">Weeks 1-2</span>
+                        </div>
+                        <p>We start by deeply understanding your business. Our experts listen, identify your unique needs, and build a tailored roadmap to ensure the implementation matches your exact requirements.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Migration & Configuration</h3>
+                            <span class="timeline-weeks">Weeks 3-5</span>
+                        </div>
+                        <p>We handle the heavy lifting—safely migrating your critical data (parts, customers, suppliers, BOMs) into Rover ERP. Early data visibility lets you immediately experience efficiency gains.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>System Fine-Tuning</h3>
+                            <span class="timeline-weeks">Weeks 6-8</span>
+                        </div>
+                        <p>Together, we configure Rover ERP around your workflows. Our agile approach means adjustments happen quickly, ensuring the system perfectly matches your day-to-day operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Training & Change Management</h3>
+                            <span class="timeline-weeks">Weeks 9-10</span>
+                        </div>
+                        <p>Training tailored to each team member ensures everyone confidently uses Rover from day one. Personalized sessions, role-specific training, and easy-to-use guides drive rapid adoption.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Go-Live Preparation & Testing</h3>
+                            <span class="timeline-weeks">Weeks 11-12</span>
+                        </div>
+                        <p>Before launch, we meticulously test your system in realistic scenarios. This phase ensures everything works seamlessly, eliminating surprises at go-live.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">🚀</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Launch & Ongoing Support</h3>
+                            <span class="timeline-weeks">Go-Live Week</span>
+                        </div>
+                        <p>The big moment arrives smoothly, with minimal disruption to your operations. Our dedicated support team remains by your side, ensuring continuous success long after implementation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impl-benefits">
+                <div class="impl-benefit">
+                    <div class="impl-benefit-icon">🎯</div>
+                    <h4>Tailored Approach</h4>
+                    <p>We adapt to your business—not the other way around</p>
+                </div>
+                <div class="impl-benefit">
+                    <div class="impl-benefit-icon">⚡</div>
+                    <h4>Quick & Clear</h4>
+                    <p>Operational in ~120 days, faster than industry averages</p>
+                </div>
+                <div class="impl-benefit">
+                    <div class="impl-benefit-icon">🤝</div>
+                    <h4>Personal Support</h4>
+                    <p>Decades of manufacturing & IT experience at your side</p>
+                </div>
+                <div class="impl-benefit">
+                    <div class="impl-benefit-icon">📈</div>
+                    <h4>Empowering Growth</h4>
+                    <p>Improved efficiency, control, and capacity from day one</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="testimonial" style="max-width: 800px; margin: 0 auto;">
+                <p class="testimonial-quote">We started with Rover in September and said we wanted to be live by the end of the year. That was an aggressive timeline—but the team didn't even flinch. And sure enough, we made it happen.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DL</div>
+                    <div class="author-info"><h4>Derrick Lang</h4><p>Carr Manufacturing</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for Clarity?</h2>
+            <p>Schedule a free implementation consultation and discover how Rover ERP can transform your business from chaos to clarity.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+                <p>Manufacturing intelligence platform from Zumasys. Trusted by manufacturers for over 30 years.</p>
+            </div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>ERP</h4><ul><li><a href="erp-modules.html">Modules</a></li><li><a href="erp-who.html">Who It's For</a></li><li><a href="implementation.html">Implementation</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc. All rights reserved.</p><p>Irvine, CA · San Diego, CA · Sioux Falls, SD</p></div>
+    </footer>
+</body>
+</html>

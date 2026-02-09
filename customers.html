@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Success Stories | Rover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+        .story-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem; transition: all 0.3s; }
+        .story-card:hover { border-color: var(--accent-orange); transform: translateY(-4px); }
+        .story-logo { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
+        .story-quote { font-size: 1.1rem; font-style: italic; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .story-author { display: flex; align-items: center; gap: 1rem; }
+        .story-avatar { width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-orange), var(--accent-blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .story-author-info h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+        .story-author-info p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+        .featured-story { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); }
+        .featured-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .featured-text h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .featured-text p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .featured-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .featured-stat { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; text-align: center; }
+        .featured-stat .value { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--accent-cyan); }
+        .featured-stat .label { color: var(--text-muted); font-size: 0.85rem; }
+        .logos-section { padding: 4rem 3rem; border-bottom: 1px solid var(--border-subtle); }
+        .logos-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; opacity: 0.6; }
+        .logos-grid span { font-family: 'Space Mono', monospace; color: var(--text-secondary); }
+        @media (max-width: 1024px) { .stories-grid, .featured-content { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html" class="active">Customers</a></li>
+        </ul>
+        <div class="nav-cta"><a href="demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <p class="section-label">Customers</p>
+            <h1>Success Stories</h1>
+            <p>See how manufacturers and distributors are using Rover to turn chaos into clarity.</p>
+        </div>
+    </div>
+
+    <section class="logos-section">
+        <div class="container">
+            <div class="logos-grid">
+                <span>PACE Supply</span><span>Industrial Finishes</span><span>Carr Manufacturing</span><span>US Wheel</span><span>Rottler</span><span>Toolrite</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section featured-story">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <p class="section-label">Featured Story</p>
+                    <h2>Industrial Finishes: 45 Locations, One System</h2>
+                    <p>What began with server crashes and outdated tools became a story of operational clarity. With Rover ERP, Industrial Finishes gained a system that mirrors the way they work—streamlining operations across 45+ locations.</p>
+                    <p>"I just have been amazed with how easy and comfortable it is to transition over to the team at Rover. We have more resources. We still got really good, dedicated people, easy to talk to, easy to work with."</p>
+                    <p><strong>— Ray Pfaff, Director of Operations</strong></p>
+                </div>
+                <div class="featured-stats">
+                    <div class="featured-stat"><div class="value">45+</div><div class="label">Locations unified</div></div>
+                    <div class="featured-stat"><div class="value">100%</div><div class="label">Uptime since migration</div></div>
+                    <div class="featured-stat"><div class="value">60%</div><div class="label">Faster reporting</div></div>
+                    <div class="featured-stat"><div class="value">1</div><div class="label">Unified system</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="text-center mb-6">
+                <h2 class="section-title">What Our Customers Say</h2>
+            </div>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-logo">PACE Supply Corp.</div>
+                    <p class="story-quote">"We're really pleased with Rover Pay. The interface is super user-friendly, and our team got the hang of it quickly. Plus, their support team is awesome—always quick to respond and super helpful."</p>
+                    <div class="story-author">
+                        <div class="story-avatar">SR</div>
+                        <div class="story-author-info"><h4>Sam Roach</h4><p>PACE Supply Corp.</p></div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-logo">US Wheel</div>
+                    <p class="story-quote">"The successful migration and the ongoing improvements to the company's operations serve as a testament to the benefits of choosing Rover ERP."</p>
+                    <div class="story-author">
+                        <div class="story-avatar">BW</div>
+                        <div class="story-author-info"><h4>Bob Williams</h4><p>VP & General Manager</p></div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-logo">Carr Manufacturing</div>
+                    <p class="story-quote">"The ability to customize and adapt the software to fit our business, rather than the other way around, has been remarkable. And the support we've received—phenomenal!"</p>
+                    <div class="story-author">
+                        <div class="story-avatar">DL</div>
+                        <div class="story-author-info"><h4>Derrick Lang</h4><p>Carr Manufacturing</p></div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-logo">Toolrite Manufacturing</div>
+                    <p class="story-quote">"Moving to Rover was like upgrading from a rotary phone to a smartphone. It's an investment that benefits the entire team, streamlining our processes and enhancing efficiency."</p>
+                    <div class="story-author">
+                        <div class="story-avatar">EK</div>
+                        <div class="story-author-info"><h4>Eric Kutemeier</h4><p>Program Manager</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Write Your Success Story?</h2>
+            <p>Join hundreds of manufacturers who've transformed their operations with Rover.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

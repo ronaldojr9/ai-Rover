@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rover Platform | AI + Pay + ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .platform-hero { padding: 10rem 3rem 6rem; background: var(--gradient-mesh); text-align: center; }
+        .platform-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .platform-hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem; }
+        .journey-section { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); }
+        .journey-visual { display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 4rem 0; flex-wrap: wrap; }
+        .journey-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2rem; width: 280px; text-align: center; transition: all 0.3s; }
+        .journey-step:hover { border-color: var(--accent-orange); transform: translateY(-4px); }
+        .journey-step.featured { border-color: var(--accent-orange); box-shadow: 0 0 40px var(--accent-orange-glow); }
+        .journey-number { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .journey-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .journey-step h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .journey-step .tagline { color: var(--accent-orange); font-size: 0.9rem; margin-bottom: 1rem; }
+        .journey-step p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .journey-arrow { font-size: 2rem; color: var(--text-muted); }
+        .value-props { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+        .value-prop { text-align: center; }
+        .value-prop-icon { width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto 1rem; }
+        .value-prop h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .value-prop p { color: var(--text-secondary); font-size: 0.9rem; }
+        .compare-section { background: var(--bg-primary); }
+        .compare-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .compare-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; }
+        .compare-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .compare-card .tagline { color: var(--accent-orange); font-size: 0.9rem; margin-bottom: 1rem; }
+        .compare-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .compare-card .btn { width: 100%; }
+        @media (max-width: 1024px) { .value-props, .compare-grid { grid-template-columns: 1fr; } .journey-arrow { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html">ERP</a></li>
+            <li><a href="platform.html" class="active">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta"><a href="demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="platform-hero">
+        <div class="badge mb-4"><span class="badge-dot"></span> Complete Platform</div>
+        <h1>One Platform. Three Ways to Win.</h1>
+        <p>Rover is a complete manufacturing intelligence platform. Start where you need, expand as you grow. AI, Payments, and ERP—designed to work together.</p>
+    </section>
+
+    <section class="section journey-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Your Journey</p>
+                <h2 class="section-title">Start Anywhere. Expand Over Time.</h2>
+                <p class="section-subtitle">Most customers start with AI for quick wins, then expand into Pay and ERP as needs grow.</p>
+            </div>
+            <div class="journey-visual">
+                <div class="journey-step featured">
+                    <div class="journey-number">01 — Start Here</div>
+                    <div class="journey-icon">🤖</div>
+                    <h3>Rover AI</h3>
+                    <div class="tagline">See what's happening</div>
+                    <p>Works with any ERP. Surface insights in days, not months. Low risk, fast ROI.</p>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">02 — Expand</div>
+                    <div class="journey-icon">💳</div>
+                    <h3>Rover Pay</h3>
+                    <div class="tagline">Accelerate cash flow</div>
+                    <p>Add integrated payments. Automatic reconciliation. Faster collections.</p>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="journey-number">03 — Transform</div>
+                    <div class="journey-icon">⚙️</div>
+                    <h3>Rover ERP</h3>
+                    <div class="tagline">Own your operations</div>
+                    <p>When you're ready, the full platform with AI and Pay built in from day one.</p>
+                </div>
+            </div>
+            <div class="value-props">
+                <div class="value-prop">
+                    <div class="value-prop-icon">🔌</div>
+                    <h4>Works With Your Stack</h4>
+                    <p>AI and Pay integrate with your existing systems. No rip-and-replace required.</p>
+                </div>
+                <div class="value-prop">
+                    <div class="value-prop-icon">📈</div>
+                    <h4>Grow at Your Pace</h4>
+                    <p>Add capabilities as you need them. No pressure to buy the whole platform upfront.</p>
+                </div>
+                <div class="value-prop">
+                    <div class="value-prop-icon">🔗</div>
+                    <h4>Better Together</h4>
+                    <p>Each product works standalone, but they're designed to work better together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section compare-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Choose Your Starting Point</p>
+                <h2 class="section-title">Which Rover Is Right for You?</h2>
+            </div>
+            <div class="compare-grid">
+                <div class="compare-card">
+                    <h3>🤖 Rover AI</h3>
+                    <div class="tagline">Best for: Quick wins without disruption</div>
+                    <p>You want intelligence from your data but aren't ready to change your ERP. Start seeing insights in days.</p>
+                    <a href="ai.html" class="btn btn-secondary">Explore Rover AI</a>
+                </div>
+                <div class="compare-card">
+                    <h3>💳 Rover Pay</h3>
+                    <div class="tagline">Best for: Cash flow improvement</div>
+                    <p>You want faster payments and automatic reconciliation without changing your operational systems.</p>
+                    <a href="pay.html" class="btn btn-secondary">Explore Rover Pay</a>
+                </div>
+                <div class="compare-card">
+                    <h3>⚙️ Rover ERP</h3>
+                    <div class="tagline">Best for: Full transformation</div>
+                    <p>You're ready to replace your legacy ERP with a modern system built for manufacturing, with AI and Pay native.</p>
+                    <a href="erp.html" class="btn btn-secondary">Explore Rover ERP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Not Sure Where to Start?</h2>
+            <p>Talk to our team. We'll help you identify the right entry point based on your needs and goals.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

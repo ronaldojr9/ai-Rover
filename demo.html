@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Demo | Rover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+        .demo-left { background: var(--gradient-mesh); padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+        .demo-left h1 { font-size: 3rem; margin-bottom: 1.5rem; line-height: 1.1; }
+        .demo-left > p { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 3rem; }
+        .demo-benefits { list-style: none; }
+        .demo-benefits li { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; font-size: 1rem; color: var(--text-secondary); }
+        .demo-benefits li::before { content: '✓'; width: 28px; height: 28px; background: rgba(16, 185, 129, 0.1); color: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .demo-right { background: var(--bg-secondary); padding: 6rem 4rem; display: flex; align-items: center; justify-content: center; }
+        .demo-form-container { width: 100%; max-width: 480px; }
+        .demo-form-container h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .demo-form-container > p { color: var(--text-muted); margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-secondary); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.875rem 1rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 1rem; color: var(--text-primary); font-family: inherit; transition: border-color 0.2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-orange); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group select { cursor: pointer; }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        .form-submit { width: 100%; padding: 1rem; font-size: 1rem; margin-top: 1rem; }
+        .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center; }
+        .demo-logo { margin-bottom: 3rem; }
+        @media (max-width: 1024px) {
+            .demo-page { grid-template-columns: 1fr; }
+            .demo-left { padding: 8rem 2rem 3rem; }
+            .demo-right { padding: 3rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: absolute; background: transparent; border: none;">
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+        <div class="nav-cta"><a href="#" class="btn btn-ghost">Sign In</a></div>
+    </nav>
+
+    <div class="demo-page">
+        <div class="demo-left">
+            <div>
+                <h1>See Rover in Action</h1>
+                <p>Get a personalized demo of the Rover platform. We'll show you real insights from your industry—not a canned presentation.</p>
+                <ul class="demo-benefits">
+                    <li>30-minute personalized walkthrough</li>
+                    <li>See AI insights relevant to your business</li>
+                    <li>Get answers to your specific questions</li>
+                    <li>No pressure, no hard sell</li>
+                    <li>Talk to a real human who knows manufacturing</li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo-right">
+            <div class="demo-form-container">
+                <h2>Request Your Demo</h2>
+                <p>Fill out the form and we'll be in touch within 24 hours.</p>
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Jane">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="jane@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company *</label>
+                        <input type="text" id="company" name="company" required placeholder="Acme Manufacturing">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="employees">Company Size</label>
+                            <select id="employees" name="employees">
+                                <option value="">Select...</option>
+                                <option value="1-20">1-20 employees</option>
+                                <option value="21-50">21-50 employees</option>
+                                <option value="51-100">51-100 employees</option>
+                                <option value="101-250">101-250 employees</option>
+                                <option value="250+">250+ employees</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Primary Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select...</option>
+                            <option value="ai">Rover AI</option>
+                            <option value="pay">Rover Pay</option>
+                            <option value="erp">Rover ERP</option>
+                            <option value="platform">Full Platform</option>
+                            <option value="not-sure">Not sure yet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Anything else we should know?</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your current challenges or what you're hoping to achieve..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">Request Demo</button>
+                    <p class="form-note">By submitting, you agree to our Privacy Policy. We'll never spam you.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

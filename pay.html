@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover Pay | Integrated Payments for Manufacturing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pay-hero {
+            padding: 10rem 3rem 6rem;
+            background: radial-gradient(ellipse at 80% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 100%, rgba(255, 107, 53, 0.1) 0%, transparent 50%), var(--bg-primary);
+            position: relative;
+        }
+        .pay-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .pay-hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.1; }
+        .pay-hero-text h1 span { color: var(--accent-cyan); }
+        .pay-hero-text p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7; }
+        .pay-hero-ctas { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .pay-hero-stats { display: flex; gap: 3rem; }
+        .pay-stat-value { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--accent-cyan); }
+        .pay-stat-label { font-size: 0.85rem; color: var(--text-muted); }
+        .pay-visual { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2rem; }
+        .pay-visual-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); }
+        .pay-visual-badge { background: rgba(16, 185, 129, 0.1); color: var(--accent-green); font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 100px; font-weight: 600; }
+        .pay-transaction { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: 10px; margin-bottom: 0.75rem; }
+        .pay-transaction-left { display: flex; align-items: center; gap: 1rem; }
+        .pay-transaction-icon { width: 40px; height: 40px; background: rgba(6, 182, 212, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .pay-transaction-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .pay-transaction-info p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+        .pay-transaction-amount .amount { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--accent-green); }
+        .pay-transaction-amount .status { font-size: 0.75rem; color: var(--text-muted); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .benefit-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+        .benefit-card:hover { border-color: var(--accent-cyan); transform: translateY(-4px); }
+        .benefit-icon { width: 48px; height: 48px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .benefit-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+        .benefit-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .how-pay-works { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .how-pay-steps { list-style: none; }
+        .how-pay-step { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+        .step-num { width: 40px; height: 40px; background: var(--bg-card); border: 2px solid var(--accent-cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-weight: 700; color: var(--accent-cyan); flex-shrink: 0; }
+        .step-content h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .step-content p { color: var(--text-secondary); font-size: 0.95rem; }
+        @media (max-width: 1024px) {
+            .pay-hero-content, .how-pay-works { grid-template-columns: 1fr; }
+            .pay-visual { display: none; }
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html" class="active">Pay</a></li>
+            <li><a href="erp.html">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="demo.html" class="btn btn-primary">Get a Demo</a>
+        </div>
+    </nav>
+
+    <section class="pay-hero">
+        <div class="pay-hero-content">
+            <div class="pay-hero-text">
+                <div class="badge mb-4"><span class="badge-dot"></span> Integrated payments</div>
+                <h1>Get Paid Faster. <span>See Everything.</span></h1>
+                <p>Rover Pay connects payments directly to your operations. No more reconciliation headaches. No more cash flow surprises. Just seamless order-to-cash visibility.</p>
+                <div class="pay-hero-ctas">
+                    <a href="demo.html" class="btn btn-primary btn-lg">See Rover Pay</a>
+                    <a href="#benefits" class="btn btn-secondary btn-lg">Learn More</a>
+                </div>
+                <div class="pay-hero-stats">
+                    <div class="pay-stat"><div class="pay-stat-value">12 days</div><div class="pay-stat-label">Faster avg. payment</div></div>
+                    <div class="pay-stat"><div class="pay-stat-value">4 hrs</div><div class="pay-stat-label">Saved weekly on reconciliation</div></div>
+                </div>
+            </div>
+            <div class="pay-visual">
+                <div class="pay-visual-header">
+                    <span style="font-weight: 600;">Recent Payments</span>
+                    <span class="pay-visual-badge">✓ All Reconciled</span>
+                </div>
+                <div class="pay-transaction">
+                    <div class="pay-transaction-left">
+                        <div class="pay-transaction-icon">💳</div>
+                        <div class="pay-transaction-info"><h4>Acme Manufacturing</h4><p>INV-2024-1847</p></div>
+                    </div>
+                    <div class="pay-transaction-amount"><div class="amount">+$12,450.00</div><div class="status">Just now</div></div>
+                </div>
+                <div class="pay-transaction">
+                    <div class="pay-transaction-left">
+                        <div class="pay-transaction-icon">🏦</div>
+                        <div class="pay-transaction-info"><h4>Precision Parts Co.</h4><p>INV-2024-1842</p></div>
+                    </div>
+                    <div class="pay-transaction-amount"><div class="amount">+$8,320.00</div><div class="status">2 hrs ago</div></div>
+                </div>
+                <div class="pay-transaction">
+                    <div class="pay-transaction-left">
+                        <div class="pay-transaction-icon">💳</div>
+                        <div class="pay-transaction-info"><h4>Industrial Supply LLC</h4><p>INV-2024-1839</p></div>
+                    </div>
+                    <div class="pay-transaction-amount"><div class="amount">+$24,100.00</div><div class="status">Yesterday</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Why Rover Pay</p>
+                <h2 class="section-title">Payments That Actually Work for Manufacturing</h2>
+                <p class="section-subtitle">Built for B2B complexity—not retrofitted from retail.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔗</div>
+                    <h3>Automatic Reconciliation</h3>
+                    <p>Payments match to invoices automatically. No more hunting through bank statements or matching spreadsheets.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Cash Flow Visibility</h3>
+                    <p>See your full order-to-cash picture in real time. Know exactly where every dollar is at any moment.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Faster Payments</h3>
+                    <p>Make it easy for customers to pay. Embedded payment links, customer portal, and flexible payment options.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Credit Management</h3>
+                    <p>Set credit limits, track exposure, and get alerts when customers approach thresholds. Reduce risk automatically.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Competitive Rates</h3>
+                    <p>Transparent pricing with no hidden fees. Rates designed for B2B transaction sizes, not retail micro-payments.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔌</div>
+                    <h3>Works With Your Stack</h3>
+                    <p>Whether you use Rover ERP, Rover AI, or another system entirely—Rover Pay integrates seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="how-pay-works">
+                <div>
+                    <p class="section-label">How It Works</p>
+                    <h2 class="section-title">From Invoice to Cash—Automatically</h2>
+                    <ul class="how-pay-steps">
+                        <li class="how-pay-step">
+                            <div class="step-num">1</div>
+                            <div class="step-content"><h4>Invoice Goes Out</h4><p>Create an invoice in your system. Rover Pay automatically attaches a secure payment link.</p></div>
+                        </li>
+                        <li class="how-pay-step">
+                            <div class="step-num">2</div>
+                            <div class="step-content"><h4>Customer Pays</h4><p>Your customer clicks the link and pays via card, ACH, or their preferred method. No friction.</p></div>
+                        </li>
+                        <li class="how-pay-step">
+                            <div class="step-num">3</div>
+                            <div class="step-content"><h4>Auto-Reconciliation</h4><p>Payment is automatically matched to the invoice. AR is updated instantly. No manual work.</p></div>
+                        </li>
+                        <li class="how-pay-step">
+                            <div class="step-num">4</div>
+                            <div class="step-content"><h4>Cash in Bank</h4><p>Funds settle to your account. Full visibility from order to cash, every step of the way.</p></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">We're really pleased with Rover Pay. The interface is super user-friendly, and our team got the hang of it quickly. Plus, their support team is awesome—always quick to respond and super helpful.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info"><h4>Sam Roach</h4><p>PACE Supply Corp.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Accelerate Your Cash Flow?</h2>
+            <p>See how Rover Pay can eliminate reconciliation headaches and get you paid faster.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+                <p>Manufacturing intelligence platform from Zumasys. Trusted by manufacturers for over 30 years.</p>
+            </div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="customers.html">Success Stories</a></li><li><a href="#">Blog</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="#">Contact</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc. All rights reserved.</p><p>Irvine, CA · San Diego, CA · Sioux Falls, SD</p></div>
+    </footer>
+</body>
+</html>

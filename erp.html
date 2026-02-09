@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP | Built for Manufacturers and Distributors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .erp-hero {
+            padding: 10rem 3rem 6rem;
+            background: radial-gradient(ellipse at 30% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 100%, rgba(255, 107, 53, 0.1) 0%, transparent 50%), var(--bg-primary);
+            position: relative;
+        }
+        .erp-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .erp-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.1; }
+        .erp-hero h1 span { color: var(--accent-blue); }
+        .erp-hero > p { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.7; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .erp-hero-ctas { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; }
+        .erp-hero-logos { display: flex; justify-content: center; gap: 3rem; opacity: 0.5; flex-wrap: wrap; }
+        .erp-hero-logos span { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-secondary); }
+        .benefits-section { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); }
+        .benefits-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
+        .benefits-intro h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .benefits-intro p { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem; }
+        .benefit-highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .benefit-highlight { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s; }
+        .benefit-highlight:hover { border-color: var(--accent-blue); transform: translateY(-4px); }
+        .benefit-highlight-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .benefit-highlight h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .benefit-highlight p { color: var(--text-secondary); font-size: 0.9rem; }
+        .modules-section { background: var(--bg-primary); }
+        .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .module-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; transition: all 0.3s; }
+        .module-card:hover { border-color: var(--accent-orange); }
+        .module-card h4 { font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .module-card p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+        .differentiators { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); }
+        .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+        .diff-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; }
+        .diff-card h3 { font-size: 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .diff-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        @media (max-width: 1024px) {
+            .benefits-intro { grid-template-columns: 1fr; }
+            .benefit-highlights { grid-template-columns: repeat(2, 1fr); }
+            .modules-grid { grid-template-columns: repeat(2, 1fr); }
+            .diff-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .benefit-highlights, .modules-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html" class="active">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="demo.html" class="btn btn-primary">Get a Demo</a>
+        </div>
+    </nav>
+
+    <section class="erp-hero">
+        <div class="erp-hero-content">
+            <div class="badge mb-4"><span class="badge-dot"></span> Complete ERP Solution</div>
+            <h1>ERP Built for <span>Manufacturers</span></h1>
+            <p>Rover ERP is purpose-built for small and mid-sized manufacturers and distributors. Not retrofitted accounting software—a real operations platform with AI and payments built in.</p>
+            <div class="erp-hero-ctas">
+                <a href="demo.html" class="btn btn-primary btn-lg">Schedule a Demo</a>
+                <a href="pricing.html" class="btn btn-secondary btn-lg">View Pricing</a>
+            </div>
+            <div class="erp-hero-logos">
+                <span>PACE Supply</span>
+                <span>Industrial Finishes</span>
+                <span>Carr Manufacturing</span>
+                <span>US Wheel</span>
+                <span>Rottler</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section benefits-section">
+        <div class="container">
+            <div class="benefits-intro">
+                <div>
+                    <p class="section-label">Why Rover ERP</p>
+                    <h2>Your Next Step to Clarity</h2>
+                    <p>Tired of juggling multiple systems that don't work together? Rover ERP connects your entire operation—inventory, production, accounting, sales—into one system that actually makes sense.</p>
+                    <p>For over 30 years, businesses like yours have trusted Rover ERP to turn complexity into clarity.</p>
+                    <a href="implementation.html" class="btn btn-outline mt-3">See How We Implement →</a>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-quote">Moving to Rover was like upgrading from a rotary phone to a smartphone. It's an investment that benefits the entire team, streamlining our processes and enhancing efficiency.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EK</div>
+                        <div class="author-info"><h4>Eric Kutemeier</h4><p>Program Manager, Toolrite Manufacturing</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit-highlights">
+                <div class="benefit-highlight">
+                    <div class="benefit-highlight-icon">⏱️</div>
+                    <h3>Save Time</h3>
+                    <p>Automate manual tasks and reduce errors</p>
+                </div>
+                <div class="benefit-highlight">
+                    <div class="benefit-highlight-icon">📊</div>
+                    <h3>Real-Time Insights</h3>
+                    <p>Make smarter decisions with live data</p>
+                </div>
+                <div class="benefit-highlight">
+                    <div class="benefit-highlight-icon">🔗</div>
+                    <h3>Streamlined Ops</h3>
+                    <p>Everything works together seamlessly</p>
+                </div>
+                <div class="benefit-highlight">
+                    <div class="benefit-highlight-icon">📈</div>
+                    <h3>Built for Growth</h3>
+                    <p>Scales with your business</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section modules-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Complete Solution</p>
+                <h2 class="section-title">All the Features You Need. All in One Place.</h2>
+                <p class="section-subtitle">Gone are the days of piecing together multiple systems. From accounting to inventory, production to CRM—everything in one platform.</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card"><h4>📦 Inventory Control</h4><p>Multi-location, lot tracking, cycle counts, reorder points</p></div>
+                <div class="module-card"><h4>�icing Manufacturing</h4><p>MRP, scheduling, work orders, shop floor control</p></div>
+                <div class="module-card"><h4>💰 Finance & Accounting</h4><p>GL, AP/AR, job costing, financial reporting</p></div>
+                <div class="module-card"><h4>🛒 Purchasing</h4><p>Supplier management, POs, receiving, supply chain</p></div>
+                <div class="module-card"><h4>📋 Order Management</h4><p>Quotes, orders, invoicing, shipping integration</p></div>
+                <div class="module-card"><h4>👥 CRM & Sales</h4><p>Customer management, pipeline, sales reporting</p></div>
+                <div class="module-card"><h4>📊 Rover BI</h4><p>Dashboards, KPIs, operational analytics</p></div>
+                <div class="module-card"><h4>🔧 Engineering</h4><p>Product configurator, BOM management</p></div>
+                <div class="module-card"><h4>🤖 Rover AI</h4><p>Built-in intelligence for inventory, demand, anomalies</p></div>
+                <div class="module-card"><h4>💳 Rover Pay</h4><p>Integrated payments and reconciliation</p></div>
+                <div class="module-card"><h4>🌐 Portal</h4><p>Customer and supplier self-service access</p></div>
+                <div class="module-card"><h4>⚡ Workflow</h4><p>Automation, triggers, notifications</p></div>
+            </div>
+            <div class="text-center mt-6">
+                <a href="erp-modules.html" class="btn btn-secondary">Explore All Modules →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section differentiators">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">What Makes Us Different</p>
+                <h2 class="section-title">ERP That Adapts to You</h2>
+                <p class="section-subtitle">Most ERPs force you into their mold. Rover adapts to how you actually work.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <h3>🎯 Tailored to Your Business</h3>
+                    <p>We don't believe all companies are the same. Rover adapts to your unique workflows—customization isn't a costly add-on, it's fundamental to what we do.</p>
+                </div>
+                <div class="diff-card">
+                    <h3>🤝 True Partnership</h3>
+                    <p>You'll have direct access to our expert team. We're not just a software vendor—we're invested in your success. Life is too short to work with jerks.</p>
+                </div>
+                <div class="diff-card">
+                    <h3>🚀 AI & Payments Native</h3>
+                    <p>Unlike competitors bolting on AI as an afterthought, Rover AI and Rover Pay are built into the platform from day one. Intelligence everywhere.</p>
+                </div>
+                <div class="diff-card">
+                    <h3>💰 No Brand Tax</h3>
+                    <p>Get enterprise-grade capabilities without the enterprise price tag. Mr. NetSuite doesn't care about your business. We do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for an ERP That Feels Like a Partner?</h2>
+            <p>See how Rover ERP can turn your operational chaos into clarity. Schedule a demo and experience the difference.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+                <p>Manufacturing intelligence platform from Zumasys. Trusted by manufacturers for over 30 years.</p>
+            </div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>ERP</h4><ul><li><a href="erp-modules.html">Modules</a></li><li><a href="erp-who.html">Who It's For</a></li><li><a href="implementation.html">Implementation</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc. All rights reserved.</p><p>Irvine, CA · San Diego, CA · Sioux Falls, SD</p></div>
+    </footer>
+</body>
+</html>

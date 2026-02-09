@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover AI | Manufacturing Intelligence That Works With Any ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* AI Page specific styles */
+        .ai-hero {
+            padding: 10rem 3rem 6rem;
+            background: var(--gradient-mesh);
+            position: relative;
+        }
+
+        .ai-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(var(--border-subtle) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        }
+
+        .ai-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .ai-hero-text h1 span {
+            color: var(--accent-orange);
+        }
+
+        .ai-hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .ai-hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .ai-hero-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .ai-hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-hero-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .ai-visual-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .ai-visual-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .ai-visual-dot.red { background: #ef4444; }
+        .ai-visual-dot.yellow { background: #f59e0b; }
+        .ai-visual-dot.green { background: #10b981; }
+
+        .ai-visual-content {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .ai-insight {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .ai-insight:last-child {
+            margin-bottom: 0;
+        }
+
+        .ai-insight-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .ai-insight-type {
+            color: var(--accent-orange);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .ai-insight-time {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .ai-insight p {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .ai-insight-metric {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .ai-insight-metric .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .ai-insight-metric .label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .how-step::after {
+            content: '→';
+            position: absolute;
+            right: -1.25rem;
+            top: 2rem;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+
+        .how-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        .how-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .how-step p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            background: var(--bg-primary);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-4px);
+        }
+
+        .use-case-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .use-case-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .use-case-card > p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .use-case-example {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 3px solid var(--accent-orange);
+        }
+
+        .use-case-example p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* Integrations */
+        .integrations {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .integration-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .integration-card:hover {
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        .integration-logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .integration-name {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Preview */
+        .pricing-preview {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 60px var(--accent-orange-glow);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-orange);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+        }
+
+        .pricing-tier {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-price .amount {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .pricing-price .period {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .pricing-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        @media (max-width: 1024px) {
+            .ai-hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-hero-visual {
+                display: none;
+            }
+
+            .how-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .how-step::after {
+                display: none;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .integrations-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ai-hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .how-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .integrations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">R</div>
+            Rover
+        </a>
+        <ul class="nav-links">
+            <li>
+                <a href="ai.html" class="active">AI</a>
+            </li>
+            <li>
+                <a href="pay.html">Pay</a>
+            </li>
+            <li>
+                <a href="#">ERP <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="erp.html">What is Rover ERP?<span>Complete overview</span></a>
+                    <a href="erp-modules.html">Modules<span>Features & capabilities</span></a>
+                    <a href="erp-who.html">Who It's For<span>By role & industry</span></a>
+                    <a href="implementation.html">Implementation<span>Our proven process</span></a>
+                </div>
+            </li>
+            <li>
+                <a href="platform.html">Platform</a>
+            </li>
+            <li>
+                <a href="pricing.html">Pricing</a>
+            </li>
+            <li>
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="#">Blog<span>Insights & updates</span></a>
+                    <a href="why-rover.html">Why Rover<span>Our story & values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="demo.html" class="btn btn-primary">Get a Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="ai-hero">
+        <div class="ai-hero-content">
+            <div class="ai-hero-text">
+                <div class="badge mb-4">
+                    <span class="badge-dot"></span>
+                    Works with any ERP
+                </div>
+                <h1>Manufacturing Intelligence <span>On Autopilot</span></h1>
+                <p>Rover AI monitors your operations 24/7, surfacing insights your current ERP can't see. Inventory blind spots. Cash flow patterns. Demand signals. All visible in days—not months.</p>
+                <div class="ai-hero-ctas">
+                    <a href="demo.html" class="btn btn-primary btn-lg">See It In Action</a>
+                    <a href="pricing.html" class="btn btn-secondary btn-lg">View Pricing</a>
+                </div>
+                <div class="ai-hero-meta">
+                    <span>⚡ Live in 14 days</span>
+                    <span>🔌 No ERP migration</span>
+                    <span>📊 Real ROI in week 1</span>
+                </div>
+            </div>
+            <div class="ai-hero-visual">
+                <div class="ai-visual-header">
+                    <span class="ai-visual-dot red"></span>
+                    <span class="ai-visual-dot yellow"></span>
+                    <span class="ai-visual-dot green"></span>
+                    <span style="color: var(--text-muted); font-size: 0.8rem; margin-left: auto;">Rover AI Dashboard</span>
+                </div>
+                <div class="ai-visual-content">
+                    <div class="ai-insight">
+                        <div class="ai-insight-header">
+                            <span class="ai-insight-type">🔴 Inventory Alert</span>
+                            <span class="ai-insight-time">2 min ago</span>
+                        </div>
+                        <p>SKU #4521 (Bearing Assembly) has 847 units with no movement in 180+ days. Recommend markdown or supplier return.</p>
+                        <div class="ai-insight-metric">
+                            <span class="value">$34,200</span>
+                            <span class="label">tied up in dead stock</span>
+                        </div>
+                    </div>
+                    <div class="ai-insight">
+                        <div class="ai-insight-header">
+                            <span class="ai-insight-type">📈 Demand Signal</span>
+                            <span class="ai-insight-time">1 hr ago</span>
+                        </div>
+                        <p>Widget Pro orders up 47% vs. same period last year. Current inventory covers 18 days. Recommend reorder trigger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-title">From Data to Decisions in Days</h2>
+                <p class="section-subtitle">Rover AI connects to your existing systems and starts delivering value immediately—no rip-and-replace required.</p>
+            </div>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="step-number">1</div>
+                    <h3>Connect</h3>
+                    <p>We connect securely to your existing ERP, accounting system, or data sources. No migration required.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-number">2</div>
+                    <h3>Analyze</h3>
+                    <p>Rover AI scans your historical data, learning patterns in inventory, sales, cash flow, and operations.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-number">3</div>
+                    <h3>Surface</h3>
+                    <p>Within days, you see actionable insights—dead inventory, demand trends, cash flow risks—prioritized by impact.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-number">4</div>
+                    <h3>Act</h3>
+                    <p>Take action on AI recommendations, track results, and watch Rover get smarter over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section use-cases">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Capabilities</p>
+                <h2 class="section-title">Intelligence Where It Matters</h2>
+                <p class="section-subtitle">Rover AI focuses on the operational blind spots that cost manufacturers real money.</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">📦</div>
+                    <h3>Inventory Optimization</h3>
+                    <p>Identify dead stock, predict stockouts, and optimize reorder points based on actual demand patterns—not gut feel.</p>
+                    <div class="use-case-example">
+                        <p>"Rover identified $180K in slow-moving inventory we'd been sitting on for 2 years. We liquidated 60% of it in the first quarter."</p>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">📈</div>
+                    <h3>Demand Forecasting</h3>
+                    <p>See demand shifts before they hit. Rover analyzes historical patterns, seasonality, and customer behavior to predict what's coming.</p>
+                    <div class="use-case-example">
+                        <p>"We caught a 40% demand spike two weeks early. First time we weren't scrambling to expedite materials."</p>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">💰</div>
+                    <h3>Cash Flow Insights</h3>
+                    <p>Monitor receivables aging, payables clustering, and working capital trends. Get early warning on cash crunches before they hit.</p>
+                    <div class="use-case-example">
+                        <p>"Rover flagged a customer whose payment pattern shifted. We adjusted terms before it became a collections problem."</p>
+                    </div>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🔔</div>
+                    <h3>Anomaly Detection</h3>
+                    <p>Get alerted to unusual patterns—margin erosion, order anomalies, cost spikes—before they become expensive problems.</p>
+                    <div class="use-case-example">
+                        <p>"We discovered a pricing error that had been costing us $2K per month. Rover caught it in week one."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section integrations">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Integrations</p>
+                <h2 class="section-title">Works With Your Current Stack</h2>
+                <p class="section-subtitle">Rover AI connects to the systems you already run—no need to change your operations.</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-logo">SAP</div>
+                    <div class="integration-name">SAP Business One</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">EPICOR</div>
+                    <div class="integration-name">Epicor Prophet 21</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">INFOR</div>
+                    <div class="integration-name">Infor CloudSuite</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">SYSPRO</div>
+                    <div class="integration-name">SYSPRO ERP</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">QB</div>
+                    <div class="integration-name">QuickBooks</div>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">CSV</div>
+                    <div class="integration-name">Spreadsheets</div>
+                </div>
+            </div>
+            <p class="text-center mt-4 text-muted">Don't see your system? We likely support it. <a href="demo.html" style="color: var(--accent-orange);">Ask us →</a></p>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="section pricing-preview">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Pricing</p>
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that fits your operations. All plans include setup, training, and support.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-tier">Essentials</div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">1,295</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-description">Core intelligence for growing manufacturers</p>
+                    <ul class="pricing-features">
+                        <li>Inventory optimization</li>
+                        <li>Basic demand forecasting</li>
+                        <li>Weekly insight reports</li>
+                        <li>Email alerts</li>
+                        <li>Standard integrations</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-secondary btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-tier">Professional</div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">1,895</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-description">Advanced intelligence with deeper insights</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Essentials</li>
+                        <li>Advanced demand forecasting</li>
+                        <li>Cash flow monitoring</li>
+                        <li>Anomaly detection</li>
+                        <li>Daily insight updates</li>
+                        <li>Custom dashboards</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">2,395</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="pricing-description">Full platform with premium capabilities</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Professional</li>
+                        <li>Multi-location support</li>
+                        <li>Custom AI models</li>
+                        <li>API access</li>
+                        <li>Dedicated success manager</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-secondary btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>See What Your Data Is Hiding</h2>
+            <p>Book a 30-minute demo. We'll connect to your data and show you real insights—not a canned presentation.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">R</div>
+                    Rover
+                </a>
+                <p>Manufacturing intelligence platform from Zumasys. Trusted by manufacturers for over 30 years.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="ai.html">Rover AI</a></li>
+                    <li><a href="pay.html">Rover Pay</a></li>
+                    <li><a href="erp.html">Rover ERP</a></li>
+                    <li><a href="#">Integrations</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="customers.html">Success Stories</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Webinars</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="why-rover.html">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Zumasys, Inc. All rights reserved.</p>
+            <p>Irvine, CA · San Diego, CA · Sioux Falls, SD</p>
+        </div>
+    </footer>
+</body>
+</html>

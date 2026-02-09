@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing | Rover ERP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .module-hero {
+            padding: 10rem 3rem 4rem;
+            background: var(--gradient-mesh);
+            position: relative;
+        }
+        .module-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(var(--border-subtle) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        }
+        .module-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .module-icon-large {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+        .module-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+        }
+        .module-hero .tagline {
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        .module-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .module-hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .module-overview {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+        .overview-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .overview-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .overview-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-section {
+            background: var(--bg-primary);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-4px);
+        }
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .feature-card h3::before {
+            content: '→';
+            color: var(--accent-orange);
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .benefits-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        .benefits-list {
+            list-style: none;
+        }
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+        .benefits-list li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .benefits-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+        .benefits-visual .stat {
+            margin-bottom: 2rem;
+        }
+        .benefits-visual .stat:last-child {
+            margin-bottom: 0;
+        }
+        .benefits-visual .stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+        .benefits-visual .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .module-nav {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+            padding: 3rem;
+        }
+        .module-nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .module-nav a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+        .module-nav a:hover {
+            border-color: var(--accent-orange);
+            color: var(--text-primary);
+        }
+        .module-nav .next {
+            text-align: right;
+        }
+        .module-nav .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .module-nav .name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html" class="active">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="module-hero">
+        <div class="module-hero-content">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../erp.html">ERP</a> / 
+                <a href="../erp-modules.html">Modules</a> / 
+                <span>Manufacturing</span>
+            </div>
+            <div class="module-icon-large">⚙️</div>
+            <h1>Manufacturing</h1>
+            <p class="tagline">Production Planning & Shop Floor Control</p>
+            <p>Complete manufacturing execution with MPS, MRP, and CRP capabilities. Plan production, track jobs in real-time, and optimize capacity across your entire operation.</p>
+            <div class="module-hero-ctas">
+                <a href="../demo.html" class="btn btn-primary btn-lg">See It In Action</a>
+                <a href="../erp-modules.html" class="btn btn-secondary btn-lg">View All Modules</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section module-overview">
+        <div class="container">
+            <div class="overview-content">
+                <h2>Overview</h2>
+                <p>Rover's Manufacturing module gives you complete control over your production operations—from initial planning through final delivery. Whether you're running a job shop, batch production, or mixed-mode manufacturing, Rover adapts to how you work.</p>
+                <p>Built for growing manufacturers, Rover's intuitive design adapts to your workflows, ensuring fast adoption and long-term scalability. And because it's part of the integrated Rover platform, data flows seamlessly to finance, sales, inventory, and every other module.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Capabilities</p>
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">Everything you need for manufacturing operations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Master Production Scheduling (MPS)</h3>
+                    <p>Convert sales orders and forecasts into a prioritized production schedule. Balance demand with capacity constraints automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Material Requirements Planning (MRP)</h3>
+                    <p>Generate purchasing and production recommendations based on demand, lead times, and current inventory. Never miss a component again.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Capacity Requirements Planning (CRP)</h3>
+                    <p>Schedule production based on actual labor and machine capacity. Identify bottlenecks before they impact delivery dates.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Work Order Management</h3>
+                    <p>Create, release, and track work orders through every production step. Full visibility from start to finish.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Shop Floor Control</h3>
+                    <p>Barcode-driven labor capture, operation tracking, and real-time job status. Your team knows exactly where every job stands.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Work Center Scheduling</h3>
+                    <p>Forward, backward, or manual scheduling methods. Optimize for due dates, efficiency, or both.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Quality Assurance</h3>
+                    <p>Enforce quality checks at each production step. Capture inspection data and track non-conformances.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Labor Time Tracking</h3>
+                    <p>Accurate time capture for job costing and payroll. Track direct and indirect labor with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Production Reporting</h3>
+                    <p>Real-time dashboards showing production status, efficiency metrics, and exception alerts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div>
+                    <p class="section-label">Why It Matters</p>
+                    <h2 class="section-title">Benefits for Your Business</h2>
+                    <ul class="benefits-list">
+                        <li>Align production with actual demand to reduce waste and improve on-time delivery</li>
+                        <li>Balance workloads across work centers to avoid machine and labor downtime</li>
+                        <li>Real-time job tracking ensures no surprises on the shop floor</li>
+                        <li>Barcode-driven input minimizes errors and speeds data capture</li>
+                        <li>Integrated quality control reduces rework and customer complaints</li>
+                    </ul>
+                </div>
+                <div class="benefits-visual">
+                    <div class="stat">
+                        <div class="stat-value">23%</div>
+                        <div class="stat-label">Average improvement in on-time delivery</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">15%</div>
+                        <div class="stat-label">Reduction in production downtime</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">40%</div>
+                        <div class="stat-label">Faster work order processing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="module-nav">
+        <div class="module-nav-inner">
+            <a href="../erp-modules.html">
+                <span>←</span>
+                <div>
+                    <div class="label">Back to</div>
+                    <div class="name">All Modules</div>
+                </div>
+            </a>
+            <a href="inventory.html" class="next">
+                <div>
+                    <div class="label">Next</div>
+                    <div class="name">Inventory Control</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Manufacturing in Action?</h2>
+            <p>Get a personalized demo focused on how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>ERP Modules</h4><ul><li><a href="../erp-modules.html">All Modules</a></li><li><a href="manufacturing.html">Manufacturing</a></li><li><a href="inventory.html">Inventory</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

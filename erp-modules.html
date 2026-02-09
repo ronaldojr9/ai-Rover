@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP Modules | Complete Feature Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .modules-hero { padding: 10rem 3rem 4rem; background: var(--gradient-mesh); text-align: center; }
+        .modules-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+        .modules-hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        
+        .modules-nav { background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle); padding: 1rem 3rem; position: sticky; top: 72px; z-index: 50; }
+        .modules-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 0.5rem; }
+        .modules-nav a { padding: 0.5rem 1rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 100px; font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+        .modules-nav a:hover { border-color: var(--accent-orange); color: var(--text-primary); }
+        
+        .module-section { padding: 5rem 3rem; border-bottom: 1px solid var(--border-subtle); }
+        .module-section:nth-child(even) { background: var(--bg-secondary); }
+        .module-section:nth-child(odd) { background: var(--bg-primary); }
+        
+        .module-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+        .module-content.reverse { grid-template-columns: 1.5fr 1fr; }
+        .module-content.reverse .module-info { order: 2; }
+        .module-content.reverse .module-details { order: 1; }
+        
+        .module-info { position: sticky; top: 160px; }
+        .module-icon { width: 64px; height: 64px; background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem; }
+        .module-info h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+        .module-info > p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; }
+        .module-info .btn { margin-right: 0.5rem; }
+        
+        .module-details h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .feature-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+        .feature-item:hover { border-color: var(--accent-orange); }
+        .feature-item h4 { font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .feature-item h4::before { content: '→'; color: var(--accent-orange); }
+        .feature-item p { color: var(--text-muted); font-size: 0.85rem; margin: 0; line-height: 1.5; }
+        
+        .benefits-list { list-style: none; }
+        .benefits-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 0; color: var(--text-secondary); font-size: 0.95rem; border-bottom: 1px solid var(--border-subtle); }
+        .benefits-list li:last-child { border-bottom: none; }
+        .benefits-list li::before { content: '✓'; color: var(--accent-green); font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
+        
+        @media (max-width: 1024px) {
+            .module-content, .module-content.reverse { grid-template-columns: 1fr; }
+            .module-content.reverse .module-info, .module-content.reverse .module-details { order: unset; }
+            .module-info { position: static; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html" class="active">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta"><a href="demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="modules-hero">
+        <p class="section-label">Rover ERP</p>
+        <h1>Complete ERP Modules</h1>
+        <p>Everything you need to run manufacturing and distribution operations—all in one integrated platform.</p>
+    </section>
+
+    <div class="modules-nav">
+        <div class="modules-nav-inner">
+            <a href="#manufacturing">Manufacturing</a>
+            <a href="#inventory">Inventory</a>
+            <a href="#finance">Finance</a>
+            <a href="#purchasing">Purchasing</a>
+            <a href="#sales">Sales & CRM</a>
+            <a href="#engineering">Engineering</a>
+            <a href="#projects">Projects</a>
+            <a href="#bi">Rover BI</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#portal">Portal</a>
+            <a href="#ai">Rover AI</a>
+            <a href="#pay">Rover Pay</a>
+        </div>
+    </div>
+
+    <!-- Manufacturing -->
+    <section id="manufacturing" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">⚙️</div>
+                <h2>Manufacturing</h2>
+                <p>Complete shop floor control with MPS, MRP, and CRP capabilities. Plan production, track jobs in real-time, and optimize capacity across your entire operation.</p>
+                <a href="modules/manufacturing.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Master Production Scheduling</h4><p>Convert orders and forecasts into prioritized work orders</p></div>
+                    <div class="feature-item"><h4>Material Requirements Planning</h4><p>Generate purchasing and production recommendations automatically</p></div>
+                    <div class="feature-item"><h4>Capacity Planning (CRP)</h4><p>Schedule based on labor and machine capacity</p></div>
+                    <div class="feature-item"><h4>Shop Floor Control</h4><p>Barcode-driven labor capture and real-time job tracking</p></div>
+                    <div class="feature-item"><h4>Work Center Scheduling</h4><p>Forward, backward, or manual scheduling methods</p></div>
+                    <div class="feature-item"><h4>Quality Assurance</h4><p>Enforce quality checks at each production step</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Align production with actual demand to reduce waste</li>
+                    <li>Balance workloads and avoid machine or labor downtime</li>
+                    <li>Real-time job tracking ensures no surprises on the shop floor</li>
+                    <li>Barcode-driven input minimizes errors</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Control -->
+    <section id="inventory" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">📦</div>
+                <h2>Inventory Control</h2>
+                <p>Complete visibility and control over your inventory across multiple locations. Track lots, manage cycle counts, and optimize stock levels in real-time.</p>
+                <a href="modules/inventory.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Multi-Location Management</h4><p>Track inventory across warehouses, bins, and locations</p></div>
+                    <div class="feature-item"><h4>Lot & Serial Tracking</h4><p>Full traceability from receipt to shipment</p></div>
+                    <div class="feature-item"><h4>Cycle Counting</h4><p>Scheduled counts with variance reporting</p></div>
+                    <div class="feature-item"><h4>Reorder Point Management</h4><p>Automatic alerts and purchase suggestions</p></div>
+                    <div class="feature-item"><h4>Barcode Integration</h4><p>Scan-based receiving, picking, and transfers</p></div>
+                    <div class="feature-item"><h4>Inventory Valuation</h4><p>FIFO, LIFO, average, and standard costing</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Reduce carrying costs with optimized stock levels</li>
+                    <li>Eliminate stockouts with intelligent reorder alerts</li>
+                    <li>Full traceability for compliance and recalls</li>
+                    <li>Faster picking and receiving with barcode scanning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finance -->
+    <section id="finance" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">💰</div>
+                <h2>Finance & Accounting</h2>
+                <p>Complete financial management with GL, AP, AR, and job costing. Get real-time visibility into your financial position with integrated reporting.</p>
+                <a href="modules/finance.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>General Ledger</h4><p>Multi-company, multi-currency chart of accounts</p></div>
+                    <div class="feature-item"><h4>Accounts Payable</h4><p>Vendor management, invoice processing, payment scheduling</p></div>
+                    <div class="feature-item"><h4>Accounts Receivable</h4><p>Customer invoicing, aging, collections management</p></div>
+                    <div class="feature-item"><h4>Job Costing</h4><p>Track costs by job, project, or work order</p></div>
+                    <div class="feature-item"><h4>Financial Reporting</h4><p>Balance sheet, P&L, cash flow, custom reports</p></div>
+                    <div class="feature-item"><h4>Bank Reconciliation</h4><p>Automated matching and reconciliation</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Real-time financial visibility across the organization</li>
+                    <li>Accurate job costing for better pricing decisions</li>
+                    <li>Streamlined month-end close process</li>
+                    <li>Integrated with operations for single source of truth</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchasing -->
+    <section id="purchasing" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">🛒</div>
+                <h2>Purchasing</h2>
+                <p>Streamline procurement from requisition to receipt. Manage suppliers, track orders, and optimize your supply chain with integrated purchasing tools.</p>
+                <a href="modules/purchasing.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Purchase Orders</h4><p>Create, approve, and track POs through fulfillment</p></div>
+                    <div class="feature-item"><h4>Supplier Management</h4><p>Vendor profiles, performance tracking, pricing agreements</p></div>
+                    <div class="feature-item"><h4>Receiving</h4><p>Barcode-driven receipt with quality inspection</p></div>
+                    <div class="feature-item"><h4>Purchase Requisitions</h4><p>Internal request workflow with approvals</p></div>
+                    <div class="feature-item"><h4>Landed Cost Tracking</h4><p>Capture freight, duties, and handling costs</p></div>
+                    <div class="feature-item"><h4>Vendor Returns</h4><p>RMA processing and credit tracking</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Reduce procurement cycle time with streamlined workflows</li>
+                    <li>Better supplier negotiations with performance data</li>
+                    <li>Accurate landed costs for true product costing</li>
+                    <li>Automated reorder suggestions from MRP</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales & CRM -->
+    <section id="sales" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">👥</div>
+                <h2>Sales & CRM</h2>
+                <p>Manage customer relationships from quote to cash. Track opportunities, process orders, and deliver exceptional customer experiences.</p>
+                <a href="modules/sales.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Quote Management</h4><p>Create and track quotes with approval workflows</p></div>
+                    <div class="feature-item"><h4>Order Entry</h4><p>Fast order processing with pricing and availability</p></div>
+                    <div class="feature-item"><h4>Customer Management</h4><p>360° view of customer history and interactions</p></div>
+                    <div class="feature-item"><h4>Pricing & Discounts</h4><p>Customer-specific pricing, volume discounts, promotions</p></div>
+                    <div class="feature-item"><h4>Sales Reporting</h4><p>Pipeline, bookings, and rep performance analytics</p></div>
+                    <div class="feature-item"><h4>Credit Management</h4><p>Credit limits, holds, and approval workflows</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Faster quote-to-order conversion</li>
+                    <li>Complete visibility into customer relationships</li>
+                    <li>Accurate pricing with automated discount rules</li>
+                    <li>Better forecasting with pipeline visibility</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering -->
+    <section id="engineering" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">🔧</div>
+                <h2>Engineering</h2>
+                <p>Powerful product configurator and BOM management. Enable sales teams to configure complex products while engineering maintains control.</p>
+                <a href="modules/engineering.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Bill of Materials</h4><p>Multi-level BOMs with revision control</p></div>
+                    <div class="feature-item"><h4>Product Configurator</h4><p>Rules-based configuration for complex products</p></div>
+                    <div class="feature-item"><h4>Routing Management</h4><p>Define operations, work centers, and labor standards</p></div>
+                    <div class="feature-item"><h4>ECO Management</h4><p>Engineering change orders with approval workflow</p></div>
+                    <div class="feature-item"><h4>Where-Used Analysis</h4><p>Track component usage across products</p></div>
+                    <div class="feature-item"><h4>Document Management</h4><p>Attach drawings, specs, and instructions</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Sales can configure products without engineering involvement</li>
+                    <li>Maintain engineering control with approval workflows</li>
+                    <li>Accurate costing with detailed BOMs and routings</li>
+                    <li>Full revision history and change tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">📋</div>
+                <h2>Project Management</h2>
+                <p>Track complex projects with detailed cost and transaction-level visibility. Manage budgets, timelines, and resources across your project portfolio.</p>
+                <a href="modules/projects.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Project Tracking</h4><p>Budget vs. actual with real-time updates</p></div>
+                    <div class="feature-item"><h4>Cost Capture</h4><p>Labor, materials, and overhead allocation</p></div>
+                    <div class="feature-item"><h4>Milestone Billing</h4><p>Progress billing and revenue recognition</p></div>
+                    <div class="feature-item"><h4>Resource Planning</h4><p>Allocate people and equipment to projects</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Real-time visibility into project profitability</li>
+                    <li>Accurate billing with milestone tracking</li>
+                    <li>Better resource utilization across projects</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rover BI -->
+    <section id="bi" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">📊</div>
+                <h2>Rover BI</h2>
+                <p>Dashboards and analytics that give you instant visibility into KPIs and operational metrics. Make data-driven decisions with real-time insights.</p>
+                <a href="modules/rover-bi.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Executive Dashboards</h4><p>High-level KPIs at a glance</p></div>
+                    <div class="feature-item"><h4>Operational Reports</h4><p>Detailed reports for every module</p></div>
+                    <div class="feature-item"><h4>Custom Analytics</h4><p>Build your own reports and visualizations</p></div>
+                    <div class="feature-item"><h4>Scheduled Reports</h4><p>Automated delivery to stakeholders</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Instant visibility into business performance</li>
+                    <li>Data-driven decision making at every level</li>
+                    <li>Reduce time spent creating manual reports</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">⚡</div>
+                <h2>Workflow & Automation</h2>
+                <p>Automate routine tasks with triggers, notifications, and approval workflows. Keep your team informed and processes moving.</p>
+                <a href="modules/workflow.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Event Triggers</h4><p>Automate actions based on system events</p></div>
+                    <div class="feature-item"><h4>Notifications</h4><p>Email and in-app alerts for key activities</p></div>
+                    <div class="feature-item"><h4>Approval Workflows</h4><p>Multi-step approvals with escalation</p></div>
+                    <div class="feature-item"><h4>Task Management</h4><p>Assign and track tasks across teams</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Reduce manual work with automation</li>
+                    <li>Never miss critical events with alerts</li>
+                    <li>Enforce business rules consistently</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portal -->
+    <section id="portal" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">🌐</div>
+                <h2>Rover Portal</h2>
+                <p>Self-service access for customers and suppliers. Let partners check order status, view invoices, and collaborate without calling your team.</p>
+                <a href="modules/portal.html" class="btn btn-secondary btn-sm">Learn More</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Customer Portal</h4><p>Order status, invoices, payment history</p></div>
+                    <div class="feature-item"><h4>Supplier Portal</h4><p>PO acknowledgment, ASN submission</p></div>
+                    <div class="feature-item"><h4>Secure Access</h4><p>Role-based permissions and authentication</p></div>
+                    <div class="feature-item"><h4>Self-Service Orders</h4><p>Allow customers to place orders online</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Reduce inbound calls with self-service</li>
+                    <li>Improve customer satisfaction with 24/7 access</li>
+                    <li>Streamline supplier collaboration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rover AI -->
+    <section id="ai" class="module-section">
+        <div class="module-content">
+            <div class="module-info">
+                <div class="module-icon">🤖</div>
+                <h2>Rover AI</h2>
+                <p>Built-in artificial intelligence that surfaces insights, predicts demand, and catches anomalies before they become problems. Intelligence everywhere.</p>
+                <a href="ai.html" class="btn btn-primary btn-sm">Explore Rover AI</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Inventory Optimization</h4><p>Identify dead stock, predict stockouts</p></div>
+                    <div class="feature-item"><h4>Demand Forecasting</h4><p>AI-powered demand predictions</p></div>
+                    <div class="feature-item"><h4>Anomaly Detection</h4><p>Catch unusual patterns automatically</p></div>
+                    <div class="feature-item"><h4>Cash Flow Insights</h4><p>Monitor receivables and payables patterns</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Surface insights your ERP can't see</li>
+                    <li>Proactive alerts before problems occur</li>
+                    <li>Data-driven recommendations you can act on</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rover Pay -->
+    <section id="pay" class="module-section">
+        <div class="module-content reverse">
+            <div class="module-info">
+                <div class="module-icon">💳</div>
+                <h2>Rover Pay</h2>
+                <p>Integrated payment processing with automatic reconciliation. Get paid faster and eliminate the manual work of matching payments to invoices.</p>
+                <a href="pay.html" class="btn btn-primary btn-sm">Explore Rover Pay</a>
+                <a href="demo.html" class="btn btn-outline btn-sm">See Demo</a>
+            </div>
+            <div class="module-details">
+                <h3>Key Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-item"><h4>Payment Links</h4><p>Embedded payment links on invoices</p></div>
+                    <div class="feature-item"><h4>Auto-Reconciliation</h4><p>Payments match to invoices automatically</p></div>
+                    <div class="feature-item"><h4>Multiple Payment Types</h4><p>Cards, ACH, and more</p></div>
+                    <div class="feature-item"><h4>Customer Portal Payments</h4><p>Self-service payment via portal</p></div>
+                </div>
+                <h3>Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Get paid 12+ days faster on average</li>
+                    <li>Eliminate manual reconciliation work</li>
+                    <li>Complete order-to-cash visibility</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>See Rover ERP In Action</h2>
+            <p>Get a personalized demo focused on the modules that matter most to your business.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

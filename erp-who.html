@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Is Rover ERP For? | By Role</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .persona-section { padding: 4rem 0; border-bottom: 1px solid var(--border-subtle); }
+        .persona-section:last-of-type { border-bottom: none; }
+        .persona-grid { display: grid; grid-template-columns: 300px 1fr; gap: 4rem; align-items: start; }
+        .persona-sidebar { position: sticky; top: 120px; }
+        .persona-avatar { width: 120px; height: 120px; background: linear-gradient(135deg, var(--accent-orange), var(--accent-blue)); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1.5rem; }
+        .persona-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .persona-role { color: var(--accent-orange); font-size: 1rem; font-weight: 500; }
+        .persona-content h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .persona-content > p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+        .challenges-list, .solutions-list { list-style: none; margin-bottom: 2rem; }
+        .challenges-list li, .solutions-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 0.75rem 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+        .challenges-list li::before { content: '⚠️'; flex-shrink: 0; }
+        .solutions-list li::before { content: '✓'; color: var(--accent-green); font-weight: 700; flex-shrink: 0; font-size: 1.1rem; }
+        .why-matters { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; margin-top: 2rem; }
+        .why-matters h4 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent-orange); }
+        .why-matters p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+        @media (max-width: 1024px) {
+            .persona-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .persona-sidebar { position: static; display: flex; align-items: center; gap: 1.5rem; }
+            .persona-avatar { width: 80px; height: 80px; font-size: 2rem; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="ai.html">AI</a></li>
+            <li><a href="pay.html">Pay</a></li>
+            <li><a href="erp.html" class="active">ERP</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="customers.html">Customers</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn btn-ghost">Sign In</a>
+            <a href="demo.html" class="btn btn-primary">Get a Demo</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-content">
+            <p class="section-label">Rover ERP</p>
+            <h1>Who Is Rover ERP For?</h1>
+            <p>Different roles need different things from an ERP. Here's how Rover helps each member of your team succeed.</p>
+        </div>
+    </div>
+
+    <section class="section" style="background: var(--bg-primary);">
+        <div class="container">
+            
+            <!-- Owner -->
+            <div class="persona-section">
+                <div class="persona-grid">
+                    <div class="persona-sidebar">
+                        <div class="persona-avatar">👔</div>
+                        <div>
+                            <h2 class="persona-title">For Owners</h2>
+                            <p class="persona-role">CEO / President / Founder</p>
+                        </div>
+                    </div>
+                    <div class="persona-content">
+                        <h3>Challenges You Face</h3>
+                        <ul class="challenges-list">
+                            <li>Finding a technology partner who understands your unique business needs</li>
+                            <li>Ensuring software aligns with and enhances your company's vision</li>
+                            <li>Gaining a complete view of the business to make informed strategic decisions</li>
+                            <li>Avoiding the "brand tax" of overpriced enterprise software</li>
+                        </ul>
+                        
+                        <h3>How Rover ERP Helps</h3>
+                        <ul class="solutions-list">
+                            <li><strong>Tailored to Your Business:</strong> Customizable to fit your specific workflows and unique requirements—the software works the way you do</li>
+                            <li><strong>A Trusted Partner:</strong> Direct access to our experienced team and executives. You're gaining a partner invested in your success</li>
+                            <li><strong>Holistic Visibility:</strong> Consolidate data from every department into a single application with real-time insights</li>
+                            <li><strong>Built for Growth:</strong> Scales with your business, adapting to changes as you expand</li>
+                        </ul>
+                        
+                        <div class="why-matters">
+                            <h4>Why It Matters</h4>
+                            <p>As an owner, you need more than software—you need a partner as committed to your success as you are. Mr. NetSuite doesn't care about your business. We do. With Rover, you get a solution that evolves with your business while fostering a relationship that prioritizes your vision.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GM -->
+            <div class="persona-section">
+                <div class="persona-grid">
+                    <div class="persona-sidebar">
+                        <div class="persona-avatar">📋</div>
+                        <div>
+                            <h2 class="persona-title">For General Managers</h2>
+                            <p class="persona-role">GM / COO / Operations Director</p>
+                        </div>
+                    </div>
+                    <div class="persona-content">
+                        <h3>Challenges You Face</h3>
+                        <ul class="challenges-list">
+                            <li>Overseeing multiple departments and ensuring smooth collaboration</li>
+                            <li>Identifying and resolving operational inefficiencies</li>
+                            <li>Supporting employees with the tools and guidance they need to succeed</li>
+                            <li>Getting timely, accurate information to make decisions</li>
+                        </ul>
+                        
+                        <h3>How Rover ERP Helps</h3>
+                        <ul class="solutions-list">
+                            <li><strong>Streamlined Processes:</strong> Combines inventory, production, and customer management into one cohesive system, eliminating redundancies</li>
+                            <li><strong>Real-Time Insights:</strong> Visibility into operations lets you quickly identify bottlenecks and optimize performance</li>
+                            <li><strong>Exceptional Support:</strong> Our fully knowledgeable support team is dedicated to helping you and your employees succeed</li>
+                            <li><strong>AI-Powered Intelligence:</strong> Rover AI surfaces anomalies and opportunities you'd otherwise miss</li>
+                        </ul>
+                        
+                        <div class="why-matters">
+                            <h4>Why It Matters</h4>
+                            <p>With Rover ERP and our dedicated support team, you can focus on leading with confidence—knowing that your operations are optimized, your employees are supported, and your challenges are met with expert solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CFO -->
+            <div class="persona-section">
+                <div class="persona-grid">
+                    <div class="persona-sidebar">
+                        <div class="persona-avatar">💰</div>
+                        <div>
+                            <h2 class="persona-title">For CFOs</h2>
+                            <p class="persona-role">CFO / Controller / Finance Director</p>
+                        </div>
+                    </div>
+                    <div class="persona-content">
+                        <h3>Challenges You Face</h3>
+                        <ul class="challenges-list">
+                            <li>Managing costs and labor expenses while maintaining profitability</li>
+                            <li>Ensuring financial processes are efficient and compliant</li>
+                            <li>Implementing a robust ERP without exceeding budget constraints</li>
+                            <li>Getting accurate, timely financial data for decision-making</li>
+                        </ul>
+                        
+                        <h3>How Rover ERP Helps</h3>
+                        <ul class="solutions-list">
+                            <li><strong>Low Cost of Implementation:</strong> Powerful features with minimal setup and ongoing expenses—no brand tax</li>
+                            <li><strong>Deep Cost & Labor Tracking:</strong> Detailed insights into costs across departments, real-time labor expense tracking</li>
+                            <li><strong>Integrated Financial Management:</strong> Combines accounting, forecasting, and reporting into one system</li>
+                            <li><strong>Smarter Decision-Making:</strong> Real-time data on costs, budgets, and profitability for confident strategic decisions</li>
+                        </ul>
+                        
+                        <div class="why-matters">
+                            <h4>Why It Matters</h4>
+                            <p>Rover ERP empowers CFOs to control costs, track labor effectively, and streamline financial processes without breaking the bank. With actionable insights and efficiency gains, you can focus on building a financially sound and profitable future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>See Rover in Action for Your Role</h2>
+            <p>Get a personalized demo focused on the challenges and workflows that matter most to you.</p>
+            <a href="demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+                <p>Manufacturing intelligence platform from Zumasys. Trusted by manufacturers for over 30 years.</p>
+            </div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="ai.html">Rover AI</a></li><li><a href="pay.html">Rover Pay</a></li><li><a href="erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>ERP</h4><ul><li><a href="erp-modules.html">Modules</a></li><li><a href="erp-who.html">Who It's For</a></li><li><a href="implementation.html">Implementation</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="why-rover.html">About</a></li><li><a href="customers.html">Customers</a></li></ul></div>
+            <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc. All rights reserved.</p><p>Irvine, CA · San Diego, CA · Sioux Falls, SD</p></div>
+    </footer>
+</body>
+</html>
