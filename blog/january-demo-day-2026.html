@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January Demo Day: Flexible Web Workflows, Approval Logic &amp; .NET Client Quality of Life Improvements | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-release">Release</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">February 10, 2026</span>
+            </div>
+            <h1>January Demo Day: Flexible Web Workflows, Approval Logic &amp; .NET Client Quality of Life Improvements</h1>
+            <p class="post-subtitle">Our January Demo Day showcased some of the most requested features in recent memory — configurable approval workflows in Rover Web, powerful new workflow logic, and a wave of quality-of-life improvements for .NET client users.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>Our January Demo Day brought together the Rover ERP team to walk through a packed slate of new capabilities. This post recaps the highlights — from a brand-new approval framework in Rover Web to meaningful daily-use improvements in the .NET desktop client.</p>
+
+                <div class="highlight-box">
+                    <h4>What Was Covered</h4>
+                    <p>Three major areas were featured in the January Demo Day: <strong>Flexible Web Workflows</strong> (configurable multi-step processes directly in Rover Web), <strong>Approval Logic</strong> (route documents through configurable approval chains), and <strong>.NET Client Quality of Life Improvements</strong> (faster, smoother daily use of the desktop client).</p>
+                </div>
+
+                <h2>Flexible Web Workflows</h2>
+
+                <p>One of the most requested capabilities from our manufacturing and distribution customers is the ability to define and manage their own business workflows directly in Rover Web — without custom code or IT intervention. That's exactly what flexible web workflows deliver.</p>
+
+                <p>With this feature, administrators can build multi-step process flows tied to key business events: a new customer record is created, a purchase requisition is submitted, a work order changes status, a quality hold is applied. Each trigger can launch a configurable sequence of actions — notifications, record updates, document generation, or routing to an approval queue.</p>
+
+                <h3>Key Capabilities</h3>
+                <ul>
+                    <li><strong>Event-based triggers:</strong> Kick off workflows automatically based on record creation, status changes, field values crossing thresholds, or manual user actions</li>
+                    <li><strong>Configurable steps:</strong> Chain together notifications, field updates, document attachments, task assignments, and approval requests in any order</li>
+                    <li><strong>Conditional branching:</strong> Route workflows down different paths based on data values — for example, orders over $10,000 go through a different approval path than standard orders</li>
+                    <li><strong>User and role assignment:</strong> Assign tasks and approvals to specific users, roles, or dynamically to the record owner or manager</li>
+                    <li><strong>Visibility and audit trail:</strong> Every workflow step is logged with a timestamp, user, and outcome — giving managers a complete audit trail of every process</li>
+                </ul>
+
+                <p>The workflow builder is available in Rover Web's administration panel. No coding required — administrators configure workflows using a visual interface that reflects the actual sequence of steps.</p>
+
+                <h2>Approval Logic</h2>
+
+                <p>Tied closely to flexible workflows, the new approval logic framework gives organizations a structured way to route documents and decisions through defined approval chains. This is particularly valuable for purchasing controls, expense authorizations, and quality sign-offs.</p>
+
+                <h3>Approval Chains</h3>
+                <p>Organizations can define multi-level approval chains for any document type supported in Rover Web. A purchase order, for example, might require approval from the purchasing manager for orders under $5,000, the VP of Operations for orders between $5,000 and $25,000, and the CFO for anything above that threshold.</p>
+
+                <ul>
+                    <li><strong>Dollar threshold routing:</strong> Automatically route documents to the appropriate approver based on value</li>
+                    <li><strong>Sequential vs. parallel approvals:</strong> Require approvers to sign off in sequence, or notify multiple approvers simultaneously and require all (or any) to approve</li>
+                    <li><strong>Escalation rules:</strong> If an approval isn't acted on within a configured timeframe, automatically escalate to a backup approver or manager</li>
+                    <li><strong>Delegation:</strong> Approvers can delegate their authority temporarily — for vacations or out-of-office periods — without leaving approvals stuck in the queue</li>
+                    <li><strong>Rejection with comments:</strong> Approvers can reject a document with a required reason, which is logged and visible to the submitter</li>
+                </ul>
+
+                <h3>Where Approvals Apply</h3>
+                <p>The initial release of approval logic supports the following document types in Rover Web:</p>
+                <ul>
+                    <li>Purchase Requisitions and Purchase Orders</li>
+                    <li>Sales Order overrides (discounts beyond standard thresholds)</li>
+                    <li>Credit limit exceptions</li>
+                    <li>Work order material substitutions</li>
+                    <li>Quality holds and dispositions</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Why This Matters for Manufacturers</h4>
+                    <p>Many of our customers have been managing approvals through email chains, printed forms, or verbal sign-offs. That creates compliance gaps, slows down operations, and makes audits painful. The new approval framework brings those controls directly into Rover ERP — where the data already lives — so approvals are fast, traceable, and enforceable.</p>
+                </div>
+
+                <h2>.NET Client Quality of Life Improvements</h2>
+
+                <p>While Rover Web continues to expand in capability, many Rover ERP users rely on the .NET desktop client for their day-to-day work — and this release includes a meaningful set of improvements that make the desktop experience faster and less frustrating.</p>
+
+                <h3>Navigation &amp; Search</h3>
+                <ul>
+                    <li><strong>Persistent search history:</strong> Search fields now remember recent lookups, so frequently-used part numbers, customer names, or vendors are a single click away</li>
+                    <li><strong>Improved tab behavior:</strong> Tab-key navigation between fields is smoother and more predictable across all major screens</li>
+                    <li><strong>Quick-access favorites bar:</strong> Users can pin their most-used screens to a persistent favorites bar at the top of the application — reducing menu navigation for everyday tasks</li>
+                </ul>
+
+                <h3>Data Entry &amp; Display</h3>
+                <ul>
+                    <li><strong>Inline editing in grids:</strong> Select grid rows can now be edited inline without opening a separate detail screen — saving clicks for batch updates</li>
+                    <li><strong>Column resizing memory:</strong> Column widths and order are now saved per-user, per-screen — no more resizing the same grid every time you log in</li>
+                    <li><strong>Improved date pickers:</strong> Date entry fields now accept typed input more reliably, and the date picker calendar has been redesigned for clarity</li>
+                    <li><strong>Larger default font options:</strong> Users can select from three display density settings — Compact, Standard, and Comfortable — to match their screen size and preference</li>
+                </ul>
+
+                <h3>Performance</h3>
+                <ul>
+                    <li><strong>Faster screen loads:</strong> Several high-traffic screens (Customer Inquiry, Part Inquiry, Order Entry) have been optimized to load noticeably faster on both LAN and WAN connections</li>
+                    <li><strong>Reduced memory usage:</strong> Background data caching has been refactored — customers running the .NET client on older hardware should see improved stability over long sessions</li>
+                </ul>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">3×</span>
+                        <span class="stat-desc">Approval decision speed vs. email-based approvals</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-desc">Audit trail coverage for all workflow actions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Zero</span>
+                        <span class="stat-desc">Code required to configure web workflows</span>
+                    </div>
+                </div>
+
+                <h2>What's Coming Next</h2>
+
+                <p>The January Demo Day also included a sneak peek at capabilities on the near-term roadmap:</p>
+                <ul>
+                    <li><strong>Workflow templates:</strong> A library of pre-built workflow templates for common manufacturing and distribution processes — import and customize rather than build from scratch</li>
+                    <li><strong>Mobile approval notifications:</strong> Push notifications to mobile devices when an approval action is waiting — keeping the approval queue moving even when approvers are on the floor</li>
+                    <li><strong>Expanded document coverage:</strong> Approval logic extended to cover additional document types including AP invoices and RMAs</li>
+                    <li><strong>Rover Web: Customer Portal improvements:</strong> Enhanced self-service capabilities for customers — order status, invoice history, and document downloads without calling in</li>
+                </ul>
+
+                <h2>How to Get These Features</h2>
+
+                <p>Flexible web workflows and approval logic are available to all Rover ERP customers on Rover Web. Cloud-hosted customers will receive the update automatically. On-premise customers should contact <a href="../contact.html" style="color: var(--accent-orange);">Zumasys support</a> to schedule their upgrade to the latest release.</p>
+
+                <p>The .NET client quality of life improvements are included in the latest desktop client installer, available through the Zumasys customer portal or by contacting your support representative.</p>
+
+                <p>If you'd like a guided walk-through of the new workflow and approval features — or want help designing workflows for your specific operations — <a href="../demo.html" style="color: var(--accent-orange);">schedule a session with our team</a>. We're happy to help you design approval chains and workflows that match the way your business actually runs.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">🚀</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys is continuously evolving Rover ERP to meet the needs of modern manufacturers and distributors. Our Demo Days give customers a direct look at what's new, what's coming, and how the product is shaped by their feedback.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="sema-2025.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Rover ERP at SEMA 2025</div>
+                </div>
+            </a>
+            <a href="index.html" class="next-post">
+                <div>
+                    <div class="nav-label">All Posts</div>
+                    <div class="nav-title">Back to Blog</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>
