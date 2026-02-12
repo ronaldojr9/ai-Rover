@@ -79,6 +79,18 @@ nav {
     display: block;
 }
 
+/* Preferred full logo */
+.logo-picture {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     gap: 0.5rem;
