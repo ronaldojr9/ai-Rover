@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>September Demo Day – Smarter Scanning, Session Security &amp; Customer Portal Enhancements | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-event">Events</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">October 2, 2025</span>
+            </div>
+            <h1>September Demo Day – Smarter Scanning, Session Security &amp; Customer Portal Enhancements</h1>
+            <p class="post-subtitle">This month's demo day showcases updates that help your teams move faster, safer, and more efficiently—from warehouse operations to customer service.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>September's Demo Day showcased three areas where Rover ERP is extending its capabilities: smarter barcode scanning for warehouse and receiving operations, new session security controls for organizations with compliance requirements, and a significantly enhanced customer portal experience. Here's the full recap.</p>
+
+                <div class="highlight-box">
+                    <h4>What Was Covered</h4>
+                    <p>Three major areas were featured: <strong>Smarter Scanning</strong> (native barcode support across all web workflows), <strong>Session Security</strong> (configurable timeouts, MFA, and session monitoring), and <strong>Customer Portal Enhancements</strong> (order tracking, document downloads, and self-service returns).</p>
+                </div>
+
+                <h2>Smarter Scanning</h2>
+
+                <p>One of the most consistent requests from our warehouse and receiving customers has been native barcode scanning support in Rover Web — without needing a separate scanning app, middleware, or third-party integration. With this release, scanning works directly in the browser across all warehouse workflows.</p>
+
+                <h3>Where Scanning Is Now Available</h3>
+                <ul>
+                    <li><strong>Receiving:</strong> Scan item barcodes to populate the received item and quantity — or scan a license plate to receive an entire pallet with one scan</li>
+                    <li><strong>Picking:</strong> Scan pick list items to confirm picks, with scan-to-confirm mode eliminating manual quantity entry for standard operations</li>
+                    <li><strong>Bin transfers:</strong> Scan source bin, item, and destination bin to complete a transfer in seconds</li>
+                    <li><strong>Physical inventory counts:</strong> Scan items to increment count quantities — the count sheet updates in real time as items are scanned</li>
+                    <li><strong>Work order material issues:</strong> Scan components at the point of issue to the work order — reduces errors in material tracking</li>
+                </ul>
+
+                <h3>Barcode Format Support</h3>
+                <p>The scanning capability supports 1D barcodes (Code 128, Code 39, UPC) and 2D formats (QR codes, DataMatrix, GS1-128). For organizations using GS1 labeling, the system automatically parses application identifiers from GS1-128 barcodes — extracting item, lot, serial, quantity, and expiration date from a single scan.</p>
+
+                <h3>Mobile Optimization</h3>
+                <p>Scanning screens automatically enter full-screen mode on mobile devices, with larger touch targets and simplified layouts designed for gloved hands and handheld scanners. Camera-based scanning is also supported for devices without hardware scanners.</p>
+
+                <h2>Session Security</h2>
+
+                <p>Security requirements vary significantly across our customer base — from small shops with a handful of users to multi-site manufacturers with compliance obligations. The September release adds the controls that regulated and security-conscious organizations need.</p>
+
+                <h3>New Security Controls</h3>
+                <ul>
+                    <li><strong>Role-based session timeouts:</strong> Set different idle timeout thresholds by user role — warehouse users on shared terminals get shorter timeouts; office users on dedicated machines can work with longer sessions</li>
+                    <li><strong>MFA enforcement by role:</strong> Require multi-factor authentication for specific roles (administrators, finance, managers) without forcing it on all users</li>
+                    <li><strong>Session activity log:</strong> Administrators can view all active sessions with user, device, IP address, and last activity — useful for auditing and identifying stale sessions</li>
+                    <li><strong>Remote session termination:</strong> Administrators can force-logout any active session from the admin panel — useful when an employee leaves or a shared device is reported lost</li>
+                    <li><strong>IP restriction by role:</strong> Optionally restrict logins to specific IP ranges — keep warehouse users on the facility network, while allowing remote access for approved roles</li>
+                </ul>
+
+                <h2>Customer Portal Enhancements</h2>
+
+                <p>The Rover Customer Portal is the self-service face of your business for customers who want to check orders, retrieve documents, or get status updates without calling in. September's updates significantly expand what customers can do on their own.</p>
+
+                <h3>What's New</h3>
+                <ul>
+                    <li><strong>Order tracking timeline:</strong> A visual milestone timeline shows the complete journey of each order — entry, confirmation, production, shipping, and delivery</li>
+                    <li><strong>Document downloads:</strong> Invoices, packing lists, BOLs, and proof of delivery documents are all available for download directly from the portal — no more emailing documents on request</li>
+                    <li><strong>Self-service returns:</strong> Customers can initiate an RMA request from the portal, specifying the items to return and the reason — the request triggers your internal RMA workflow in Rover ERP automatically</li>
+                    <li><strong>Notification management:</strong> Customers can configure their own notification preferences — ship confirmations, invoice availability, order delays, and custom alerts</li>
+                    <li><strong>Multi-location support:</strong> Customers with multiple ship-to locations can now view all their locations' orders under a single portal login with location filtering</li>
+                </ul>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">1 scan</span>
+                        <span class="stat-desc">To receive an entire pallet using license plate scanning</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-desc">New session security controls for compliance needs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Self-service</span>
+                        <span class="stat-desc">Returns, documents, and notifications — no phone call needed</span>
+                    </div>
+                </div>
+
+                <h2>What's Coming Next</h2>
+
+                <p>October's Demo Day will cover smarter client behavior, custom list highlights, and improved error handling across both the web and .NET clients. <a href="../demo.html" style="color: var(--accent-orange);">Register for the next Demo Day</a> to see these features live.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">🚀</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys is continuously evolving Rover ERP to meet the needs of modern manufacturers and distributors. Our Demo Days give customers a direct look at what's new, what's coming, and how the product is shaped by their feedback.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="two-paths-pick-modernization.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Two Paths to PICK Modernization: Lessons from Eagle Group &amp; Encompass</div>
+                </div>
+            </a>
+            <a href="build-framework-manufacturing-ai.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">The BUILD Framework™ for Manufacturing AI</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

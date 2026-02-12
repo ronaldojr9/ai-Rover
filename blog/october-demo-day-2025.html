@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>October Demo Day – Smarter Clients, Custom Highlights &amp; Better Error Handling | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-event">Events</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">November 7, 2025</span>
+            </div>
+            <h1>October Demo Day – Smarter Clients, Custom Highlights &amp; Better Error Handling</h1>
+            <p class="post-subtitle">This month's demo day focuses on user experience, data visibility, and system stability designed to help teams move faster, work smarter, and experience fewer interruptions.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>October's Demo Day covered a set of updates that directly address the day-to-day friction points our customers have flagged most often: smarter client behavior that reduces repetitive steps, custom highlighting tools that make critical data stand out, and improved error handling that reduces confusion and speeds up problem resolution.</p>
+
+                <div class="highlight-box">
+                    <h4>What Was Covered</h4>
+                    <p>Three major areas were featured: <strong>Smarter Clients</strong> (intelligent defaults and predictive behavior in both web and .NET clients), <strong>Custom Highlights</strong> (user-configurable color coding for list views), and <strong>Better Error Handling</strong> (clearer messages, guided resolution, and fewer dead ends).</p>
+                </div>
+
+                <h2>Smarter Clients</h2>
+
+                <p>The "smarter client" updates focus on reducing the number of keystrokes and clicks required for common tasks by having the system make better inferences about what you're trying to do.</p>
+
+                <h3>Intelligent Defaults</h3>
+                <ul>
+                    <li><strong>Last-used values:</strong> Fields that typically have the same value for a given user now default to the last value entered — shipping method, warehouse location, sales rep, and others</li>
+                    <li><strong>Context-aware lookups:</strong> When searching for parts while entering a purchase order, the system filters results to the selected vendor's catalog by default — no more wading through thousands of parts to find the ones your vendor actually supplies</li>
+                    <li><strong>Predictive line entry:</strong> On order entry, typing the first few characters of a frequently ordered part number triggers a suggestion list ranked by order frequency for that customer</li>
+                    <li><strong>Smart date defaults:</strong> Due dates and ship dates now default based on the record context — vendor lead time for POs, customer terms for SO payment due dates, current schedule for work orders</li>
+                </ul>
+
+                <h3>Reduced Navigation</h3>
+                <ul>
+                    <li>Related record quick-view panels: Hover over a customer, vendor, or part number on any screen to see a summary card without navigating away from your current screen</li>
+                    <li>Recent records sidebar: A collapsible recent records panel shows your last 10 accessed records for instant return navigation</li>
+                    <li>Cross-module drill-through: Click any document reference (PO number, order number, work order) from any screen to jump directly to that record</li>
+                </ul>
+
+                <h2>Custom Highlights</h2>
+
+                <p>Custom highlights let users define color-coding rules for any list view in Rover Web — making important records visually distinct without requiring additional filtering or sorting.</p>
+
+                <h3>How It Works</h3>
+                <ul>
+                    <li>Define a rule based on any field in the list view: status, date, value, flag, or any combination</li>
+                    <li>Assign a highlight color (from a standard palette or a custom hex code) to rows matching your rule</li>
+                    <li>Apply the highlight to the entire row, a specific column, or just an icon indicator</li>
+                    <li>Rules are applied in priority order — multiple rules can apply to the same list with clear precedence</li>
+                    <li>Highlights can be personal (visible only to you) or shared (available to all users in your role)</li>
+                </ul>
+
+                <h3>Common Use Cases</h3>
+                <ul>
+                    <li>Highlight overdue orders in red on the open order list</li>
+                    <li>Flag items below reorder point in orange on the inventory list</li>
+                    <li>Mark high-priority customers with a gold indicator on the customer list</li>
+                    <li>Color-code work orders by work center for quick visual scanning on the production schedule</li>
+                    <li>Show credit-hold customers in a distinct color on the order entry screen</li>
+                </ul>
+
+                <h2>Better Error Handling</h2>
+
+                <p>One of the most consistent pieces of feedback from our customers has been about error messages — cryptic codes, incomplete information, and no guidance on how to resolve the issue. The October release significantly improves this.</p>
+
+                <h3>What Changed</h3>
+                <ul>
+                    <li><strong>Plain-language error messages:</strong> Error messages now describe what went wrong in business terms, not system terms — "This customer has exceeded their credit limit" instead of "CREDIT_LIMIT_EXCEEDED: err 4422"</li>
+                    <li><strong>Resolution guidance:</strong> Most error messages now include a suggested next step — what to check, what to change, or who to contact</li>
+                    <li><strong>Context preservation:</strong> When an error occurs, the form no longer clears — your data is preserved so you can fix the issue and resubmit without re-entering everything</li>
+                    <li><strong>Error log access:</strong> Administrators can now view a filterable error log showing all errors encountered by all users in the past 30 days, with full context — useful for identifying systemic issues</li>
+                    <li><strong>Inline validation:</strong> More validations now happen as you type rather than on save — catching problems earlier in the workflow</li>
+                </ul>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-desc">Reduction in clicks for common order entry workflows</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Unlimited</span>
+                        <span class="stat-desc">Custom highlight rules per list view</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-desc">Of system errors now include resolution guidance</span>
+                    </div>
+                </div>
+
+                <h2>What's Next</h2>
+
+                <p>November's release will include the initial release of the Rover AI Technical Support Assistant and expanded web production capabilities. <a href="../demo.html" style="color: var(--accent-orange);">Register for the next Demo Day</a> to see these features live.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">🚀</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys is continuously evolving Rover ERP to meet the needs of modern manufacturers and distributors. Our Demo Days give customers a direct look at what's new, what's coming, and how the product is shaped by their feedback.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="chaos-to-clarity-part-2.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Chaos to Clarity, Part 2: From Report-Hunting to Real-Time Answers on Your ERP Data</div>
+                </div>
+            </a>
+            <a href="sema-2025.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">Rover ERP at SEMA 2025</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

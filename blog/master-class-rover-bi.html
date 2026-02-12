@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP Master Class – Rover BI Power Users | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-event">Webinar</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">February 6, 2026</span>
+            </div>
+            <h1>Rover ERP Master Class – Rover BI Power Users</h1>
+            <p class="post-subtitle">In this Master Class, we dive into Rover BI with a hands-on walkthrough focused on real-world reporting workflows—from building clean, performant datasets to creating dashboards fast with Magic Visuals and AI-assisted development.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>If you've been using Rover BI for basic reports but know there's more power under the hood — this Master Class was made for you. In February's session, we went deep on advanced Rover BI techniques: dataset design for performance, Magic Visuals for rapid dashboard creation, and how to use AI-assisted development to write and debug DAX expressions faster than ever.</p>
+
+                <div class="highlight-box">
+                    <h4>What We Covered</h4>
+                    <p>This session focused on three areas: <strong>Dataset Architecture</strong> (building clean, fast, reusable datasets), <strong>Magic Visuals</strong> (generating dashboards in minutes using AI), and <strong>AI-Assisted Development</strong> (using the Rover AI assistant to write formulas, troubleshoot errors, and explain complex expressions).</p>
+                </div>
+
+                <h2>Building Clean, Performant Datasets</h2>
+
+                <p>The foundation of every great Rover BI dashboard is a well-structured dataset. In this session, we walked through how to design datasets that are fast to query, easy to maintain, and reusable across multiple reports.</p>
+
+                <h3>Dataset Best Practices</h3>
+                <ul>
+                    <li><strong>Star schema design:</strong> Structure your datasets with a central fact table and connected dimension tables — this dramatically improves query performance at scale</li>
+                    <li><strong>Pre-aggregated measures:</strong> Calculate totals, averages, and ratios at the dataset level rather than in individual visuals — keep visuals simple and fast</li>
+                    <li><strong>Incremental refresh:</strong> For large transactional datasets, configure incremental refresh so only new or changed data is loaded — not the entire dataset every time</li>
+                    <li><strong>Shared datasets:</strong> Build a core dataset once and share it across multiple dashboards — changes to the underlying data model propagate automatically</li>
+                    <li><strong>Row-level security:</strong> Implement RLS at the dataset level to ensure each user sees only the data they're authorized to view</li>
+                </ul>
+
+                <h3>Connecting to Rover ERP Data</h3>
+                <p>Rover BI connects natively to your Rover ERP data through the Rover Data Services layer. In the session, we demonstrated how to:</p>
+                <ul>
+                    <li>Select and filter which tables and views to include in your dataset</li>
+                    <li>Build relationships between tables using ERP keys (customer IDs, part numbers, work order numbers)</li>
+                    <li>Create calculated columns for derived fields that don't exist natively in the ERP (e.g., days late, margin %, on-time delivery rate)</li>
+                </ul>
+
+                <h2>Magic Visuals: Dashboards in Minutes</h2>
+
+                <p>Magic Visuals is one of the most popular features in Rover BI — and for good reason. Instead of manually configuring chart types, axes, and formatting, Magic Visuals analyzes your dataset and generates a full dashboard layout automatically.</p>
+
+                <h3>How Magic Visuals Works</h3>
+                <ol>
+                    <li>Select the dataset you want to visualize</li>
+                    <li>Choose the key metrics you want to highlight (revenue, open orders, on-time %, inventory turns)</li>
+                    <li>Rover BI's AI engine analyzes the data structure and automatically selects the most appropriate chart types</li>
+                    <li>A complete dashboard is generated — including KPI cards, trend lines, bar charts, and tables</li>
+                    <li>You refine and customize the generated layout to match your exact needs</li>
+                </ol>
+
+                <p>In live testing during the session, participants went from a raw dataset to a fully functional executive dashboard in under 8 minutes — including a revenue trend chart, open order aging breakdown, and top customer summary table.</p>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">&lt;10 min</span>
+                        <span class="stat-desc">From dataset to complete dashboard using Magic Visuals</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-desc">Chart and visual types available in Rover BI</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Zero</span>
+                        <span class="stat-desc">Code required for most dashboard creation tasks</span>
+                    </div>
+                </div>
+
+                <h2>AI-Assisted Development</h2>
+
+                <p>Writing DAX expressions and complex calculated measures can be a barrier for users who aren't data analysts by trade. Rover BI's AI assistant removes that barrier — you describe what you want in plain English, and the assistant generates the expression for you.</p>
+
+                <h3>What the AI Assistant Can Do</h3>
+                <ul>
+                    <li><strong>Generate DAX measures:</strong> "Calculate the 12-month rolling average of monthly revenue" → the assistant writes the complete DAX measure</li>
+                    <li><strong>Explain existing formulas:</strong> Paste in a complex expression and ask the assistant to explain what it does in plain English</li>
+                    <li><strong>Debug errors:</strong> When a measure returns an error, the assistant identifies the issue and suggests a fix</li>
+                    <li><strong>Optimize slow measures:</strong> The assistant can review an existing measure and suggest performance improvements</li>
+                    <li><strong>Suggest related metrics:</strong> Based on your dataset, the assistant proactively suggests measures you might want to add</li>
+                </ul>
+
+                <h3>Live Demo Highlights</h3>
+                <p>During the session, our instructor used the AI assistant to:</p>
+                <ul>
+                    <li>Build a year-over-year revenue comparison measure in under 2 minutes</li>
+                    <li>Fix a broken CALCULATE expression that was producing incorrect results</li>
+                    <li>Generate a complete set of KPI measures for an operations dashboard — on-time delivery, scrap rate, schedule adherence — from a single prompt</li>
+                </ul>
+
+                <h2>Watch the Recording</h2>
+
+                <p>This Master Class session was recorded and is available in the Rover Knowledge Base for all active customers. If you're not yet a Rover BI user and want to see what's possible, <a href="../demo.html" style="color: var(--accent-orange);">schedule a demo</a> and we'll walk you through the platform with your own data.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">📊</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Training Team</h4>
+                        <p>Rover Master Classes are monthly deep-dive sessions for Rover ERP customers. Each session focuses on a specific area of the platform, combining live demonstrations with hands-on exercises and Q&amp;A. All sessions are recorded and made available in the Rover Knowledge Base.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="december-demo-day-2025.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">December Demo Day – Web Production Enhancements, POS Flexibility &amp; .NET Client Quality-of-Life Improvements</div>
+                </div>
+            </a>
+            <a href="january-2026-release.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">Rover ERP January 2026 Release Notice</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

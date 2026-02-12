@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP November 2025 Release Notice | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-release">Release Notes</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">December 16, 2025</span>
+            </div>
+            <h1>Rover ERP November 2025 Release Notice</h1>
+            <p class="post-subtitle">Features, updates, and bug fixes for Rover Web Client versions 2.19.0 &amp; 2.20.0</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>November saw two web client releases — 2.19.0 and 2.20.0 — delivering expanded production capabilities, AI support assistant enhancements, and a significant round of bug fixes. Here's a complete summary of what's included.</p>
+
+                <div class="highlight-box">
+                    <h4>Release Summary</h4>
+                    <p><strong>Rover Web Client versions 2.19.0 and 2.20.0</strong> — Released November 2025. These releases expand the AI support assistant, improve web production workflows, and deliver broad quality fixes across the platform.</p>
+                </div>
+
+                <h2>Version 2.19.0 – New Features</h2>
+
+                <h3>Rover AI Technical Support Assistant (Beta)</h3>
+                <ul>
+                    <li>Initial release of the Rover AI Technical Support Assistant for internal support teams</li>
+                    <li>Natural language queries against live ERP data — orders, invoices, inventory, vendor records</li>
+                    <li>Role-based access control integrates with existing Rover security settings</li>
+                    <li>Configuration available in Rover AI administration panel</li>
+                    <li>Audit logging for all assistant queries and responses</li>
+                </ul>
+
+                <h3>Web Production – Work Order Enhancements</h3>
+                <ul>
+                    <li>Scrap reporting now available in Rover Web, including reason codes and photo attachment support</li>
+                    <li>Work order labor entry improved — direct entry of start/stop times with automatic duration calculation</li>
+                    <li>Material issue screen updated to show current bin quantities inline</li>
+                    <li>Subcontract operation status now visible on the work order routing screen</li>
+                </ul>
+
+                <h3>Customer Portal</h3>
+                <ul>
+                    <li>Customers can now download copies of invoices, packing lists, and proof of delivery documents directly from the portal</li>
+                    <li>New order tracking timeline view shows key milestones from order entry through shipment</li>
+                    <li>Email notification preferences can now be managed by customers through the portal settings page</li>
+                </ul>
+
+                <h2>Version 2.20.0 – New Features</h2>
+
+                <h3>AI Support Assistant – General Availability</h3>
+                <ul>
+                    <li>AI Technical Support Assistant promoted from beta to general availability</li>
+                    <li>Customer-facing portal integration now available — embed the assistant in your customer portal for self-service support</li>
+                    <li>Expanded query coverage includes RMAs, warranty claims, and service tickets</li>
+                    <li>Response confidence indicators help users understand when to verify information with a human agent</li>
+                </ul>
+
+                <h3>Rover BI Enhancements</h3>
+                <ul>
+                    <li>Magic Visuals feature released — generate complete dashboard layouts automatically from your dataset</li>
+                    <li>AI-assisted DAX formula generation now available in the measure editor</li>
+                    <li>Shared datasets can now be marked as certified — indicating they've been reviewed and approved for organization-wide use</li>
+                    <li>Dashboard subscriptions: schedule automatic PDF delivery of any dashboard to email recipients on a daily, weekly, or monthly cadence</li>
+                </ul>
+
+                <h2>Improvements</h2>
+
+                <h3>Web Client</h3>
+                <ul>
+                    <li>Navigation sidebar now supports collapsing to an icon-only mode for more screen space</li>
+                    <li>List view column filters now support "not equal" and "is blank / is not blank" operators</li>
+                    <li>Inline editing now available in the open PO line items grid</li>
+                    <li>Date pickers now accept keyboard shortcuts: "T" for today, "+7" for 7 days from today, "-30" for 30 days ago</li>
+                </ul>
+
+                <h3>Finance</h3>
+                <ul>
+                    <li>Journal entry screen now supports copy-and-paste from Excel for rapid data entry</li>
+                    <li>Bank reconciliation now highlights unmatched transactions in a separate review queue</li>
+                    <li>AP aging report now includes a column for expected payment date based on vendor terms</li>
+                </ul>
+
+                <h2>Bug Fixes (2.19.0 &amp; 2.20.0 Combined)</h2>
+                <ul>
+                    <li>Fixed an issue where the work order completion screen would occasionally submit duplicate transactions under high load</li>
+                    <li>Resolved a display error in the inventory valuation report for items with multiple costing methods</li>
+                    <li>Fixed a session handling bug that caused intermittent 401 errors for users behind certain proxy configurations</li>
+                    <li>Corrected an issue where sales order line delivery dates would reset to today when saving an address override</li>
+                    <li>Fixed broken pagination in the vendor history inquiry when filtering by date range and item simultaneously</li>
+                    <li>Resolved an issue where dashboard filters would not apply correctly after refreshing the browser</li>
+                    <li>Fixed a calculation error in the weighted average cost update for items received in multiple currencies</li>
+                </ul>
+
+                <h2>Upgrade Notes</h2>
+
+                <p>Both 2.19.0 and 2.20.0 have been automatically applied for cloud-hosted customers. On-premise customers should contact <a href="../contact.html" style="color: var(--accent-orange);">Zumasys support</a> to schedule their upgrade. The AI Technical Support Assistant requires additional configuration before activation — reach out to your implementation consultant for setup guidance.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">📋</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys ships regular updates to Rover ERP based on customer feedback, industry trends, and our internal roadmap. Release notices are published with every major version to keep customers informed of what's new and changed.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="meet-tyler-hansen.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Meet Tyler Hansen: Bringing Real-World ERP and AI Experience to Rover ERP</div>
+                </div>
+            </a>
+            <a href="master-class-boosting-support.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">Rover ERP Master Class – Boosting Support Efficiency with Rover ERP</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>
