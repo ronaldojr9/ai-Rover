@@ -1,13 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 36" width="140" height="36">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 36" width="150" height="36">
   <defs>
     <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#ff8c5a;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <!-- Icon box -->
+  <!-- Orange rounded square background -->
   <rect width="36" height="36" rx="8" ry="8" fill="url(#orangeGrad)"/>
-  <text x="18" y="25" font-family="DM Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-0.5">R</text>
-  <!-- Wordmark -->
-  <text x="46" y="25" font-family="DM Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" letter-spacing="-0.5">Rover</text>
+  <!-- Geometric R path -->
+  <path d="
+    M 10 8
+    L 10 28
+    L 13.5 28
+    L 13.5 21.5
+    L 18.5 21.5
+    L 22.5 28
+    L 26.5 28
+    L 22 21
+    C 24.5 20 26 17.5 26 15
+    C 26 10.5 22.5 8 18 8
+    Z
+    M 13.5 11
+    L 18 11
+    C 20.5 11 22.5 12.5 22.5 15
+    C 22.5 17.5 20.5 19 18 19
+    L 13.5 19
+    Z
+  " fill="white"/>
+  <!-- Wordmark: "Rover" in light color -->
+  <text x="46" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f8fafc" letter-spacing="-0.5">Rover</text>
 </svg>

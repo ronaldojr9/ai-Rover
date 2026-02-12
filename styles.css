@@ -76,7 +76,9 @@ nav {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .nav-links {
