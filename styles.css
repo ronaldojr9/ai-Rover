@@ -75,13 +75,8 @@ nav {
 .logo-icon {
     width: 36px;
     height: 36px;
-    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-light) 100%);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: white;
+    display: block;
 }
 
 .nav-links {
