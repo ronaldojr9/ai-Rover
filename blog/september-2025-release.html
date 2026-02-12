@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP September 2025 Release Notice | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-release">Release Notes</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">October 7, 2025</span>
+            </div>
+            <h1>Rover ERP September 2025 Release Notice</h1>
+            <p class="post-subtitle">Features, updates, and bug fixes for Rover Web Client version 2.16.0</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>Rover Web Client 2.16.0 focuses on warehouse operations, session security, and customer portal enhancements — building on the features showcased in September's Demo Day. Here's a complete summary of what's new and fixed.</p>
+
+                <div class="highlight-box">
+                    <h4>Release Summary</h4>
+                    <p><strong>Rover Web Client version 2.16.0</strong> — Released October 2025. This release delivers enhanced barcode scanning, session security improvements, and expanded customer portal capabilities.</p>
+                </div>
+
+                <h2>New Features</h2>
+
+                <h3>Enhanced Barcode Scanning</h3>
+                <ul>
+                    <li>Barcode scanning now works in all Rover Web receiving, picking, and bin transfer screens — no separate scanning app required</li>
+                    <li>Support for 1D and 2D barcodes (QR codes, DataMatrix) across all scanning workflows</li>
+                    <li>Scan-to-confirm mode: Scan the barcode on a tote or carton to automatically confirm the pick — eliminates manual quantity entry for standard pick operations</li>
+                    <li>License plate scanning: Receive entire pallets or totes by scanning a single license plate label</li>
+                    <li>Mobile device optimization: Scanning screens automatically enter full-screen mode on mobile devices for easier use on tablets and handheld scanners</li>
+                </ul>
+
+                <h3>Session Security Improvements</h3>
+                <ul>
+                    <li>Configurable session timeout: Administrators can set idle timeout durations by user role — shorter timeouts for warehouse users on shared devices, longer timeouts for office users on personal workstations</li>
+                    <li>Session activity log: Administrators can view a log of active sessions including user, device, IP address, and last activity time</li>
+                    <li>Force logout: Administrators can remotely terminate any active session from the session management screen</li>
+                    <li>MFA enforcement by role: Multi-factor authentication can now be required for specific roles (administrators, managers) while remaining optional for other users</li>
+                    <li>Login location restrictions: Optionally restrict logins to specific IP ranges or subnets — useful for organizations that want to prevent access from outside the facility</li>
+                </ul>
+
+                <h3>Customer Portal Enhancements</h3>
+                <ul>
+                    <li>Order tracking timeline: Customers can now see a visual timeline of their order from entry through shipment, including key milestone dates</li>
+                    <li>Document downloads: Invoices, packing lists, and proof of delivery documents are available for download directly from the portal</li>
+                    <li>Return Request initiation: Customers can initiate a return request (RMA) from the portal — triggering the internal RMA workflow in Rover ERP</li>
+                    <li>Notification preferences: Customers can manage their email notification preferences — what they want to be notified about and when</li>
+                    <li>Consolidated account view: Multi-site customers can now view all their locations' orders under a single portal login</li>
+                </ul>
+
+                <h2>Improvements</h2>
+
+                <h3>Warehouse Operations</h3>
+                <ul>
+                    <li>Pick confirmation screen redesigned for faster operation on mobile devices — larger touch targets, simplified layout</li>
+                    <li>Receiving screen now shows previous receipts for the same PO inline — useful for identifying partial receipt situations</li>
+                    <li>Bin location lookup improved — type partial bin code with wildcard support</li>
+                </ul>
+
+                <h3>General Web Client</h3>
+                <ul>
+                    <li>Print preview now available before sending to printer — reduces wasted labels and paper</li>
+                    <li>Column filter dropdowns now support multi-select — filter a list by multiple status values simultaneously</li>
+                    <li>Saved views: Users can save their current filter and sort configuration on any list view and restore it with one click</li>
+                </ul>
+
+                <h2>Bug Fixes</h2>
+                <ul>
+                    <li>Fixed an issue where session timeout warning would not appear for users on certain browser configurations, resulting in silent logouts</li>
+                    <li>Resolved an incorrect quantity available calculation on the picking screen when multiple open orders existed for the same item</li>
+                    <li>Fixed a customer portal issue where PDF invoices would occasionally download with corrupted formatting on Safari</li>
+                    <li>Corrected an issue where barcode scans with leading or trailing whitespace would fail to match records</li>
+                    <li>Fixed a display error in the bin transfer confirmation screen when transferring items with active lot tracking</li>
+                    <li>Resolved an issue where customer portal users could see orders for other customers in certain multi-site configurations</li>
+                </ul>
+
+                <h2>Upgrade Notes</h2>
+
+                <p>Web Client 2.16.0 has been automatically applied for cloud-hosted customers. On-premise customers should contact <a href="../contact.html" style="color: var(--accent-orange);">Zumasys support</a> to schedule their upgrade. The new session security features require administrator configuration before taking effect.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">📋</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys ships regular updates to Rover ERP based on customer feedback, industry trends, and our internal roadmap.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="build-framework-manufacturing-ai.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">The BUILD Framework™ for Manufacturing AI</div>
+                </div>
+            </a>
+            <a href="master-class-plan-to-production.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">Rover ERP Master Class – From Plan to Production</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

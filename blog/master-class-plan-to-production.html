@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP Master Class – From Plan to Production | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-event">Webinar</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">October 28, 2025</span>
+            </div>
+            <h1>Rover ERP Master Class – From Plan to Production</h1>
+            <p class="post-subtitle">In this month's Rover ERP Master Class, we focused on the production planning process — helping manufacturing teams streamline the journey from demand signal to finished goods.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>For manufacturers, the gap between a plan and actual production is where costs grow, schedules slip, and customer commitments get missed. In October's Master Class, we walked through Rover ERP's production planning tools end-to-end — from demand signals and material requirements planning through work order execution and completion.</p>
+
+                <div class="highlight-box">
+                    <h4>What We Covered</h4>
+                    <p>This session covered the complete production planning cycle in Rover ERP: <strong>Demand Planning</strong> (sales forecasts, sales orders, and MPS), <strong>Material Requirements Planning</strong> (MRP runs, planned order generation, and exception handling), and <strong>Work Order Execution</strong> (release, dispatch, shop floor reporting, and completion).</p>
+                </div>
+
+                <h2>Demand Planning: Where the Plan Starts</h2>
+
+                <p>Every production plan starts with demand. In Rover ERP, demand comes from multiple sources that are consolidated into the Master Production Schedule (MPS):</p>
+
+                <ul>
+                    <li><strong>Firm demand:</strong> Open sales orders with confirmed delivery dates</li>
+                    <li><strong>Forecast demand:</strong> Manually entered or imported sales forecasts</li>
+                    <li><strong>Interplant demand:</strong> Transfer orders and branch replenishment requests</li>
+                    <li><strong>Safety stock replenishment:</strong> Triggered when on-hand quantities fall below defined minimums</li>
+                </ul>
+
+                <p>The MPS view in Rover Web lets planners see all demand sources consolidated by item and time bucket — giving a clear picture of what needs to be produced and when, before MRP is run.</p>
+
+                <h2>Material Requirements Planning (MRP)</h2>
+
+                <p>MRP is where Rover ERP translates demand into action. In the session, we walked through the complete MRP run process:</p>
+
+                <h3>Running MRP</h3>
+                <ol>
+                    <li>Select the planning horizon (days out to plan)</li>
+                    <li>Select which items and locations to include</li>
+                    <li>Run the calculation — Rover ERP explodes BOMs, checks on-hand and on-order quantities, and generates planned orders to cover net requirements</li>
+                    <li>Review the output in the MRP exception report before releasing any planned orders</li>
+                </ol>
+
+                <h3>MRP Exception Handling</h3>
+                <p>The exception report is where most of the planning work happens. Rover ERP surfaces three types of exceptions:</p>
+                <ul>
+                    <li><strong>Past due:</strong> Planned orders that are already late given current lead times — need immediate action</li>
+                    <li><strong>Reschedule in:</strong> Existing orders scheduled too far out — can be moved earlier to better align with demand</li>
+                    <li><strong>Reschedule out or cancel:</strong> Existing orders that are ahead of need — can be delayed or cancelled to free up capacity or reduce WIP</li>
+                </ul>
+
+                <p>In the demo, we showed how planners can review and action MRP exceptions directly in Rover Web — approving, rescheduling, or deleting planned orders without leaving the planning screen.</p>
+
+                <h2>Work Order Execution</h2>
+
+                <p>Once planned orders are approved and converted to work orders, the focus shifts to the shop floor. We covered the complete work order lifecycle:</p>
+
+                <h3>Work Order Release</h3>
+                <ul>
+                    <li>Confirm material availability before releasing — the system flags any components below required quantity</li>
+                    <li>Print shop packets including routing, BOM, and any attached drawings or work instructions</li>
+                    <li>Assign to work centers based on the routing — with current queue visibility to avoid overloading</li>
+                </ul>
+
+                <h3>Shop Floor Reporting</h3>
+                <ul>
+                    <li>Labor entry: Record actual hours by operation, employee, and work center</li>
+                    <li>Material issues: Record actual material usage against work order requirements</li>
+                    <li>Operation completion: Mark individual routing steps complete as they're finished</li>
+                    <li>Scrap and rework: Record scrap quantities and reasons — tracked separately from good production</li>
+                </ul>
+
+                <h3>Work Order Completion &amp; Variance</h3>
+                <p>At completion, Rover ERP automatically calculates production variances:</p>
+                <ul>
+                    <li><strong>Material variance:</strong> Actual material usage vs. standard BOM quantity</li>
+                    <li><strong>Labor variance:</strong> Actual labor hours and cost vs. standard routing</li>
+                    <li><strong>Quantity variance:</strong> Completed quantity vs. originally planned quantity</li>
+                </ul>
+
+                <p>Variances are immediately visible in the work order completion screen and flow through to costing automatically.</p>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">1 screen</span>
+                        <span class="stat-desc">To review and action all MRP exceptions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Real-time</span>
+                        <span class="stat-desc">Variance tracking from first operation to completion</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Automatic</span>
+                        <span class="stat-desc">BOM explosion and material requirements calculation</span>
+                    </div>
+                </div>
+
+                <h2>Watch the Recording</h2>
+
+                <p>The full session recording is available in the Rover Knowledge Base. If you want a personalized walkthrough of Rover ERP's production planning tools configured for your specific operations, <a href="../demo.html" style="color: var(--accent-orange);">schedule a session with our team</a>.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">🏭</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Training Team</h4>
+                        <p>Rover Master Classes are monthly deep-dive sessions for Rover ERP customers. Each session focuses on a specific area of the platform, combining live demonstrations with hands-on exercises and Q&amp;A.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="september-2025-release.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Rover ERP September 2025 Release Notice</div>
+                </div>
+            </a>
+            <a href="october-2025-release.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">Rover ERP October 2025 Release Notice</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

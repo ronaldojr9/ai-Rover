@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP January 2026 Release Notice | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-release">Release Notes</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">February 10, 2026</span>
+            </div>
+            <h1>Rover ERP January 2026 Release Notice</h1>
+            <p class="post-subtitle">Features, updates, and bug fixes for Rover Web Client version 2.21.0</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>The January 2026 release of Rover ERP (Web Client version 2.21.0) delivers a focused set of new features, workflow improvements, and quality fixes across the platform. Here's a complete summary of what's included in this release.</p>
+
+                <div class="highlight-box">
+                    <h4>Release Summary</h4>
+                    <p><strong>Rover Web Client version 2.21.0</strong> — Released February 2026. This release introduces flexible web workflows, approval logic, and a broad set of usability improvements across the platform.</p>
+                </div>
+
+                <h2>New Features</h2>
+
+                <h3>Flexible Web Workflows</h3>
+                <ul>
+                    <li>Administrators can now define multi-step business process workflows directly in Rover Web without custom code</li>
+                    <li>Event-based triggers support record creation, status changes, field value thresholds, and manual user actions</li>
+                    <li>Conditional branching routes workflows down different paths based on data values</li>
+                    <li>Full audit trail on every workflow step, including timestamp, user, and outcome</li>
+                </ul>
+
+                <h3>Approval Logic Framework</h3>
+                <ul>
+                    <li>Multi-level approval chains now available for Purchase Requisitions, Purchase Orders, and Sales Order overrides</li>
+                    <li>Dollar threshold routing automatically sends documents to the appropriate approver based on value</li>
+                    <li>Sequential and parallel approval modes supported</li>
+                    <li>Escalation rules automatically reassign approvals that aren't acted on within a configured timeframe</li>
+                    <li>Delegation allows approvers to transfer authority temporarily</li>
+                    <li>Approval logic also covers credit limit exceptions, work order material substitutions, and quality holds</li>
+                </ul>
+
+                <h3>Customer Portal Enhancements</h3>
+                <ul>
+                    <li>Customers can now view order status, invoice history, and download documents directly from the portal</li>
+                    <li>Improved portal navigation with a redesigned dashboard layout</li>
+                    <li>New self-service options reduce inbound support requests for order inquiries</li>
+                </ul>
+
+                <h2>Improvements</h2>
+
+                <h3>Web Client</h3>
+                <ul>
+                    <li>Improved grid performance on large data sets — list views with thousands of records now load and scroll faster</li>
+                    <li>Date range filters now persist across sessions in list views</li>
+                    <li>Attachment previews now support PDF files in addition to images</li>
+                    <li>Keyboard navigation improved across all modal dialogs</li>
+                    <li>Search results now highlight matching text within results for faster scanning</li>
+                </ul>
+
+                <h3>Inventory &amp; Warehouse</h3>
+                <ul>
+                    <li>Bin transfer screen now supports batch processing — transfer multiple items in a single session</li>
+                    <li>Physical inventory count sheets can now be exported to CSV</li>
+                    <li>Lot and serial number lookup improved with partial-match search support</li>
+                </ul>
+
+                <h3>Purchasing</h3>
+                <ul>
+                    <li>Vendor lead time is now displayed inline on the purchase order entry screen</li>
+                    <li>PO line notes now carry forward to the receipt and AP invoice screens</li>
+                    <li>Blanket purchase order release history now shows cumulative quantities ordered and received</li>
+                </ul>
+
+                <h3>Sales &amp; Order Management</h3>
+                <ul>
+                    <li>Quote-to-order conversion now copies all line-level notes and attachments</li>
+                    <li>Shipping address override on orders is now tracked with a change log entry</li>
+                    <li>Credit hold status now displays as a banner alert on the customer record</li>
+                </ul>
+
+                <h2>Bug Fixes</h2>
+                <ul>
+                    <li>Fixed an issue where saving a record with a blank required field would clear other unsaved fields</li>
+                    <li>Resolved a display bug in the AP aging report when filtering by multiple vendors simultaneously</li>
+                    <li>Fixed incorrect tax calculation on orders with mixed taxable and non-taxable line items</li>
+                    <li>Corrected a session timeout issue that would occasionally log users out mid-workflow</li>
+                    <li>Fixed broken pagination on the open order inquiry screen when filtering by date range</li>
+                    <li>Resolved an issue where emailed documents would sometimes attach an older version of the document</li>
+                    <li>Fixed a UI overlap issue in the workflow configuration panel on smaller screen resolutions</li>
+                </ul>
+
+                <h2>Upgrade Notes</h2>
+
+                <p>Rover Web Client 2.21.0 is available now for cloud-hosted customers — no action required, the update has been automatically applied. On-premise customers should contact <a href="../contact.html" style="color: var(--accent-orange);">Zumasys support</a> to schedule their upgrade.</p>
+
+                <p>The new workflow and approval features require administrator setup before they are active for end users. See the Rover Knowledge Base or contact your implementation consultant for configuration guidance.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">📋</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys ships regular updates to Rover ERP based on customer feedback, industry trends, and our internal roadmap. Release notices are published with every major version to keep customers informed of what's new and changed.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="master-class-rover-bi.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Rover ERP Master Class – Rover BI Power Users</div>
+                </div>
+            </a>
+            <a href="january-demo-day-2026.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">January Demo Day – Flexible Web Workflows, Approval Logic &amp; .NET Client Quality-of-Life Improvements</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

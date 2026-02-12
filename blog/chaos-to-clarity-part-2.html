@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos to Clarity, Part 2: From Report-Hunting to Real-Time Answers on Your ERP Data | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-insights">Insights</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">November 7, 2025</span>
+            </div>
+            <h1>Chaos to Clarity, Part 2: From Report-Hunting to Real-Time Answers on Your ERP Data</h1>
+            <p class="post-subtitle">In part two of our Chaos to Clarity series, Tyler Hansen and Mike Wright showed how building AI on a secure platform that's integrated to your ERP turns "go build a report" into "get an answer and act."</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>In Part 1 of the Chaos to Clarity series, we covered the BUILD Framework™ — a practical methodology for manufacturers who want to move from AI experimentation to production-ready AI that actually runs on their business. In this second session, Tyler Hansen (Implementation Consultant) and Mike Wright (CTO, Zumasys) went a level deeper: how do you get real-time answers from your ERP data, and why does the platform you build on matter so much?</p>
+
+                <div class="highlight-box">
+                    <h4>About This Series</h4>
+                    <p>The Chaos to Clarity Webinar Series explores how manufacturing and distribution businesses can move from data chaos — scattered reports, slow queries, gut-feel decisions — to clarity: real-time answers from their actual business data, delivered to the people who need them.</p>
+                </div>
+
+                <h2>The Report-Hunting Problem</h2>
+
+                <p>Every operations leader in manufacturing knows the scenario: You need a number. You ask someone. They say they'll get back to you. Twenty minutes later, you have a spreadsheet — exported from the ERP, reformatted, maybe manually combined with data from another source — that answers approximately what you asked, as of data that may or may not be current.</p>
+
+                <p>This isn't a failure of the people involved. It's a failure of the tools. When getting an answer requires running a report, you get slow, periodic answers. When getting an answer requires real-time query access, you get fast, current answers.</p>
+
+                <p>The gap between those two states is enormous — and AI is what closes it.</p>
+
+                <h2>What "Real-Time Answers" Actually Means</h2>
+
+                <p>Mike opened the session by drawing a sharp distinction between two types of AI on ERP data:</p>
+
+                <h3>AI on Top of Reports</h3>
+                <p>Some AI tools work by letting you ask questions about pre-built reports or static data exports. You get an answer — but the answer is only as current as the last report run, and only as complete as the data that was included in that report. This is AI on top of a reporting layer, not AI on top of your ERP.</p>
+
+                <h3>AI Connected to Live ERP Data</h3>
+                <p>Rover AI works differently. When you ask a question — "What's the on-time delivery rate for our top 10 customers this quarter?" — the AI doesn't consult a cached report. It queries your live Rover ERP data in real time. The answer reflects what's actually in the system right now, not 24 hours ago.</p>
+
+                <p>That distinction matters enormously for operational decisions. Inventory availability, order status, production schedule — these change hourly. Decisions made on day-old data are made with incomplete information.</p>
+
+                <h2>The Platform Question</h2>
+
+                <p>Tyler walked through what he called the "platform trap" — the tendency to build AI on top of isolated data exports rather than on a secure, integrated ERP platform. The consequences are predictable:</p>
+
+                <ul>
+                    <li><strong>Data freshness:</strong> AI answers are only as current as the last export</li>
+                    <li><strong>Security gaps:</strong> Data sitting in separate AI environments isn't protected by your ERP's security model</li>
+                    <li><strong>Maintenance burden:</strong> Every time your data structure changes, your AI pipeline breaks</li>
+                    <li><strong>Incomplete context:</strong> Isolated exports miss the relational context that makes ERP data meaningful — a customer order means nothing without the customer's credit status, shipping preferences, and history</li>
+                </ul>
+
+                <p>Building AI on the Rover platform avoids these traps. The security model, the live data connection, and the relational context are all inherited from Rover ERP — not rebuilt from scratch for each AI application.</p>
+
+                <h2>Live Demo: Questions That Used to Require Reports</h2>
+
+                <p>The session included a live demonstration of the Rover AI assistant answering questions that would previously have required building and running reports:</p>
+
+                <ul>
+                    <li>"Which open purchase orders are past their expected receipt date, and what's the combined value?" → Answered in 4 seconds</li>
+                    <li>"What's our current inventory value for finished goods vs. raw materials?" → Answered in 2 seconds</li>
+                    <li>"Which customers placed orders last quarter but haven't ordered anything in the past 30 days?" → Answered in 6 seconds, with a downloadable list</li>
+                    <li>"How does this month's production output compare to the same month last year?" → Answered with a comparison chart in 8 seconds</li>
+                </ul>
+
+                <p>For each question, Tyler also demonstrated what the "old way" looked like — showing the report that would have been required, the typical time to run and export it, and the manual steps needed to get to the same answer.</p>
+
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <span class="stat-number">Seconds</span>
+                        <span class="stat-desc">To get answers that previously took 20+ minutes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Live</span>
+                        <span class="stat-desc">Data from Rover ERP — not cached exports</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Zero</span>
+                        <span class="stat-desc">Reports to build, run, or export</span>
+                    </div>
+                </div>
+
+                <h2>What's in Part 3</h2>
+
+                <p>The Chaos to Clarity series continues with a session on AI-driven exception management — using AI to proactively surface the issues that need your attention rather than waiting for you to go looking for them. Watch for the announcement in the coming weeks.</p>
+
+                <p>Missed Part 1? The recording of the BUILD Framework™ session is available <a href="build-framework-manufacturing-ai.html" style="color: var(--accent-orange);">in our blog</a>. Both sessions are also available in the Rover Knowledge Base for active customers.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">💡</div>
+                    <div class="blog-author-info">
+                        <h4>Tyler Hansen &amp; Mike Wright</h4>
+                        <p>Tyler Hansen is an Implementation Consultant at Zumasys with hands-on manufacturing and ERP consulting experience. Mike Wright is CTO at Zumasys, responsible for Rover ERP's technical architecture and AI platform strategy.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="october-2025-release.html">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">Rover ERP October 2025 Release Notice</div>
+                </div>
+            </a>
+            <a href="october-demo-day-2025.html" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">October Demo Day – Smarter Clients, Custom Highlights &amp; Better Error Handling</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>
