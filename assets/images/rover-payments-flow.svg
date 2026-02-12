@@ -1,0 +1,72 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a" x1="170" y1="250" x2="1030" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="#0A0F1A"/>
+  <circle cx="350" cy="380" r="220" fill="#06B6D4" fill-opacity="0.14" filter="url(#glow)"/>
+  <circle cx="870" cy="420" r="240" fill="#10B981" fill-opacity="0.12" filter="url(#glow)"/>
+
+  <!-- nodes -->
+  <g stroke="rgba(148,163,184,0.22)" stroke-width="2" fill="#111827">
+    <rect x="170" y="300" width="260" height="200" rx="24"/>
+    <rect x="470" y="260" width="260" height="280" rx="24"/>
+    <rect x="770" y="300" width="260" height="200" rx="24"/>
+  </g>
+
+  <!-- node headers -->
+  <g font-family="DM Sans, system-ui" fill="rgba(248,250,252,0.9)">
+    <text x="210" y="345" font-size="18" font-weight="700">Invoice</text>
+    <text x="510" y="305" font-size="18" font-weight="700">Rover Pay</text>
+    <text x="810" y="345" font-size="18" font-weight="700">Cash</text>
+  </g>
+
+  <g font-family="DM Sans, system-ui" fill="rgba(148,163,184,0.78)">
+    <text x="210" y="370" font-size="14">Send invoice + link</text>
+    <text x="510" y="330" font-size="14">Collect • Reconcile • Report</text>
+    <text x="810" y="370" font-size="14">Settle + update AR</text>
+  </g>
+
+  <!-- invoice lines -->
+  <g fill="rgba(148,163,184,0.28)">
+    <rect x="210" y="410" width="180" height="10" rx="5"/>
+    <rect x="210" y="432" width="160" height="10" rx="5"/>
+    <rect x="210" y="454" width="120" height="10" rx="5"/>
+  </g>
+
+  <!-- rover pay chips -->
+  <rect x="510" y="380" width="180" height="38" rx="19" fill="rgba(6,182,212,0.12)" stroke="rgba(6,182,212,0.35)"/>
+  <rect x="530" y="394" width="88" height="10" rx="5" fill="rgba(6,182,212,0.85)"/>
+  <text x="625" y="406" font-family="Space Mono, ui-monospace" font-size="12" fill="rgba(6,182,212,0.95)">ACH</text>
+
+  <rect x="510" y="430" width="200" height="38" rx="19" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.35)"/>
+  <rect x="530" y="444" width="110" height="10" rx="5" fill="rgba(16,185,129,0.85)"/>
+  <text x="655" y="456" font-family="Space Mono, ui-monospace" font-size="12" fill="rgba(16,185,129,0.95)">CARD</text>
+
+  <rect x="510" y="480" width="170" height="38" rx="19" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.35)"/>
+  <rect x="530" y="494" width="92" height="10" rx="5" fill="rgba(59,130,246,0.85)"/>
+  <text x="630" y="506" font-family="Space Mono, ui-monospace" font-size="12" fill="rgba(59,130,246,0.95)">WIRE</text>
+
+  <!-- cash lines -->
+  <g fill="rgba(148,163,184,0.28)">
+    <rect x="810" y="410" width="180" height="10" rx="5"/>
+    <rect x="810" y="432" width="150" height="10" rx="5"/>
+    <rect x="810" y="454" width="135" height="10" rx="5"/>
+  </g>
+
+  <!-- flow arrows -->
+  <path d="M430 400C460 400 450 400 470 400" stroke="url(#a)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M730 400C760 400 750 400 770 400" stroke="url(#a)" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M456 400l-14-10v20l14-10Z" fill="rgba(6,182,212,0.9)"/>
+  <path d="M756 400l-14-10v20l14-10Z" fill="rgba(16,185,129,0.9)"/>
+
+  <!-- caption -->
+  <text x="470" y="610" font-family="DM Sans, system-ui" font-size="16" fill="rgba(148,163,184,0.85)">Order-to-cash visibility with automatic reconciliation</text>
+</svg>

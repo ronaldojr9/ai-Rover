@@ -48,9 +48,31 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1200px;
             position: relative;
             z-index: 1;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-visual {
+            background: rgba(26, 34, 52, 0.55);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 14px;
         }
 
         .hero h1 {
@@ -406,6 +428,14 @@
         }
 
         @media (max-width: 1024px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                max-width: 720px;
+            }
+
             .problem-grid,
             .platform-cards {
                 grid-template-columns: 1fr;
@@ -477,25 +507,33 @@
     <section class="hero">
         <div class="hero-grid"></div>
         <div class="hero-content">
-            <div class="badge fade-in-up">
-                <span class="badge-dot"></span>
-                Now available for any ERP
-            </div>
-            <h1 class="fade-in-up delay-1">See What Your ERP <span>Is Missing</span></h1>
-            <p class="hero-subtitle fade-in-up delay-2">Rover AI brings real-time intelligence to your manufacturing operations—surfacing insights your current system can't see. No migration required.</p>
-            <div class="hero-ctas fade-in-up delay-3">
-                <a href="demo.html" class="btn btn-primary btn-lg">Get a Demo</a>
-                <a href="#" class="btn btn-secondary btn-lg">Watch 2-Min Overview</a>
-            </div>
-            <div class="hero-integrations fade-in-up delay-4">
-                <span>Works with:</span>
-                <div class="integration-logos">
-                    <div class="integration-logo">SAP</div>
-                    <div class="integration-logo">EPI</div>
-                    <div class="integration-logo">INF</div>
-                    <div class="integration-logo">SYS</div>
-                    <div class="integration-logo">QB</div>
-                    <div class="integration-logo">+</div>
+            <div class="hero-inner">
+                <div>
+                    <div class="badge fade-in-up">
+                        <span class="badge-dot"></span>
+                        Now available for any ERP
+                    </div>
+                    <h1 class="fade-in-up delay-1">See What Your ERP <span>Is Missing</span></h1>
+                    <p class="hero-subtitle fade-in-up delay-2">Rover AI brings real-time intelligence to your manufacturing operations—surfacing insights your current system can't see. No migration required.</p>
+                    <div class="hero-ctas fade-in-up delay-3">
+                        <a href="demo.html" class="btn btn-primary btn-lg">Get a Demo</a>
+                        <a href="#" class="btn btn-secondary btn-lg">Watch 2-Min Overview</a>
+                    </div>
+                    <div class="hero-integrations fade-in-up delay-4">
+                        <span>Works with:</span>
+                        <div class="integration-logos">
+                            <div class="integration-logo">SAP</div>
+                            <div class="integration-logo">EPI</div>
+                            <div class="integration-logo">INF</div>
+                            <div class="integration-logo">SYS</div>
+                            <div class="integration-logo">QB</div>
+                            <div class="integration-logo">+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual fade-in-up delay-2" aria-hidden="true">
+                    <img src="assets/images/rover-hero-dashboard.svg" alt="" loading="eager">
                 </div>
             </div>
         </div>

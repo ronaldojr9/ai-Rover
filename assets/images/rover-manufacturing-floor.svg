@@ -1,0 +1,66 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0F1A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="200" y1="200" x2="1000" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF6B35" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.22" stroke="rgba(148,163,184,0.25)">
+    <path d="M0 140H1200"/>
+    <path d="M0 260H1200"/>
+    <path d="M0 380H1200"/>
+    <path d="M0 500H1200"/>
+    <path d="M0 620H1200"/>
+    <path d="M160 0V800"/>
+    <path d="M320 0V800"/>
+    <path d="M480 0V800"/>
+    <path d="M640 0V800"/>
+    <path d="M800 0V800"/>
+    <path d="M960 0V800"/>
+    <path d="M1120 0V800"/>
+  </g>
+
+  <!-- factory silhouette -->
+  <path d="M130 580V430L260 500V430L410 510V420L560 500V405L720 485V430L860 500V460L1020 520V580H130Z" fill="#1A2234" stroke="rgba(148,163,184,0.22)" stroke-width="2"/>
+  <rect x="160" y="330" width="140" height="250" rx="14" fill="#111827" stroke="rgba(148,163,184,0.22)"/>
+  <rect x="330" y="310" width="170" height="270" rx="14" fill="#111827" stroke="rgba(148,163,184,0.22)"/>
+  <rect x="520" y="290" width="200" height="290" rx="14" fill="#111827" stroke="rgba(148,163,184,0.22)"/>
+  <rect x="745" y="320" width="170" height="260" rx="14" fill="#111827" stroke="rgba(148,163,184,0.22)"/>
+
+  <!-- windows -->
+  <g fill="rgba(248,250,252,0.14)">
+    <rect x="190" y="370" width="80" height="14" rx="7"/>
+    <rect x="190" y="400" width="80" height="14" rx="7"/>
+    <rect x="190" y="430" width="80" height="14" rx="7"/>
+
+    <rect x="360" y="350" width="110" height="14" rx="7"/>
+    <rect x="360" y="380" width="110" height="14" rx="7"/>
+    <rect x="360" y="410" width="110" height="14" rx="7"/>
+
+    <rect x="555" y="330" width="130" height="14" rx="7"/>
+    <rect x="555" y="360" width="130" height="14" rx="7"/>
+    <rect x="555" y="390" width="130" height="14" rx="7"/>
+
+    <rect x="775" y="360" width="110" height="14" rx="7"/>
+    <rect x="775" y="390" width="110" height="14" rx="7"/>
+    <rect x="775" y="420" width="110" height="14" rx="7"/>
+  </g>
+
+  <!-- accent signal path -->
+  <path d="M180 640C300 590 350 690 470 640C590 590 650 720 780 650C905 580 965 680 1070 610" stroke="url(#acc)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M180 640C300 590 350 690 470 640C590 590 650 720 780 650C905 580 965 680 1070 610" stroke="rgba(248,250,252,0.10)" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- labels -->
+  <g font-family="DM Sans, system-ui" fill="rgba(148,163,184,0.85)">
+    <text x="160" y="230" font-size="18">Operations</text>
+    <text x="160" y="255" font-size="14" fill="rgba(148,163,184,0.65)">Inventory • Production • Shipping</text>
+  </g>
+</svg>
