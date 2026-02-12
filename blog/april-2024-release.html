@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rover ERP April 2024 Release Notice | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights &amp; updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story &amp; values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag blog-tag-release">Release</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">May 3, 2024</span>
+            </div>
+            <h1>Rover ERP April 2024 Release Notice</h1>
+            <p class="post-subtitle">The April 2024 release adds GL Journal Entry via Rover Web, post-creation pick ticket printing, user-based printer defaults, and real-time inventory visibility in part search.</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+
+                <p>The April 2024 release, posted May 3, 2024, continues Rover ERP's commitment to expanding Rover Web capabilities while improving day-to-day usability across the platform. This release (covering Web Client versions 2.1.0 through 2.4.0) brings four meaningful improvements: GL Journal Entry in the web interface, streamlined pick ticket printing, user-based printer defaults, and in-context inventory visibility during part search and order entry.</p>
+
+                <h2>Finance: GL Journal Entry via Rover Web</h2>
+                <p>A new GL Transaction entry screen is now available in Rover Web, bringing one of the most-requested accounting functions to the modern interface. Users can now enter new General Ledger journal entries without needing to open the legacy client.</p>
+                <ul>
+                    <li><strong>Standard debit/credit entry</strong> with full account lookup — search accounts by number or description without memorizing codes</li>
+                    <li>Supports all standard journal entry types including recurring entries and adjusting entries</li>
+                    <li>Validation enforces balanced entries before submission, preventing unbalanced journals from reaching the ledger</li>
+                </ul>
+                <p>This is part of an ongoing initiative to bring full accounting functionality to the Rover Web interface, reducing dependency on the legacy client for finance team workflows. Additional GL and AR/AP functionality is planned for upcoming releases.</p>
+
+                <h2>Shipping &amp; Fulfillment: Pick Ticket Improvements</h2>
+                <p>Two related improvements make the order fulfillment workflow more efficient for warehouse teams:</p>
+
+                <h3>Print on Creation</h3>
+                <p>A pick ticket can now be printed immediately after order creation — without navigating to a separate print queue or returning to the order later. The moment an order is saved, the print prompt appears. For high-volume fulfillment operations, this eliminates a manual step from every single order.</p>
+
+                <h3>User-Based Default Printer</h3>
+                <p>Each user can now set a preferred default pick ticket printer in their personal Settings. Set it once and the system remembers it for every future order. Users working at different workstations or in different areas of the warehouse can each have their own default — so the right printer fires every time without any selection required at the moment of printing.</p>
+
+                <div class="highlight-box">
+                    <h4>Small Change, Big Impact</h4>
+                    <p>In a fulfillment operation processing hundreds of orders per day, eliminating even one click per order adds up to hours of recovered time per week. These two pick ticket improvements work together to remove friction at the highest-frequency point in the fulfillment workflow.</p>
+                </div>
+
+                <h2>Inventory Visibility: Part Search Enhancements</h2>
+                <p>One of the most common interruptions in the order entry process is needing to check stock levels mid-order — navigating to a different screen, looking up the part, then navigating back. This release eliminates that interruption entirely.</p>
+                <ul>
+                    <li><strong>Inventory in part search</strong> — on-hand quantities are now visible directly in the part search screen. No need to open a separate inventory inquiry.</li>
+                    <li><strong>Warehouse breakdown on click</strong> — clicking on the available quantity label expands a warehouse-by-warehouse breakdown, showing exactly where stock is located across your facility or facilities</li>
+                    <li><strong>Also available in cart view</strong> — the same inventory visibility is available in the POS/order entry cart, so you can check availability without leaving the order in progress</li>
+                </ul>
+                <p>For customer service representatives and sales staff entering orders, this means faster answers to "do we have it?" without putting the customer on hold or switching screens.</p>
+
+                <h2>Web Client Version History</h2>
+                <p>This release encompasses Web Client versions 2.1.0 through 2.4.0. Here's what each version introduced:</p>
+
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border);">
+                                <th style="text-align: left; padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">Version</th>
+                                <th style="text-align: left; padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">Changes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem;">2.1.0</td>
+                                <td style="padding: 0.75rem 1rem;">Initial GL Journal Entry screen in Rover Web</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem;">2.2.0</td>
+                                <td style="padding: 0.75rem 1rem;">Pick ticket default printer per user in Settings</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem;">2.3.0</td>
+                                <td style="padding: 0.75rem 1rem;">Inventory quantities displayed in part search screen</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem;">2.3.1</td>
+                                <td style="padding: 0.75rem 1rem;">Bug fixes and stability improvements</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem 1rem; font-family: 'Space Mono', monospace; font-size: 0.85rem;">2.4.0</td>
+                                <td style="padding: 0.75rem 1rem;">Inventory visibility extended to cart/order entry view</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>How to Update</h2>
+                <p>Rover Web updates are deployed automatically for cloud-hosted customers — no action is required. If you're on the cloud, you already have these features.</p>
+                <p>On-premise customers should contact <a href="../contact.html">Zumasys support</a> to schedule their upgrade. The support team will coordinate a maintenance window and handle the update process. If your organization is still running an on-premise instance and you'd like to explore the benefits of cloud hosting, <a href="../demo.html">reach out to our team</a> — automatic updates are just one of many advantages.</p>
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">🌱</div>
+                    <div class="blog-author-info">
+                        <h4>Rover Product Team</h4>
+                        <p>The Rover Product Team at Zumasys is continuously evolving Rover ERP to meet the needs of modern manufacturers and distributors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="erp-insights-efficiency.html"><span>←</span><div><div class="nav-label">Previous Post</div><div class="nav-title">Rover ERP Insights: Enhancing Efficiency and Productivity</div></div></a>
+            <a href="inventory-accuracy.html" class="next-post"><div><div class="nav-label">Next Post</div><div class="nav-title">Leveling Up Your Organization's Inventory Accuracy</div></div><span>→</span></a>
+        </div>
+    </div>
+
+    <section class="cta-section"><div class="cta-content"><h2>Ready to See Rover ERP in Action?</h2><p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p><a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a></div></section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>

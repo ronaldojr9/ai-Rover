@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    =====================================================================
+    BLOG POST TEMPLATE - INSTRUCTIONS
+    =====================================================================
+
+    To create a new blog post page:
+    1. Copy this file and rename it (e.g., rover-erp-december-2024-release.html)
+    2. Replace all {{PLACEHOLDER}} values with actual content
+    3. Update the <title> tag
+    4. Update prev/next navigation links
+
+    Placeholders to replace:
+    - {{POST_TITLE}} - Full post title
+    - {{POST_DATE}} - e.g., "December 23, 2024"
+    - {{POST_CATEGORY}} - e.g., "Release Notes", "Insights", "Events", "Guide"
+    - {{POST_TAG_CLASS}} - CSS class: blog-tag-release / blog-tag-insights / blog-tag-event / blog-tag-guide
+    - {{POST_SUBTITLE}} - 1-2 sentence summary shown in hero
+    - {{POST_AUTHOR_NAME}} - Author name
+    - {{POST_AUTHOR_TITLE}} - Author title/role
+    - {{POST_AUTHOR_EMOJI}} - An emoji for the author avatar
+    - {{POST_BODY}} - Full HTML body content
+    - {{PREV_POST_URL}} - URL to previous post
+    - {{PREV_POST_TITLE}} - Previous post title
+    - {{NEXT_POST_URL}} - URL to next post
+    - {{NEXT_POST_TITLE}} - Next post title
+
+    =====================================================================
+    -->
+    <title>{{POST_TITLE}} | Rover Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a>
+        <ul class="nav-links">
+            <li><a href="../ai.html">AI</a></li>
+            <li><a href="../pay.html">Pay</a></li>
+            <li><a href="../erp.html">ERP</a></li>
+            <li><a href="../platform.html">Platform</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../customers.html">Customers</a></li>
+            <li class="has-dropdown">
+                <a href="#">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="../customers.html">Success Stories<span>Customer case studies</span></a>
+                    <a href="index.html" class="active">Blog<span>Insights & updates</span></a>
+                    <a href="../why-rover.html">Why Rover<span>Our story & values</span></a>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-cta"><a href="../demo.html" class="btn btn-primary">Get a Demo</a></div>
+    </nav>
+
+    <section class="blog-post-hero">
+        <div class="blog-post-hero-content">
+            <div class="blog-post-meta">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← All Posts</a>
+                <span class="blog-tag {{POST_TAG_CLASS}}">{{POST_CATEGORY}}</span>
+                <span style="color: var(--text-muted); font-size: 0.85rem; font-family: 'Space Mono', monospace;">{{POST_DATE}}</span>
+            </div>
+            <h1>{{POST_TITLE}}</h1>
+            <p class="post-subtitle">{{POST_SUBTITLE}}</p>
+        </div>
+    </section>
+
+    <section class="section blog-post-content">
+        <div class="container">
+            <div class="blog-post-body">
+                {{POST_BODY}}
+
+                <div class="blog-author-box">
+                    <div class="blog-author-avatar">{{POST_AUTHOR_EMOJI}}</div>
+                    <div class="blog-author-info">
+                        <h4>{{POST_AUTHOR_NAME}}</h4>
+                        <p>{{POST_AUTHOR_TITLE}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-post-nav">
+        <div class="blog-post-nav-inner">
+            <a href="{{PREV_POST_URL}}">
+                <span>←</span>
+                <div>
+                    <div class="nav-label">Previous Post</div>
+                    <div class="nav-title">{{PREV_POST_TITLE}}</div>
+                </div>
+            </a>
+            <a href="{{NEXT_POST_URL}}" class="next-post">
+                <div>
+                    <div class="nav-label">Next Post</div>
+                    <div class="nav-title">{{NEXT_POST_TITLE}}</div>
+                </div>
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to See Rover ERP in Action?</h2>
+            <p>Get a personalized demo and discover how Rover can transform your manufacturing operations.</p>
+            <a href="../demo.html" class="btn btn-primary btn-lg">Schedule Your Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="../index.html" class="logo"><div class="logo-icon">R</div> Rover</a><p>Manufacturing intelligence platform from Zumasys.</p></div>
+            <div class="footer-links"><h4>Platform</h4><ul><li><a href="../ai.html">Rover AI</a></li><li><a href="../pay.html">Rover Pay</a></li><li><a href="../erp.html">Rover ERP</a></li></ul></div>
+            <div class="footer-links"><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li><li><a href="../customers.html">Success Stories</a></li><li><a href="../why-rover.html">Why Rover</a></li></ul></div>
+            <div class="footer-links"><h4>Company</h4><ul><li><a href="../why-rover.html">About</a></li><li><a href="../customers.html">Customers</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Zumasys, Inc.</p></div>
+    </footer>
+</body>
+</html>
