@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lighting Manufacturing ERP | Rover ERP</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cerulean: #009bd8;
+    --tarawera: #0b3655;
+    --jaffa: #ec7834;
+    --manatee: #838690;
+    --tarawera-deep: #072740;
+    --cerulean-light: #e6f5fc;
+    --cerulean-pale: #f0f9fd;
+    --jaffa-light: #fef3eb;
+    --white: #ffffff;
+    --off-white: #f8f9fb;
+    --text-dark: #1a2a3a;
+    --text-body: #3d4f5f;
+    --text-muted: #6b7a8a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--text-body);
+    line-height: 1.6;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11, 54, 85, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 155, 216, 0.15);
+    transition: box-shadow 0.3s;
+  }
+  .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between; height: 70px;
+  }
+  .nav-logo {
+    font-weight: 800; font-size: 1.5rem; color: var(--white);
+    text-decoration: none; letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-logo .accent { color: var(--cerulean); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-back {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500; transition: color 0.3s;
+    display: flex; align-items: center; gap: 0.35rem;
+  }
+  .nav-back:hover { color: var(--cerulean); }
+  .nav-cta {
+    background: var(--jaffa); color: var(--white);
+    padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none;
+    font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em;
+    transition: all 0.3s; border: 2px solid var(--jaffa);
+  }
+  .nav-cta:hover { background: transparent; color: var(--jaffa); }
+
+  /* HERO */
+  .hero {
+    position: relative; min-height: 520px; display: flex; align-items: center;
+    background: linear-gradient(165deg, var(--tarawera-deep) 0%, var(--tarawera) 50%, #0d4268 100%);
+    overflow: hidden; padding-top: 70px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 75% 40%, rgba(0,155,216,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(236,120,52,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,155,216,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,155,216,0.04) 1px, transparent 1px);
+    background-size: 60px 60px; pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 5rem 2rem;
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(0,155,216,0.12); border: 1px solid rgba(0,155,216,0.25);
+    color: var(--cerulean); padding: 0.4rem 1rem; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease both;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px; background: var(--cerulean);
+    border-radius: 50%; animation: pulse 2s infinite;
+  }
+  .hero h1 {
+    font-size: 3rem; font-weight: 800; color: var(--white);
+    line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s 0.1s ease both;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--cerulean), #33c0f0);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+    max-width: 540px; margin-bottom: 2rem; font-weight: 400;
+    animation: fadeInUp 0.8s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem;
+    animation: fadeInUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--jaffa); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 1rem; transition: all 0.3s; border: 2px solid var(--jaffa);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(236,120,52,0.35); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 1rem;
+    border: 2px solid rgba(255,255,255,0.25); transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--cerulean); color: var(--cerulean); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    animation: fadeInUp 0.8s 0.4s ease both;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 1.5rem; transition: all 0.35s;
+  }
+  .stat-card:hover {
+    background: rgba(0,155,216,0.08); border-color: rgba(0,155,216,0.2);
+    transform: translateY(-3px);
+  }
+  .stat-number {
+    font-size: 2rem; font-weight: 800; color: var(--cerulean);
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.35rem;
+  }
+  .stat-label {
+    font-size: 0.8rem; color: rgba(255,255,255,0.55);
+    font-weight: 500; letter-spacing: 0.02em;
+  }
+
+  /* SECTIONS */
+  .section { padding: 5.5rem 2rem; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
+  .section-tag {
+    display: inline-block; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--jaffa); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-size: 2.2rem; font-weight: 800; color: var(--tarawera);
+    letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem;
+  }
+  .section-desc {
+    font-size: 1.02rem; color: var(--text-muted); line-height: 1.7;
+  }
+
+  /* PAIN POINTS */
+  .pain-section { background: var(--off-white); }
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  }
+  .pain-card {
+    background: var(--white); border-radius: 16px; padding: 2rem;
+    border: 1px solid rgba(131,134,144,0.12); transition: all 0.4s;
+    position: relative; overflow: hidden;
+  }
+  .pain-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #d32f2f, #ff7043); opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .pain-card:hover::before { opacity: 1; }
+  .pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(11,54,85,0.08); border-color: transparent; }
+  .pain-emoji { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .pain-title { font-size: 1.1rem; font-weight: 700; color: var(--tarawera); margin-bottom: 0.5rem; }
+  .pain-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* SOLUTIONS */
+  .solution-section { background: var(--white); }
+  .solution-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+  }
+  .solution-card {
+    background: var(--cerulean-pale); border-radius: 16px; padding: 2rem;
+    border: 1px solid rgba(0,155,216,0.1); transition: all 0.4s;
+  }
+  .solution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,155,216,0.1);
+    border-color: rgba(0,155,216,0.2);
+  }
+  .sol-number {
+    font-size: 0.7rem; font-weight: 700; color: var(--cerulean);
+    letter-spacing: 0.1em; margin-bottom: 0.5rem;
+  }
+  .sol-title { font-size: 1.08rem; font-weight: 700; color: var(--tarawera); margin-bottom: 0.5rem; }
+  .sol-desc { font-size: 0.88rem; color: var(--text-body); line-height: 1.65; margin-bottom: 0.75rem; }
+  .sol-outcome {
+    font-size: 0.82rem; color: var(--cerulean); font-weight: 600;
+    padding-top: 0.75rem; border-top: 1px solid rgba(0,155,216,0.15);
+    line-height: 1.5;
+  }
+
+  /* RESULTS */
+  .results-section {
+    background: linear-gradient(165deg, var(--tarawera-deep) 0%, var(--tarawera) 100%);
+    position: relative; overflow: hidden;
+  }
+  .results-section::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,155,216,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,155,216,0.03) 1px, transparent 1px);
+    background-size: 80px 80px; pointer-events: none;
+  }
+  .results-section .section-header { position: relative; z-index: 2; }
+  .results-section .section-tag { color: var(--jaffa); }
+  .results-section .section-title { color: var(--white); }
+  .results-section .section-desc { color: rgba(255,255,255,0.6); }
+  .results-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; position: relative; z-index: 2;
+  }
+  .result-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 2rem; text-align: center;
+    transition: all 0.35s;
+  }
+  .result-card:hover {
+    background: rgba(0,155,216,0.08);
+    border-color: rgba(0,155,216,0.2);
+    transform: translateY(-4px);
+  }
+  .result-number {
+    font-size: 2.8rem; font-weight: 800; color: var(--cerulean);
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem;
+  }
+  .result-label {
+    font-size: 0.85rem; color: rgba(255,255,255,0.6);
+    font-weight: 500; line-height: 1.5;
+  }
+
+  /* USE CASE / TIMELINE */
+  .usecase-section { background: var(--off-white); }
+  .timeline {
+    max-width: 800px; margin: 0 auto; position: relative;
+    padding-left: 3rem;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(180deg, var(--cerulean), var(--jaffa));
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative; margin-bottom: 2.5rem;
+    animation: fadeInUp 0.6s ease both;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: -3rem; top: 0.25rem;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--white); border: 3px solid var(--cerulean);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1;
+  }
+  .tl-dot-inner {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--cerulean);
+  }
+  .tl-label {
+    font-size: 0.72rem; font-weight: 700; color: var(--cerulean);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.15rem;
+  }
+  .tl-time {
+    font-size: 0.85rem; font-weight: 700; color: var(--tarawera); margin-bottom: 0.35rem;
+  }
+  .tl-desc {
+    font-size: 0.92rem; color: var(--text-body); line-height: 1.6;
+    background: var(--white); border-radius: 12px; padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(131,134,144,0.1);
+  }
+
+  /* CTA */
+  .cta-section { background: var(--white); text-align: center; }
+  .cta-box { max-width: 750px; margin: 0 auto; }
+  .cta-box .section-title { margin-bottom: 1rem; }
+  .cta-box .section-desc { margin-bottom: 2.5rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary-lg {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--jaffa); color: var(--white);
+    padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none;
+    font-weight: 700; font-size: 1.05rem; transition: all 0.3s;
+    border: 2px solid var(--jaffa);
+  }
+  .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(236,120,52,0.3); }
+  .btn-outline-lg {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--tarawera);
+    padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none;
+    font-weight: 700; font-size: 1.05rem;
+    border: 2px solid rgba(11,54,85,0.2); transition: all 0.3s;
+  }
+  .btn-outline-lg:hover { border-color: var(--cerulean); color: var(--cerulean); }
+  .trust-bar {
+    display: flex; justify-content: center; align-items: center;
+    gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--text-muted); font-weight: 500;
+  }
+  .trust-item svg { width: 18px; height: 18px; stroke: var(--cerulean); fill: none; stroke-width: 2; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--tarawera-deep); padding: 3rem 2rem;
+    text-align: center; border-top: 1px solid rgba(0,155,216,0.1);
+  }
+  .footer-text { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+  .footer-text a { color: var(--cerulean); text-decoration: none; font-weight: 500; }
+  .footer-tagline { color: rgba(255,255,255,0.25); font-size: 0.78rem; margin-top: 0.5rem; font-style: italic; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero h1 { font-size: 2.4rem; }
+    .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .solution-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-sub { font-size: 1rem; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 4rem 1.25rem; }
+    .section-title { font-size: 1.75rem; }
+    .hero-actions { flex-direction: column; }
+    .cta-actions { flex-direction: column; align-items: center; }
+    .nav-back { display: none; }
+    .timeline { padding-left: 2.5rem; }
+    .tl-dot { left: -2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ROVER <span class="accent">ERP</span></a>
+    <div class="nav-links">
+      <a href="rover-industries.html" class="nav-back">← All Industries</a>
+      <a href="#cta" class="nav-cta">Schedule a Demo →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Lighting Manufacturers</div>
+      <h1>ERP Engineered for <span class='highlight'>Lighting Manufacturers</span></h1>
+      <p class="hero-sub">From LED fixtures to custom architectural solutions, Rover ERP helps lighting manufacturers manage complex BOMs, configure-to-order workflows, and accelerate production without sacrificing quality.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Schedule a Demo →</a>
+        <a href="#solutions" class="btn-secondary">See How It Works</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">BOM Variants Managed</div></div>
+      <div class="stat-card"><div class="stat-number">45%</div><div class="stat-label">Faster Config-to-Quote</div></div>
+      <div class="stat-card"><div class="stat-number">30%</div><div class="stat-label">Reduction in Scrap</div></div>
+      <div class="stat-card"><div class="stat-number">3x</div><div class="stat-label">Faster ECO Processing</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section pain-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">The Lighting Challenge</span>
+      <h2 class="section-title">When Every Fixture Is a Unique Configuration</h2>
+      <p class="section-desc">Lighting manufacturers deal with an explosion of product variants—different LED drivers, color temperatures, lens types, housing finishes, and mounting options. Managing this complexity without the right system means slow quotes, production errors, and missed deadlines.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-emoji">💡</span>
+        <h3 class="pain-title">Configuration Complexity</h3>
+        <p class="pain-desc">Hundreds of options per fixture create thousands of possible BOMs. Manual configuration leads to errors that don't surface until the production floor.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">🏗️</span>
+        <h3 class="pain-title">Multi-Level BOMs</h3>
+        <p class="pain-desc">Subassemblies within subassemblies—LED modules, drivers, housings, lenses—each with their own sourcing, lead times, and revision levels.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">🔄</span>
+        <h3 class="pain-title">Rapid Product Lifecycle</h3>
+        <p class="pain-desc">LED technology evolves fast. Managing component obsolescence, new product introductions, and engineering changes simultaneously overwhelms most systems.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">✅</span>
+        <h3 class="pain-title">Compliance & Certification</h3>
+        <p class="pain-desc">UL, DLC, Energy Star, Title 24—certification requirements vary by product and market. Tracking compliance across your catalog is a full-time job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section solution-section" id="solutions">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">How Rover Solves It</span>
+      <h2 class="section-title">Configure, Produce, Ship—With Confidence</h2>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card reveal">
+        <div class="sol-number">01</div>
+        <h3 class="sol-title">Configure-to-Order Workflows</h3>
+        <p class="sol-desc">Rules-based product configurator validates options in real-time. Sales builds valid BOMs at the point of quote—no engineering bottleneck required.</p>
+        <p class="sol-outcome">Eliminate invalid configurations and reduce quote-to-order cycle time by 45%.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sol-number">02</div>
+        <h3 class="sol-title">Multi-Level BOM Management</h3>
+        <p class="sol-desc">Manage unlimited BOM levels with revision control, effectivity dates, and where-used analysis. See the full cost picture from raw LED chips to finished goods.</p>
+        <p class="sol-outcome">One change propagates correctly across every affected assembly and work order.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sol-number">03</div>
+        <h3 class="sol-title">Production Scheduling & Routing</h3>
+        <p class="sol-desc">Visual scheduling tools account for assembly sequences, test stations, and packaging requirements. Real-time shop floor tracking keeps production on pace.</p>
+        <p class="sol-outcome">Balance your production mix across lines and shifts without overloading any single station.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sol-number">04</div>
+        <h3 class="sol-title">Product Lifecycle Management</h3>
+        <p class="sol-desc">Track every product from introduction through obsolescence. Manage engineering change orders with full impact analysis before releasing to production.</p>
+        <p class="sol-outcome">Phase in new components and phase out old ones with zero disruption to active orders.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sol-number">05</div>
+        <h3 class="sol-title">Compliance & Certification Tracking</h3>
+        <p class="sol-desc">Attach certifications to products, components, and production processes. Automated alerts when certifications approach expiration or requirements change.</p>
+        <p class="sol-outcome">Walk into any audit with complete documentation already organized and accessible.</p>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sol-number">06</div>
+        <h3 class="sol-title">Cost Analysis & Quoting</h3>
+        <p class="sol-desc">Real-time rolled-up costs across all BOM levels. Quote with confidence knowing your margins reflect actual material, labor, and overhead costs.</p>
+        <p class="sol-outcome">Win more bids with accurate, fast quotes that account for configuration-specific costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section results-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">Real Results</span>
+      <h2 class="section-title">What Lighting Manufacturers Achieve with Rover</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal">
+        <div class="result-number">45%</div>
+        <p class="result-label">Faster quote turnaround with rules-based configuration</p>
+      </div>
+      <div class="result-card reveal">
+        <div class="result-number">30%</div>
+        <p class="result-label">Reduction in production scrap through BOM accuracy</p>
+      </div>
+      <div class="result-card reveal">
+        <div class="result-number">3x</div>
+        <p class="result-label">Faster engineering change processing with impact analysis</p>
+      </div>
+      <div class="result-card reveal">
+        <div class="result-number">20%</div>
+        <p class="result-label">Improvement in on-time delivery performance</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section usecase-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-tag">Day in the Life</span>
+      <h2 class="section-title">How a Lighting Manufacturer Uses Rover</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-label">Morning</div>
+        <div class="tl-time">8:00 AM</div>
+        <div class="tl-desc">Sales configures a custom architectural fixture—color temp, driver, lens, finish—and generates an accurate quote with full BOM in 10 minutes.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-label">Mid-Morning</div>
+        <div class="tl-time">10:30 AM</div>
+        <div class="tl-desc">Engineering reviews an ECO to swap LED drivers due to supplier discontinuation. Impact analysis shows 12 active orders affected—automatically re-routed.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-label">Afternoon</div>
+        <div class="tl-time">1:00 PM</div>
+        <div class="tl-desc">Production manager checks the visual schedule—three custom runs and a stock replenishment order balanced across two assembly lines.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-label">End of Day</div>
+        <div class="tl-time">4:30 PM</div>
+        <div class="tl-desc">Quality team logs final test results. Compliance dashboard shows all shipments cleared for UL and DLC certification requirements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section" id="cta">
+  <div class="section-inner">
+    <div class="cta-box reveal">
+      <span class="section-tag">Get Started</span>
+      <h2 class="section-title">Ready to Illuminate Your&nbsp;Operations?</h2>
+      <p class="section-desc">See how Rover handles your specific configuration complexity, BOM management, and compliance requirements.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn-primary-lg">Schedule a Personalized Demo →</a>
+        <a href="#" class="btn-outline-lg">Download Industry Guide</a>
+      </div>
+      <div class="trust-bar">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Enterprise Security
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          Live in Weeks
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          95% Retention
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          30+ Years Experience
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-text">&copy; 2026 <a href="#">Zumasys, Inc.</a> — Rover ERP. All rights reserved.</p>
+  <p class="footer-tagline">Chaos to Clarity.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
