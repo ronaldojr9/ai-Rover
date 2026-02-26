@@ -61,7 +61,7 @@
         }
 
         .hero-visual {
-            background: rgba(26, 34, 52, 0.55);
+            background: var(--alpha-secondary-55);
             border: 1px solid var(--border-subtle);
             border-radius: 20px;
             padding: 1.5rem;
@@ -84,7 +84,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #ffaa80 100%);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--color-brand-primary-bright) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -164,7 +164,7 @@
         .problem-card:hover {
             border-color: var(--accent-orange);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px var(--alpha-shadow-30);
         }
 
         .problem-card::before {
@@ -186,8 +186,8 @@
         .problem-icon {
             width: 48px;
             height: 48px;
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.2);
+            background: var(--alpha-accent-10);
+            border: 1px solid var(--alpha-accent-20);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -374,7 +374,7 @@
         .erp-feature-icon {
             width: 40px;
             height: 40px;
-            background: rgba(59, 130, 246, 0.1);
+            background: var(--alpha-brand-primary-10);
             border-radius: 8px;
             display: flex;
             align-items: center;

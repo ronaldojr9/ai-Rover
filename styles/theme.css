@@ -1,0 +1,114 @@
+/* Rover Design System — Canonical Color Tokens
+   Source of truth: rover-aerospace-defense-parts.html
+   IMPORTANT: Do not hard-code hex/rgb/rgba colors outside this file.
+*/
+
+:root {
+  /* Brand */
+  --color-brand-primary: #009bd8; /* Cerulean */
+  --color-brand-secondary: #0b3655; /* Tarawera */
+  --color-accent: #ec7834; /* Jaffa */
+
+  /* Neutrals */
+  --color-neutral-0: #ffffff; /* White */
+  --color-neutral-50: #f8f9fb; /* Off-white */
+  --color-neutral-100: #f0f9fd; /* Cerulean pale */
+  --color-neutral-200: #e6f5fc; /* Cerulean light */
+  --color-neutral-500: #838690; /* Manatee */
+
+  /* Brand depth / tints */
+  --color-brand-secondary-deep: #072740; /* Tarawera deep */
+  --color-brand-secondary-mid: #0d4268; /* Used in hero gradient */
+  --color-brand-primary-bright: #33c0f0; /* Used in hero highlight gradient */
+
+  /* Text */
+  --color-text-strong: #1a2a3a; /* text-dark */
+  --color-text-body: #3d4f5f;
+  --color-text-muted: #6b7a8a;
+  --color-text-inverse: #ffffff;
+
+  /* Semantic surfaces */
+  --color-bg-main: #ffffff;
+  --color-bg-alt: #f8f9fb;
+  --color-surface: #ffffff;
+  --color-surface-tint: #f0f9fd;
+  --color-surface-tint-strong: #e6f5fc;
+
+  /* Borders */
+  --color-border: #838690;
+
+  /* Status / emphasis (from aerospace page hover strip) */
+  --color-danger: #d32f2f;
+  --color-danger-alt: #ff7043;
+
+  /* Alpha variants (centralized to eliminate rgba literals elsewhere) */
+  --alpha-nav-bg: rgba(11, 54, 85, 0.97);
+  --alpha-border-brand: rgba(0, 155, 216, 0.15);
+  --alpha-inverse-70: rgba(255, 255, 255, 0.7);
+  --alpha-inverse-60: rgba(255, 255, 255, 0.6);
+  --alpha-inverse-55: rgba(255, 255, 255, 0.55);
+  --alpha-inverse-40: rgba(255, 255, 255, 0.4);
+  --alpha-inverse-25: rgba(255, 255, 255, 0.25);
+  --alpha-surface-inverse-04: rgba(255, 255, 255, 0.04);
+  --alpha-surface-inverse-08: rgba(255, 255, 255, 0.08);
+
+  --alpha-brand-primary-12: rgba(0, 155, 216, 0.12);
+  --alpha-brand-primary-25: rgba(0, 155, 216, 0.25);
+  --alpha-brand-primary-20: rgba(0, 155, 216, 0.2);
+  --alpha-brand-primary-15: rgba(0, 155, 216, 0.15);
+  --alpha-brand-primary-10: rgba(0, 155, 216, 0.1);
+  --alpha-brand-primary-08: rgba(0, 155, 216, 0.08);
+  --alpha-brand-primary-05: rgba(0, 155, 216, 0.05);
+  --alpha-brand-primary-04: rgba(0, 155, 216, 0.04);
+  --alpha-brand-primary-03: rgba(0, 155, 216, 0.03);
+
+  --alpha-accent-35: rgba(236, 120, 52, 0.35);
+  --alpha-accent-30: rgba(236, 120, 52, 0.3);
+  --alpha-accent-20: rgba(236, 120, 52, 0.2);
+  --alpha-accent-15: rgba(236, 120, 52, 0.15);
+  --alpha-accent-10: rgba(236, 120, 52, 0.1);
+  --alpha-accent-05: rgba(236, 120, 52, 0.05);
+
+  --alpha-shadow-15: rgba(0, 0, 0, 0.15);
+  --alpha-shadow-20: rgba(0, 0, 0, 0.2);
+  --alpha-shadow-30: rgba(0, 0, 0, 0.3);
+
+  --alpha-border-neutral-12: rgba(131, 134, 144, 0.12);
+  --alpha-border-neutral-10: rgba(131, 134, 144, 0.1);
+  --alpha-border-secondary-20: rgba(11, 54, 85, 0.2);
+  --alpha-secondary-85: rgba(11, 54, 85, 0.85);
+  --alpha-secondary-55: rgba(11, 54, 85, 0.55);
+  --alpha-secondary-08: rgba(11, 54, 85, 0.08);
+
+  /* Gradients */
+  --gradient-hero-bg: linear-gradient(
+    165deg,
+    var(--color-brand-secondary-deep) 0%,
+    var(--color-brand-secondary) 50%,
+    var(--color-brand-secondary-mid) 100%
+  );
+
+  --gradient-hero-highlight: linear-gradient(
+    135deg,
+    var(--color-brand-primary),
+    var(--color-brand-primary-bright)
+  );
+
+  --gradient-danger-strip: linear-gradient(
+    90deg,
+    var(--color-danger),
+    var(--color-danger-alt)
+  );
+
+  --gradient-timeline: linear-gradient(
+    180deg,
+    var(--color-brand-primary),
+    var(--color-accent)
+  );
+
+  /* Grid overlay helpers */
+  --pattern-grid-60: linear-gradient(var(--alpha-brand-primary-04) 1px, transparent 1px),
+    linear-gradient(90deg, var(--alpha-brand-primary-04) 1px, transparent 1px);
+  --pattern-grid-80: linear-gradient(var(--alpha-brand-primary-03) 1px, transparent 1px),
+    linear-gradient(90deg, var(--alpha-brand-primary-03) 1px, transparent 1px);
+}

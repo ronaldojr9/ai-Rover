@@ -11,8 +11,8 @@
     <style>
         .pay-hero {
             padding: 10rem 3rem 6rem;
-            background: radial-gradient(ellipse at 80% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 20% 100%, rgba(255, 107, 53, 0.1) 0%, transparent 50%), var(--bg-primary);
+            background: radial-gradient(ellipse at 80% 0%, var(--alpha-brand-primary-15) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 100%, var(--alpha-accent-10) 0%, transparent 50%), var(--bg-primary);
             position: relative;
         }
         .pay-hero-content {
@@ -34,10 +34,10 @@
         .pay-stat-label { font-size: 0.85rem; color: var(--text-muted); }
         .pay-visual { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2rem; }
         .pay-visual-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); }
-        .pay-visual-badge { background: rgba(16, 185, 129, 0.1); color: var(--accent-green); font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 100px; font-weight: 600; }
+        .pay-visual-badge { background: var(--alpha-brand-primary-10); color: var(--accent-green); font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 100px; font-weight: 600; }
         .pay-transaction { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: 10px; margin-bottom: 0.75rem; }
         .pay-transaction-left { display: flex; align-items: center; gap: 1rem; }
-        .pay-transaction-icon { width: 40px; height: 40px; background: rgba(6, 182, 212, 0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .pay-transaction-icon { width: 40px; height: 40px; background: var(--alpha-brand-primary-10); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
         .pay-transaction-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
         .pay-transaction-info p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
         .pay-transaction-amount .amount { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--accent-green); }
@@ -45,7 +45,7 @@
         .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
         .benefit-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
         .benefit-card:hover { border-color: var(--accent-cyan); transform: translateY(-4px); }
-        .benefit-icon { width: 48px; height: 48px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .benefit-icon { width: 48px; height: 48px; background: var(--alpha-brand-primary-10); border: 1px solid var(--alpha-brand-primary-20); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem; }
         .benefit-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
         .benefit-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         .how-pay-works { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }

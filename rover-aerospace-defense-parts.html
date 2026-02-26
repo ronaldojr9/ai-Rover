@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aerospace & Defense ERP | Rover ERP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Centralized theme tokens + shared styles -->
+  <link rel="stylesheet" href="styles/theme.css">
+
+  <style>
+    /* Page-local CSS (layout/spacing/typography preserved). Color values must reference tokens. */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; color: var(--color-text-body); line-height: 1.6; background: var(--color-bg-main); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--alpha-nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--alpha-border-brand); transition: box-shadow 0.3s; }
+    .nav.scrolled { box-shadow: 0 4px 30px var(--alpha-shadow-15); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .nav-logo { font-weight: 800; font-size: 1.5rem; color: var(--color-text-inverse); text-decoration: none; letter-spacing: -0.02em; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-logo .accent { color: var(--color-brand-primary); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-back { color: var(--alpha-inverse-70); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.3s; display: flex; align-items: center; gap: 0.35rem; }
+    .nav-back:hover { color: var(--color-brand-primary); }
+    .nav-cta { background: var(--color-accent); color: var(--color-text-inverse); padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.02em; transition: all 0.3s; border: 2px solid var(--color-accent); }
+    .nav-cta:hover { background: transparent; color: var(--color-accent); }
+
+    /* HERO */
+    .hero { position: relative; min-height: 520px; display: flex; align-items: center; background: var(--gradient-hero-bg); overflow: hidden; padding-top: 70px; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 75% 40%, var(--alpha-brand-primary-08) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 20% 80%, var(--alpha-accent-05) 0%, transparent 60%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; inset: 0; background-image: var(--pattern-grid-60); background-size: 60px 60px; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 5rem 2rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--alpha-brand-primary-12); border: 1px solid var(--alpha-brand-primary-25); color: var(--color-brand-primary); padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease both; }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--color-brand-primary); border-radius: 50%; animation: pulse 2s infinite; }
+    .hero h1 { font-size: 3rem; font-weight: 800; color: var(--color-text-inverse); line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.5rem; animation: fadeInUp 0.8s 0.1s ease both; }
+    .hero h1 .highlight { background: var(--gradient-hero-highlight); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 1.1rem; color: var(--alpha-inverse-70); line-height: 1.7; max-width: 540px; margin-bottom: 2rem; font-weight: 400; animation: fadeInUp 0.8s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 1rem; animation: fadeInUp 0.8s 0.3s ease both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-accent); color: var(--color-text-inverse); padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: 2px solid var(--color-accent); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--alpha-accent-35); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--color-text-inverse); padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid var(--alpha-inverse-25); transition: all 0.3s; }
+    .btn-secondary:hover { border-color: var(--color-brand-primary); color: var(--color-brand-primary); }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; animation: fadeInUp 0.8s 0.4s ease both; }
+    .stat-card { background: var(--alpha-surface-inverse-04); border: 1px solid var(--alpha-surface-inverse-08); border-radius: 14px; padding: 1.5rem; transition: all 0.35s; }
+    .stat-card:hover { background: var(--alpha-brand-primary-08); border-color: var(--alpha-brand-primary-20); transform: translateY(-3px); }
+    .stat-number { font-size: 2rem; font-weight: 800; color: var(--color-brand-primary); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.35rem; }
+    .stat-label { font-size: 0.8rem; color: var(--alpha-inverse-55); font-weight: 500; letter-spacing: 0.02em; }
+
+    /* SECTIONS */
+    .section { padding: 5.5rem 2rem; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
+    .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; }
+    .section-title { font-size: 2.2rem; font-weight: 800; color: var(--color-brand-secondary); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+    .section-desc { font-size: 1.02rem; color: var(--color-text-muted); line-height: 1.7; }
+
+    /* PAIN POINTS */
+    .pain-section { background: var(--color-bg-alt); }
+    .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .pain-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--alpha-border-neutral-12); transition: all 0.4s; position: relative; overflow: hidden; }
+    .pain-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-danger-strip); opacity: 0; transition: opacity 0.3s; }
+    .pain-card:hover::before { opacity: 1; }
+    .pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px var(--alpha-secondary-08); border-color: transparent; }
+    .pain-emoji { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .pain-title { font-size: 1.1rem; font-weight: 700; color: var(--color-brand-secondary); margin-bottom: 0.5rem; }
+    .pain-desc { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.65; }
+
+    /* SOLUTIONS */
+    .solution-section { background: var(--color-bg-main); }
+    .solution-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .solution-card { background: var(--color-surface-tint); border-radius: 16px; padding: 2rem; border: 1px solid var(--alpha-brand-primary-10); transition: all 0.4s; }
+    .solution-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px var(--alpha-brand-primary-10); border-color: var(--alpha-brand-primary-20); }
+    .sol-number { font-size: 0.7rem; font-weight: 700; color: var(--color-brand-primary); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .sol-title { font-size: 1.08rem; font-weight: 700; color: var(--color-brand-secondary); margin-bottom: 0.5rem; }
+    .sol-desc { font-size: 0.88rem; color: var(--color-text-body); line-height: 1.65; margin-bottom: 0.75rem; }
+    .sol-outcome { font-size: 0.82rem; color: var(--color-brand-primary); font-weight: 600; padding-top: 0.75rem; border-top: 1px solid var(--alpha-brand-primary-15); line-height: 1.5; }
+
+    /* RESULTS */
+    .results-section { background: linear-gradient(165deg, var(--color-brand-secondary-deep) 0%, var(--color-brand-secondary) 100%); position: relative; overflow: hidden; }
+    .results-section::before { content: ''; position: absolute; inset: 0; background-image: var(--pattern-grid-80); background-size: 80px 80px; pointer-events: none; }
+    .results-section .section-header { position: relative; z-index: 2; }
+    .results-section .section-tag { color: var(--color-accent); }
+    .results-section .section-title { color: var(--color-text-inverse); }
+    .results-section .section-desc { color: var(--alpha-inverse-60); }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; z-index: 2; }
+    .result-card { background: var(--alpha-surface-inverse-04); border: 1px solid var(--alpha-surface-inverse-08); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.35s; }
+    .result-card:hover { background: var(--alpha-brand-primary-08); border-color: var(--alpha-brand-primary-20); transform: translateY(-4px); }
+    .result-number { font-size: 2.8rem; font-weight: 800; color: var(--color-brand-primary); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem; }
+    .result-label { font-size: 0.85rem; color: var(--alpha-inverse-60); font-weight: 500; line-height: 1.5; }
+
+    /* USE CASE / TIMELINE */
+    .usecase-section { background: var(--color-bg-alt); }
+    .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 3rem; }
+    .timeline::before { content: ''; position: absolute; left: 11px; top: 0; bottom: 0; width: 2px; background: var(--gradient-timeline); border-radius: 2px; }
+    .tl-item { position: relative; margin-bottom: 2.5rem; animation: fadeInUp 0.6s ease both; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -3rem; top: 0.25rem; width: 24px; height: 24px; border-radius: 50%; background: var(--color-surface); border: 3px solid var(--color-brand-primary); display: flex; align-items: center; justify-content: center; z-index: 1; }
+    .tl-dot-inner { width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-primary); }
+    .tl-label { font-size: 0.72rem; font-weight: 700; color: var(--color-brand-primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.15rem; }
+    .tl-time { font-size: 0.85rem; font-weight: 700; color: var(--color-brand-secondary); margin-bottom: 0.35rem; }
+    .tl-desc { font-size: 0.92rem; color: var(--color-text-body); line-height: 1.6; background: var(--color-surface); border-radius: 12px; padding: 1.25rem 1.5rem; border: 1px solid var(--alpha-border-neutral-10); }
+
+    /* CTA */
+    .cta-section { background: var(--color-bg-main); text-align: center; }
+    .cta-box { max-width: 750px; margin: 0 auto; }
+    .cta-box .section-title { margin-bottom: 1rem; }
+    .cta-box .section-desc { margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary-lg { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-accent); color: var(--color-text-inverse); padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: all 0.3s; border: 2px solid var(--color-accent); }
+    .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 30px var(--alpha-accent-30); }
+    .btn-outline-lg { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--color-brand-secondary); padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.05rem; border: 2px solid var(--alpha-border-secondary-20); transition: all 0.3s; }
+    .btn-outline-lg:hover { border-color: var(--color-brand-primary); color: var(--color-brand-primary); }
+    .trust-bar { display: flex; justify-content: center; align-items: center; gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--color-text-muted); font-weight: 500; }
+    .trust-item svg { width: 18px; height: 18px; stroke: var(--color-brand-primary); fill: none; stroke-width: 2; }
+
+    /* FOOTER */
+    .footer { background: var(--color-brand-secondary-deep); padding: 3rem 2rem; text-align: center; border-top: 1px solid var(--alpha-brand-primary-10); }
+    .footer-text { color: var(--alpha-inverse-40); font-size: 0.85rem; }
+    .footer-text a { color: var(--color-brand-primary); text-decoration: none; font-weight: 500; }
+    .footer-tagline { color: var(--alpha-inverse-25); font-size: 0.78rem; margin-top: 0.5rem; font-style: italic; }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) { .hero-inner { grid-template-columns: 1fr; gap: 3rem; } .hero h1 { font-size: 2.4rem; } .results-grid { grid-template-columns: repeat(2, 1fr); } .solution-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero-sub { font-size: 1rem; } .pain-grid { grid-template-columns: 1fr; } .results-grid { grid-template-columns: 1fr 1fr; } .section { padding: 4rem 1.25rem; } .section-title { font-size: 1.75rem; } .hero-actions { flex-direction: column; } .cta-actions { flex-direction: column; align-items: center; } .nav-back { display: none; } .timeline { padding-left: 2.5rem; } .tl-dot { left: -2.5rem; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ROVER <span class="accent">ERP</span></a>
+      <div class="nav-links">
+        <a href="rover-industries.html" class="nav-back">← All Industries</a>
+        <a href="#cta" class="nav-cta">Schedule a Demo →</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> Aerospace &amp; Defense Parts</div>
+        <h1>ERP Certified for <span class='highlight'>Aerospace &amp; Defense</span> Manufacturing</h1>
+        <p class="hero-sub">Serialized tracking, ITAR compliance, AS9100 documentation, and full traceability—Rover ERP gives aerospace and defense manufacturers the control and auditability that mission-critical production demands.</p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn-primary">Schedule a Demo →</a>
+          <a href="#solutions" class="btn-secondary">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Serialized Traceability</div></div>
+        <div class="stat-card"><div class="stat-number">Zero</div><div class="stat-label">ITAR Compliance Gaps</div></div>
+        <div class="stat-card"><div class="stat-number">50%</div><div class="stat-label">Faster Audit Preparation</div></div>
+        <div class="stat-card"><div class="stat-number">AS9100</div><div class="stat-label">Documentation Ready</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pain-section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">The Aerospace &amp; Defense Challenge</span>
+        <h2 class="section-title">When Every Part Has a Pedigree</h2>
+        <p class="section-desc">Aerospace and defense manufacturers operate under some of the most stringent requirements in any industry. Every part must be fully traceable, every process documented, and every shipment compliant—with zero margin for error.</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <span class="pain-emoji">🔗</span>
+          <h3 class="pain-title">Full Serialized Traceability</h3>
+          <p class="pain-desc">Every part—from raw material to finished component—must be traceable by serial number, lot, heat number, and material certification. Paper trails aren't enough.</p>
+        </div>
+        <div class="pain-card reveal">
+          <span class="pain-emoji">🛡️</span>
+          <h3 class="pain-title">ITAR &amp; Export Compliance</h3>
+          <p class="pain-desc">International Traffic in Arms Regulations require strict control over who accesses technical data and where products ship. Violations carry severe penalties.</p>
+        </div>
+        <div class="pain-card reveal">
+          <span class="pain-emoji">📑</span>
+          <h3 class="pain-title">AS9100 &amp; NADCAP Requirements</h3>
+          <p class="pain-desc">Quality management system documentation must be comprehensive, current, and audit-ready at all times. Preparing for audits shouldn't take weeks.</p>
+        </div>
+        <div class="pain-card reveal">
+          <span class="pain-emoji">⏳</span>
+          <h3 class="pain-title">Long Lead Times &amp; Complex BOMs</h3>
+          <p class="pain-desc">Multi-level assemblies with long-lead castings, forgings, and special materials. Managing MRP with 40+ week lead times requires precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section solution-section" id="solutions">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">How Rover Solves It</span>
+        <h2 class="section-title">Total Traceability. Total Compliance. Zero Doubt.</h2>
+      </div>
+      <div class="solution-grid">
+        <div class="solution-card reveal">
+          <div class="sol-number">01</div>
+          <h3 class="sol-title">Serialized Tracking &amp; Genealogy</h3>
+          <p class="sol-desc">Track every serial number from receiving through every production operation to shipment. Full part genealogy shows the complete history of every component.</p>
+          <p class="sol-outcome">Answer 'where did this part come from and where did it go?' in seconds, not days.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="sol-number">02</div>
+          <h3 class="sol-title">ITAR &amp; Export Compliance Controls</h3>
+          <p class="sol-desc">Role-based access controls restrict technical data visibility. Shipping compliance checks validate export classifications and denied party screening automatically.</p>
+          <p class="sol-outcome">Maintain ITAR compliance as a system-enforced policy, not a manual checklist.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="sol-number">03</div>
+          <h3 class="sol-title">AS9100 Quality Documentation</h3>
+          <p class="sol-desc">First Article Inspection reports, process control plans, non-conformance tracking, and corrective action management—all integrated into production workflows.</p>
+          <p class="sol-outcome">Walk into any AS9100 or NADCAP audit with documentation already organized and complete.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="sol-number">04</div>
+          <h3 class="sol-title">Advanced MRP &amp; Long-Lead Planning</h3>
+          <p class="sol-desc">MRP with awareness of long lead times, minimum order quantities, and approved supplier requirements. Plan months ahead with confidence in material availability.</p>
+          <p class="sol-outcome">Never miss a delivery date because a forging wasn't ordered in time.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="sol-number">05</div>
+          <h3 class="sol-title">Certificate of Conformance Management</h3>
+          <p class="sol-desc">Auto-generate CoCs with material certs, test results, and process documentation compiled from production records.</p>
+          <p class="sol-outcome">Ship parts with complete documentation packages that satisfy your most demanding customers.</p>
+        </div>
+        <div class="solution-card reveal">
+          <div class="sol-number">06</div>
+          <h3 class="sol-title">Revision &amp; Configuration Control</h3>
+          <p class="sol-desc">Manage part revisions, effectivity, and configuration with full change history. Ensure production always builds to the current approved revision.</p>
+          <p class="sol-outcome">Eliminate the risk of building to an obsolete drawing or specification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results-section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Real Results</span>
+        <h2 class="section-title">What Aerospace Manufacturers Achieve with Rover</h2>
+      </div>
+      <div class="results-grid">
+        <div class="result-card reveal">
+          <div class="result-number">100%</div>
+          <p class="result-label">Serialized traceability—every part, every operation, every shipment</p>
+        </div>
+        <div class="result-card reveal">
+          <div class="result-number">Zero</div>
+          <p class="result-label">ITAR compliance gaps with automated access controls</p>
+        </div>
+        <div class="result-card reveal">
+          <div class="result-number">50%</div>
+          <p class="result-label">Less time preparing for AS9100 and customer audits</p>
+        </div>
+        <div class="result-card reveal">
+          <div class="result-number">30%</div>
+          <p class="result-label">Reduction in non-conformances through in-process controls</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section usecase-section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Day in the Life</span>
+        <h2 class="section-title">How an Aerospace Manufacturer Uses Rover</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-label">Morning</div>
+          <div class="tl-time">7:00 AM</div>
+          <div class="tl-desc">Incoming titanium bar stock received. Heat certs scanned and linked to lot record. Material released to stock after receiving inspection approval.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-label">Mid-Morning</div>
+          <div class="tl-time">9:30 AM</div>
+          <div class="tl-desc">Machinist scans serial number at CNC station. Work instructions and drawing revision displayed. In-process inspection dimensions recorded digitally.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-label">Afternoon</div>
+          <div class="tl-time">1:00 PM</div>
+          <div class="tl-desc">Quality completes First Article Inspection on a new part number. FAI report auto-generated with dimensional data, material certs, and process records.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+          <div class="tl-label">End of Day</div>
+          <div class="tl-time">4:30 PM</div>
+          <div class="tl-desc">Shipment to prime contractor: CoC auto-compiled with complete documentation package. ITAR screening passed. Export paperwork generated.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="cta">
+    <div class="section-inner">
+      <div class="cta-box reveal">
+        <span class="section-tag">Get Started</span>
+        <h2 class="section-title">Ready to Elevate Your Aerospace&nbsp;Operations?</h2>
+        <p class="section-desc">See how Rover handles your traceability, ITAR compliance, and AS9100 documentation requirements.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn-primary-lg">Schedule a Personalized Demo →</a>
+          <a href="#" class="btn-outline-lg">Download Industry Guide</a>
+        </div>
+        <div class="trust-bar">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Enterprise Security
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            Live in Weeks
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            95% Retention
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            30+ Years Experience
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-text">&copy; 2026 <a href="#">Zumasys, Inc.</a> — Rover ERP. All rights reserved.</p>
+    <p class="footer-tagline">Chaos to Clarity.</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
