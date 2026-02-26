@@ -1,0 +1,97 @@
+:root {
+  --color-primary: #009bd8;
+  --color-primary-hover: #007fb3;
+  --color-secondary: #0b3655;
+  --color-secondary-deep: #072740;
+  --color-accent: #ec7834;
+  --color-accent-hover: #e0651e;
+  --color-info: #33c0f0;
+
+  --color-bg-main: #ffffff;
+  --color-bg-section-alt: #f8f9fb;
+  --color-bg-light: #f0f9fd;
+  --color-surface: #ffffff;
+  --color-surface-muted: #e6f5fc;
+  --color-surface-accent: #fef3eb;
+
+  --color-text-primary: #1a2a3a;
+  --color-text-secondary: #3d4f5f;
+  --color-text-muted: #6b7a8a;
+  --color-text-subtle: #838690;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #c8d0d8;
+  --color-border-soft: #e0e4e8;
+
+  --gradient-hero: linear-gradient(165deg, var(--color-secondary-deep) 0%, var(--color-secondary) 50%, #0d4268 100%);
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-info));
+  --gradient-alert: linear-gradient(90deg, #d32f2f, #ff7043);
+
+  --overlay-nav: rgba(11, 54, 85, 0.97);
+  --overlay-shadow: rgba(0, 0, 0, 0.15);
+  --overlay-card-shadow: rgba(0, 0, 0, 0.3);
+  --overlay-primary-25: rgba(0, 155, 216, 0.25);
+  --overlay-primary-20: rgba(0, 155, 216, 0.2);
+  --overlay-primary-15: rgba(0, 155, 216, 0.15);
+  --overlay-primary-12: rgba(0, 155, 216, 0.12);
+  --overlay-primary-10: rgba(0, 155, 216, 0.1);
+  --overlay-primary-08: rgba(0, 155, 216, 0.08);
+  --overlay-primary-05: rgba(0, 155, 216, 0.05);
+  --overlay-primary-04: rgba(0, 155, 216, 0.04);
+  --overlay-primary-03: rgba(0, 155, 216, 0.03);
+  --overlay-primary-35: rgba(0, 155, 216, 0.35);
+  --overlay-primary-30: rgba(0, 155, 216, 0.3);
+
+  --overlay-accent-35: rgba(236, 120, 52, 0.35);
+  --overlay-accent-30: rgba(236, 120, 52, 0.3);
+  --overlay-accent-05: rgba(236, 120, 52, 0.05);
+
+  --overlay-white-70: rgba(255, 255, 255, 0.7);
+  --overlay-white-60: rgba(255, 255, 255, 0.6);
+  --overlay-white-55: rgba(255, 255, 255, 0.55);
+  --overlay-white-40: rgba(255, 255, 255, 0.4);
+  --overlay-white-30: rgba(255, 255, 255, 0.3);
+  --overlay-white-25: rgba(255, 255, 255, 0.25);
+  --overlay-white-10: rgba(255, 255, 255, 0.1);
+  --overlay-white-08: rgba(255, 255, 255, 0.08);
+  --overlay-white-06: rgba(255, 255, 255, 0.06);
+  --overlay-white-05: rgba(255, 255, 255, 0.05);
+  --overlay-white-04: rgba(255, 255, 255, 0.04);
+  --overlay-white-03: rgba(255, 255, 255, 0.03);
+  --overlay-white-02: rgba(255, 255, 255, 0.02);
+
+  --overlay-subtle-12: rgba(131, 134, 144, 0.12);
+  --overlay-subtle-10: rgba(131, 134, 144, 0.1);
+  --overlay-subtle-20: rgba(131, 134, 144, 0.2);
+
+  /* Backward-compatible aliases */
+  --cerulean: var(--color-primary);
+  --tarawera: var(--color-secondary);
+  --jaffa: var(--color-accent);
+  --manatee: var(--color-text-subtle);
+  --tarawera-deep: var(--color-secondary-deep);
+  --cerulean-light: var(--color-surface-muted);
+  --cerulean-pale: var(--color-bg-light);
+  --jaffa-light: var(--color-surface-accent);
+  --white: var(--color-text-inverse);
+  --off-white: var(--color-bg-section-alt);
+  --text-dark: var(--color-text-primary);
+  --text-body: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+
+  --bg-primary: var(--color-secondary-deep);
+  --bg-secondary: var(--color-secondary);
+  --bg-card: #0a1520;
+  --bg-card-hover: #0d2030;
+  --accent-orange: var(--color-accent);
+  --accent-orange-light: var(--color-info);
+  --accent-orange-glow: var(--overlay-accent-30);
+  --accent-blue: var(--color-primary);
+  --accent-cyan: var(--color-primary);
+  --accent-green: #2ea44f;
+  --text-primary: var(--color-text-inverse);
+  --text-secondary: #a0b0c0;
+  --border-subtle: var(--overlay-white-10);
+  --border-medium: var(--overlay-white-25);
+  --gradient-mesh: radial-gradient(ellipse at 20% 0%, var(--overlay-primary-15) 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, var(--overlay-primary-10) 0%, transparent 50%);
+}

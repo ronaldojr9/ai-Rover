@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* AI Page specific styles */
@@ -101,9 +102,9 @@
             border-radius: 50%;
         }
 
-        .ai-visual-dot.red { background: #ef4444; }
-        .ai-visual-dot.yellow { background: #f59e0b; }
-        .ai-visual-dot.green { background: #10b981; }
+        .ai-visual-dot.red { background: var(--color-accent-hover); }
+        .ai-visual-dot.yellow { background: var(--color-accent); }
+        .ai-visual-dot.green { background: var(--accent-green); }
 
         .ai-visual-content {
             font-family: 'Space Mono', monospace;
@@ -251,7 +252,7 @@
         .use-case-icon {
             width: 56px;
             height: 56px;
-            background: rgba(255, 107, 53, 0.1);
+            background: var(--overlay-accent-30);
             border-radius: 12px;
             display: flex;
             align-items: center;

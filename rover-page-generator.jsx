@@ -5,17 +5,17 @@ const ROVER_SYSTEM_PROMPT = `You are the Rover ERP Web Page Generator. You creat
 ## BRAND SYSTEM (MANDATORY)
 
 ### Colors
-- Cerulean (Primary): #009bd8 / rgb(0, 155, 216)
-- Tarawera (Dark): #0b3655 / rgb(11, 54, 85)
-- Tarawera Deep: #072740
-- Jaffa (Accent/CTA): #ec7834 / rgb(236, 120, 52)
-- Manatee (Neutral): #838690 / rgb(131, 134, 144)
-- Text Dark: #1a2a3a
-- Text Body: #3d4f5f
-- Text Muted: #6b7a8a
-- Off-white Background: #f8f9fb
-- Cerulean Light: #e6f5fc
-- Cerulean Pale: #f0f9fd
+- Cerulean (Primary): var(--color-primary) / var(--color-primary)
+- Tarawera (Dark): var(--color-secondary) / var(--color-secondary)
+- Tarawera Deep: var(--color-secondary-deep)
+- Jaffa (Accent/CTA): var(--color-accent) / var(--color-accent)
+- Manatee (Neutral): var(--color-text-subtle) / var(--color-text-subtle)
+- Text Dark: var(--color-text-primary)
+- Text Body: var(--color-text-secondary)
+- Text Muted: var(--color-text-muted)
+- Off-white Background: var(--color-bg-section-alt)
+- Cerulean Light: var(--color-surface-muted)
+- Cerulean Pale: var(--color-bg-light)
 
 ### Typography
 - Font: 'Barlow', sans-serif (Google Fonts import: https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap)
@@ -26,14 +26,14 @@ const ROVER_SYSTEM_PROMPT = `You are the Rover ERP Web Page Generator. You creat
 ### Design Patterns
 - Nav: Fixed top, Tarawera Deep background with backdrop blur, Cerulean border accent
 - Hero sections: Tarawera gradient backgrounds with subtle grid overlay and radial gradients
-- Cards: White background, subtle border (rgba(131,134,144,0.12)), 16px border-radius, hover lift effect
+- Cards: White background, subtle border (var(--overlay-subtle-12)), 16px border-radius, hover lift effect
 - Buttons Primary: Jaffa background, white text, 8px border-radius, hover lift + shadow
 - Buttons Secondary: Transparent with white/tarawera border
 - Section spacing: 5-6rem padding
 - Max content width: 1280px
 - Stat cards: Semi-transparent on dark backgrounds
 - Trust bars: Cerulean icon + muted text
-- Grid overlay on dark sections: rgba(0,155,216,0.04) 1px lines at 60px intervals
+- Grid overlay on dark sections: var(--overlay-primary-04) 1px lines at 60px intervals
 
 ### Voice & Tone
 - Friendly & Professional: Approachable but credible, never corporate or robotic
@@ -261,16 +261,16 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
   return (
     <div style={{
       minHeight: "100vh",
-      background: "#060e18",
+      background: "var(--color-secondary-deep)",
       fontFamily: "'Barlow', sans-serif",
-      color: "#c8d0d8",
+      color: "var(--color-border)",
     }}>
       <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
       {/* Header */}
       <header style={{
-        borderBottom: "1px solid rgba(0,155,216,0.12)",
-        background: "rgba(7,39,64,0.6)",
+        borderBottom: "1px solid var(--overlay-primary-12)",
+        background: "var(--overlay-primary-20)",
         backdropFilter: "blur(20px)",
         position: "sticky",
         top: 0,
@@ -288,31 +288,31 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <div style={{
               width: 32, height: 32, borderRadius: 8,
-              background: "linear-gradient(135deg, #009bd8, #0b3655)",
+              background: "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "0.85rem", fontWeight: 800, color: "#fff",
+              fontSize: "0.85rem", fontWeight: 800, color: "var(--color-text-inverse)",
             }}>R</div>
             <div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>
-                Rover <span style={{ color: "#009bd8" }}>Page Generator</span>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text-inverse)", lineHeight: 1.2 }}>
+                Rover <span style={{ color: "var(--color-primary)" }}>Page Generator</span>
               </div>
-              <div style={{ fontSize: "0.65rem", color: "#838690", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <div style={{ fontSize: "0.65rem", color: "var(--color-text-subtle)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 Brand-Consistent • AI-Powered
               </div>
             </div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             {generationCount > 0 && (
-              <span style={{ fontSize: "0.75rem", color: "#838690" }}>
+              <span style={{ fontSize: "0.75rem", color: "var(--color-text-subtle)" }}>
                 {generationCount} page{generationCount !== 1 ? "s" : ""} generated
               </span>
             )}
             {generatedHTML && (
               <>
                 <button onClick={copyHTML} style={{
-                  background: "rgba(0,155,216,0.1)",
-                  border: "1px solid rgba(0,155,216,0.2)",
-                  color: "#009bd8",
+                  background: "var(--overlay-primary-10)",
+                  border: "1px solid var(--overlay-primary-20)",
+                  color: "var(--color-primary)",
                   padding: "0.4rem 1rem",
                   borderRadius: 6,
                   fontSize: "0.8rem",
@@ -321,9 +321,9 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
                   fontFamily: "inherit",
                 }}>Copy HTML</button>
                 <button onClick={downloadHTML} style={{
-                  background: "#ec7834",
+                  background: "var(--color-accent)",
                   border: "none",
-                  color: "#fff",
+                  color: "var(--color-text-inverse)",
                   padding: "0.4rem 1rem",
                   borderRadius: 6,
                   fontSize: "0.8rem",
@@ -362,7 +362,7 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
               display: "block",
               fontSize: "0.72rem",
               fontWeight: 700,
-              color: "#ec7834",
+              color: "var(--color-accent)",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               marginBottom: "0.6rem",
@@ -378,9 +378,9 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
                   onClick={() => setSelectedTemplate(t.id)}
                   style={{
                     background: selectedTemplate === t.id
-                      ? "rgba(0,155,216,0.12)"
-                      : "rgba(255,255,255,0.02)",
-                    border: `1px solid ${selectedTemplate === t.id ? "rgba(0,155,216,0.35)" : "rgba(255,255,255,0.06)"}`,
+                      ? "var(--overlay-primary-12)"
+                      : "var(--overlay-white-02)",
+                    border: `1px solid ${selectedTemplate === t.id ? "var(--overlay-primary-35)" : "var(--overlay-white-06)"}`,
                     borderRadius: 10,
                     padding: "0.7rem 0.6rem",
                     cursor: "pointer",
@@ -397,12 +397,12 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
                   <div style={{
                     fontSize: "0.78rem",
                     fontWeight: 700,
-                    color: selectedTemplate === t.id ? "#009bd8" : "#c8d0d8",
+                    color: selectedTemplate === t.id ? "var(--color-primary)" : "var(--color-border)",
                     marginBottom: "0.15rem",
                   }}>{t.label}</div>
                   <div style={{
                     fontSize: "0.65rem",
-                    color: "#838690",
+                    color: "var(--color-text-subtle)",
                     lineHeight: 1.4,
                   }}>{t.desc}</div>
                 </button>
@@ -421,7 +421,7 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
               <label style={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
-                color: "#ec7834",
+                color: "var(--color-accent)",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
               }}>Content & Copy</label>
@@ -430,7 +430,7 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
                 style={{
                   background: "none",
                   border: "none",
-                  color: "#009bd8",
+                  color: "var(--color-primary)",
                   fontSize: "0.72rem",
                   fontWeight: 600,
                   cursor: "pointer",
@@ -451,25 +451,25 @@ Generate the complete, production-ready HTML page now. Remember: output ONLY the
                     key={i}
                     onClick={() => { setUserPrompt(ex); setShowExamples(false); }}
                     style={{
-                      background: "rgba(0,155,216,0.05)",
-                      border: "1px solid rgba(0,155,216,0.1)",
+                      background: "var(--overlay-primary-05)",
+                      border: "1px solid var(--overlay-primary-10)",
                       borderRadius: 8,
                       padding: "0.6rem 0.8rem",
                       textAlign: "left",
                       cursor: "pointer",
                       fontSize: "0.78rem",
-                      color: "#c8d0d8",
+                      color: "var(--color-border)",
                       lineHeight: 1.5,
                       fontFamily: "inherit",
                       transition: "all 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.borderColor = "rgba(0,155,216,0.3)";
-                      e.target.style.background = "rgba(0,155,216,0.08)";
+                      e.target.style.borderColor = "var(--overlay-primary-30)";
+                      e.target.style.background = "var(--overlay-primary-08)";
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.borderColor = "rgba(0,155,216,0.1)";
-                      e.target.style.background = "rgba(0,155,216,0.05)";
+                      e.target.style.borderColor = "var(--overlay-primary-10)";
+                      e.target.style.background = "var(--overlay-primary-05)";
                     }}
                   >{ex}</button>
                 ))}
@@ -485,11 +485,11 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
               style={{
                 width: "100%",
                 minHeight: 180,
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "var(--overlay-white-03)",
+                border: "1px solid var(--overlay-white-08)",
                 borderRadius: 12,
                 padding: "1rem",
-                color: "#e0e4e8",
+                color: "var(--color-border-soft)",
                 fontSize: "0.88rem",
                 lineHeight: 1.65,
                 fontFamily: "inherit",
@@ -497,8 +497,8 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                 outline: "none",
                 transition: "border-color 0.2s",
               }}
-              onFocus={(e) => e.target.style.borderColor = "rgba(0,155,216,0.3)"}
-              onBlur={(e) => e.target.style.borderColor = "rgba(255,255,255,0.08)"}
+              onFocus={(e) => e.target.style.borderColor = "var(--overlay-primary-30)"}
+              onBlur={(e) => e.target.style.borderColor = "var(--overlay-white-08)"}
             />
           </div>
 
@@ -508,11 +508,11 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
               display: "block",
               fontSize: "0.72rem",
               fontWeight: 700,
-              color: "#ec7834",
+              color: "var(--color-accent)",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               marginBottom: "0.5rem",
-            }}>Additional Instructions <span style={{ color: "#838690", fontWeight: 400, textTransform: "none" }}>(optional)</span></label>
+            }}>Additional Instructions <span style={{ color: "var(--color-text-subtle)", fontWeight: 400, textTransform: "none" }}>(optional)</span></label>
             <textarea
               value={additionalInstructions}
               onChange={(e) => setAdditionalInstructions(e.target.value)}
@@ -520,11 +520,11 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
               style={{
                 width: "100%",
                 minHeight: 80,
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "var(--overlay-white-03)",
+                border: "1px solid var(--overlay-white-08)",
                 borderRadius: 12,
                 padding: "1rem",
-                color: "#e0e4e8",
+                color: "var(--color-border-soft)",
                 fontSize: "0.88rem",
                 lineHeight: 1.65,
                 fontFamily: "inherit",
@@ -532,8 +532,8 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                 outline: "none",
                 transition: "border-color 0.2s",
               }}
-              onFocus={(e) => e.target.style.borderColor = "rgba(0,155,216,0.3)"}
-              onBlur={(e) => e.target.style.borderColor = "rgba(255,255,255,0.08)"}
+              onFocus={(e) => e.target.style.borderColor = "var(--overlay-primary-30)"}
+              onBlur={(e) => e.target.style.borderColor = "var(--overlay-white-08)"}
             />
           </div>
 
@@ -547,11 +547,11 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
               borderRadius: 10,
               border: "none",
               background: isGenerating
-                ? "rgba(236,120,52,0.3)"
+                ? "var(--overlay-accent-30)"
                 : !userPrompt.trim()
-                  ? "rgba(131,134,144,0.2)"
-                  : "linear-gradient(135deg, #ec7834, #e0651e)",
-              color: !userPrompt.trim() ? "#838690" : "#fff",
+                  ? "var(--overlay-subtle-20)"
+                  : "linear-gradient(135deg, var(--color-accent), var(--color-accent-hover))",
+              color: !userPrompt.trim() ? "var(--color-text-subtle)" : "var(--color-text-inverse)",
               fontSize: "0.95rem",
               fontWeight: 700,
               cursor: isGenerating || !userPrompt.trim() ? "not-allowed" : "pointer",
@@ -565,8 +565,8 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
             {isGenerating ? (
               <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
                 <span style={{
-                  width: 16, height: 16, border: "2px solid rgba(255,255,255,0.3)",
-                  borderTopColor: "#fff", borderRadius: "50%",
+                  width: 16, height: 16, border: "2px solid var(--overlay-white-30)",
+                  borderTopColor: "var(--color-text-inverse)", borderRadius: "50%",
                   animation: "spin 0.8s linear infinite",
                   display: "inline-block",
                 }} />
@@ -577,40 +577,40 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
 
           {error && (
             <div style={{
-              background: "rgba(220,50,50,0.1)",
-              border: "1px solid rgba(220,50,50,0.25)",
+              background: "var(--overlay-accent-05)",
+              border: "1px solid var(--overlay-accent-30)",
               borderRadius: 10,
               padding: "0.8rem 1rem",
               fontSize: "0.82rem",
-              color: "#f08080",
+              color: "var(--color-accent)",
               lineHeight: 1.5,
             }}>{error}</div>
           )}
 
           {/* Brand Reference */}
           <div style={{
-            background: "rgba(0,155,216,0.04)",
-            border: "1px solid rgba(0,155,216,0.08)",
+            background: "var(--overlay-primary-04)",
+            border: "1px solid var(--overlay-primary-08)",
             borderRadius: 12,
             padding: "1rem",
           }}>
             <div style={{
               fontSize: "0.68rem",
               fontWeight: 700,
-              color: "#838690",
+              color: "var(--color-text-subtle)",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               marginBottom: "0.6rem",
             }}>Built-in Brand System</div>
             <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem" }}>
-              {["#009bd8", "#0b3655", "#ec7834", "#838690", "#072740"].map((c) => (
+              {["var(--color-primary)", "var(--color-secondary)", "var(--color-accent)", "var(--color-text-subtle)", "var(--color-secondary-deep)"].map((c) => (
                 <div key={c} style={{
                   width: 24, height: 24, borderRadius: 6,
-                  background: c, border: "1px solid rgba(255,255,255,0.1)",
+                  background: c, border: "1px solid var(--overlay-white-10)",
                 }} title={c} />
               ))}
             </div>
-            <div style={{ fontSize: "0.72rem", color: "#6b7a8a", lineHeight: 1.5 }}>
+            <div style={{ fontSize: "0.72rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
               Every page uses Barlow font, Rover color palette, responsive design, scroll animations, and manufacturing-focused messaging.
             </div>
           </div>
@@ -623,8 +623,8 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
             flexDirection: "column",
             borderRadius: 16,
             overflow: "hidden",
-            border: "1px solid rgba(0,155,216,0.12)",
-            background: "#0a1520",
+            border: "1px solid var(--overlay-primary-12)",
+            background: "var(--bg-card)",
           }}>
             {/* Preview Toolbar */}
             <div style={{
@@ -632,16 +632,16 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
               alignItems: "center",
               justifyContent: "space-between",
               padding: "0.5rem 1rem",
-              background: "rgba(7,39,64,0.8)",
-              borderBottom: "1px solid rgba(0,155,216,0.1)",
+              background: "var(--overlay-nav)",
+              borderBottom: "1px solid var(--overlay-primary-10)",
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <div style={{ display: "flex", gap: "0.35rem" }}>
-                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f57" }} />
-                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
-                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#28c840" }} />
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--color-accent-hover)" }} />
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--color-accent)" }} />
+                  <div style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--accent-green)" }} />
                 </div>
-                <span style={{ fontSize: "0.72rem", color: "#838690", marginLeft: "0.5rem" }}>
+                <span style={{ fontSize: "0.72rem", color: "var(--color-text-subtle)", marginLeft: "0.5rem" }}>
                   {isGenerating ? "Generating..." : "Preview"}
                 </span>
               </div>
@@ -649,9 +649,9 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                 <button
                   onClick={() => setActiveView(activeView === "code" ? "preview" : "code")}
                   style={{
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    color: "#c8d0d8",
+                    background: "var(--overlay-white-05)",
+                    border: "1px solid var(--overlay-white-08)",
+                    color: "var(--color-border)",
                     padding: "0.25rem 0.6rem",
                     borderRadius: 4,
                     fontSize: "0.7rem",
@@ -672,7 +672,7 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                     width: "100%",
                     height: "calc(100vh - 160px)",
                     border: "none",
-                    background: "#fff",
+                    background: "var(--color-text-inverse)",
                   }}
                   title="Page Preview"
                   srcDoc={displayHTML}
@@ -685,8 +685,8 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                   margin: 0,
                   fontSize: "0.72rem",
                   lineHeight: 1.6,
-                  color: "#a0b0c0",
-                  background: "#060e18",
+                  color: "var(--text-secondary)",
+                  background: "var(--color-secondary-deep)",
                   fontFamily: "'Courier New', monospace",
                   whiteSpace: "pre-wrap",
                   wordBreak: "break-word",
@@ -699,22 +699,22 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
                   bottom: 16,
                   left: "50%",
                   transform: "translateX(-50%)",
-                  background: "rgba(7,39,64,0.9)",
+                  background: "var(--overlay-nav)",
                   backdropFilter: "blur(10px)",
-                  border: "1px solid rgba(0,155,216,0.2)",
+                  border: "1px solid var(--overlay-primary-20)",
                   borderRadius: 100,
                   padding: "0.5rem 1.25rem",
                   display: "flex",
                   alignItems: "center",
                   gap: "0.5rem",
                   fontSize: "0.78rem",
-                  color: "#009bd8",
+                  color: "var(--color-primary)",
                   fontWeight: 600,
                 }}>
                   <span style={{
                     width: 12, height: 12,
-                    border: "2px solid rgba(0,155,216,0.3)",
-                    borderTopColor: "#009bd8",
+                    border: "2px solid var(--overlay-primary-30)",
+                    borderTopColor: "var(--color-primary)",
                     borderRadius: "50%",
                     animation: "spin 0.8s linear infinite",
                     display: "inline-block",
@@ -739,7 +739,7 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
           to { transform: rotate(360deg); }
         }
         textarea::placeholder {
-          color: #4a5568;
+          color: var(--color-text-muted);
         }
         ::-webkit-scrollbar {
           width: 6px;
@@ -748,11 +748,11 @@ Example: Create a landing page for our new Rover AI module. Headline: 'Ask Your 
           background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-          background: rgba(0,155,216,0.2);
+          background: var(--overlay-primary-20);
           border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
-          background: rgba(0,155,216,0.35);
+          background: var(--overlay-primary-35);
         }
       `}</style>
     </div>
