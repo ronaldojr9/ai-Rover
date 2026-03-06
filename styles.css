@@ -18,6 +18,15 @@ body {
     overflow-x: hidden;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 2px;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -39,6 +48,20 @@ nav {
     background: var(--overlay-nav);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
 }
 
 .logo {
@@ -119,6 +142,12 @@ nav {
     transform: translateY(10px);
     transition: all 0.2s ease;
     box-shadow: 0 20px 40px var(--overlay-card-shadow);
+}
+
+.nav-links li:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .nav-links li:hover .nav-dropdown {
@@ -239,7 +268,7 @@ nav {
 
 /* Sections */
 .section {
-    padding: 6rem 3rem;
+    padding: 5.5rem 3rem;
     position: relative;
 }
 
@@ -281,6 +310,11 @@ nav {
     font-size: 1.15rem;
     color: var(--text-secondary);
     max-width: 600px;
+    line-height: 1.75;
+}
+
+.measure {
+    max-width: 64ch;
 }
 
 .text-center {
@@ -336,7 +370,7 @@ nav {
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 2rem;
     transition: all 0.3s ease;
 }
@@ -585,6 +619,69 @@ nav {
     overflow: hidden;
 }
 
+.form-shell {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px var(--overlay-accent-05);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.trust-band {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.trust-pill {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: var(--overlay-white-03);
+}
+
 .cta-section::before {
     content: '';
     position: absolute;
@@ -712,7 +809,58 @@ footer {
         padding: 1rem 1.5rem;
     }
 
+    .nav-toggle {
+        display: inline-flex;
+    }
+
     .nav-links {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 1rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.75rem;
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        background: var(--bg-card);
+        box-shadow: 0 12px 30px var(--overlay-card-shadow);
+    }
+
+    .nav-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links > li > a {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .nav-dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0.35rem 0 0.5rem 1rem;
+        display: none;
+    }
+
+    .nav-links li.open .nav-dropdown {
+        display: block;
+    }
+
+    .nav-cta {
+        margin-left: auto;
+        margin-right: 0.5rem;
+    }
+
+    .nav-cta .btn-ghost {
         display: none;
     }
 
@@ -741,6 +889,8 @@ footer {
     .cta-section {
         padding: 5rem 1.5rem;
     }
+
+    .form-row { grid-template-columns: 1fr; }
 }
 
 /* Utility Classes */
