@@ -12,6 +12,8 @@
     <style>
         .stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
         .story-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem; transition: all 0.3s; }
+        .story-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; gap:1rem; }
+        .video-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color: var(--accent-cyan); border:1px solid var(--overlay-primary-20); padding:0.2rem 0.55rem; border-radius:999px; }
         .story-card:hover { border-color: var(--accent-orange); transform: translateY(-4px); }
         .story-logo { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); }
         .story-quote { font-size: 1.1rem; font-style: italic; line-height: 1.8; margin-bottom: 1.5rem; color: var(--text-primary); }
@@ -93,19 +95,19 @@
             </div>
             <div class="stories-grid">
                 <div class="story-card">
-                    <div class="story-logo">PACE Supply Corp.</div>
+                    <div class="story-meta"><div class="story-logo" style="margin:0;padding:0;border:0;">Industrial Finishes</div><span class="video-tag">Video Story</span></div>
+                    <p class="story-quote">"I've been amazed with how easy and comfortable it is to transition over to Rover. We have more resources, dedicated people, and a team that's easy to work with."</p>
+                    <div class="story-author">
+                        <div class="story-avatar">RP</div>
+                        <div class="story-author-info"><h4>Ray Pfaff</h4><p>Director of Operations</p></div>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-meta"><div class="story-logo" style="margin:0;padding:0;border:0;">PACE Supply Corp.</div><span class="video-tag">Video Story</span></div>
                     <p class="story-quote">"We're really pleased with Rover Pay. The interface is super user-friendly, and our team got the hang of it quickly. Plus, their support team is awesome—always quick to respond and super helpful."</p>
                     <div class="story-author">
                         <div class="story-avatar">SR</div>
                         <div class="story-author-info"><h4>Sam Roach</h4><p>PACE Supply Corp.</p></div>
-                    </div>
-                </div>
-                <div class="story-card">
-                    <div class="story-logo">US Wheel</div>
-                    <p class="story-quote">"The successful migration and the ongoing improvements to the company's operations serve as a testament to the benefits of choosing Rover ERP."</p>
-                    <div class="story-author">
-                        <div class="story-avatar">BW</div>
-                        <div class="story-author-info"><h4>Bob Williams</h4><p>VP & General Manager</p></div>
                     </div>
                 </div>
                 <div class="story-card">
