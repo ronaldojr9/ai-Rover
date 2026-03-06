@@ -21,12 +21,6 @@
         .demo-form-container { width: 100%; max-width: 480px; }
         .demo-form-container h2 { font-size: 1.75rem; margin-bottom: 0.5rem; }
         .demo-form-container > p { color: var(--text-muted); margin-bottom: 2rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-secondary); }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.875rem 1rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 1rem; color: var(--text-primary); font-family: inherit; transition: border-color 0.2s; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-orange); }
-        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .form-group select { cursor: pointer; }
         .form-group textarea { min-height: 100px; resize: vertical; }
         .form-submit { width: 100%; padding: 1rem; font-size: 1rem; margin-top: 1rem; }
@@ -45,35 +39,48 @@
                     <source srcset="rover-logo.png" type="image/png">
                     <img src="rover-logo.svg" class="logo-img" alt="Rover">
                 </picture></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul class="nav-links">
             <li><a href="ai.html">AI</a></li>
             <li><a href="pay.html">Pay</a></li>
-            <li><a href="erp.html">ERP</a></li>
+            <li><a href="#">ERP <span class="dropdown-arrow">▼</span></a>
+                <div class="nav-dropdown">
+                    <a href="erp.html">What is Rover ERP?<span>Complete overview</span></a>
+                    <a href="erp-modules.html">Modules<span>Features & capabilities</span></a>
+                    <a href="erp-who.html">Who It's For<span>By role & industry</span></a>
+                </div>
+            </li>
             <li><a href="platform.html">Platform</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="nav-cta"><a href="#" class="btn btn-ghost">Sign In</a></div>
+        <div class="nav-cta"><a href="#" class="btn btn-ghost">Sign In</a><a href="demo.html" class="btn btn-primary">Book Demo</a></div>
     </nav>
 
     <div class="demo-page">
         <div class="demo-left">
             <div>
                 <h1>See Rover in Action</h1>
-                <p>Get a personalized demo of the Rover platform. We'll show you real insights from your industry—not a canned presentation.</p>
+                <p>Get a focused walkthrough of Rover for your manufacturing or distribution workflows. We’ll cover your current process, your goals, and a practical rollout path.</p>
                 <ul class="demo-benefits">
-                    <li>30-minute personalized walkthrough</li>
-                    <li>See AI insights relevant to your business</li>
-                    <li>Get answers to your specific questions</li>
-                    <li>No pressure, no hard sell</li>
-                    <li>Talk to a real human who knows manufacturing</li>
+                    <li>30-minute role-based walkthrough for operations and finance</li>
+                    <li>ERP, AI, BI, and payment flow mapped to your business model</li>
+                    <li>Phased implementation recommendations for lower change risk</li>
+                    <li>Live Q&A with a manufacturing software specialist</li>
+                    <li>Clear next steps, no pressure</li>
                 </ul>
+                <div class="trust-band">
+                    <span class="trust-pill">Manufacturing-focused team</span>
+                    <span class="trust-pill">Mid-market implementation experts</span>
+                    <span class="trust-pill">Response within 1 business day</span>
+                </div>
             </div>
         </div>
         <div class="demo-right">
-            <div class="demo-form-container">
+            <div class="demo-form-container form-shell">
                 <h2>Request Your Demo</h2>
                 <p>Fill out the form and we'll be in touch within 24 hours.</p>
-                <form action="#" method="POST">
+                <form action="#" method="POST" aria-label="Request demo form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name *</label>
@@ -130,5 +137,6 @@
             </div>
         </div>
     </div>
+    <script src="site.js"></script>
 </body>
 </html>
